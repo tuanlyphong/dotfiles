@@ -18,37 +18,38 @@ max_height = 1200
 cache_dir = ""
 image_filter = "lanczos3"
 image_quality = 90
-sixel_fraction = 10
-ueberzug_scale = 1
-ueberzug_offset = [0, 0, 0, 0]
 
 [opener]
+# Text editors
 edit = [
   { run = 'nvim "$@"', desc = "nvim", block = true, for = "unix" },
   { run = 'code "%*"', orphan = true, desc = "code", for = "windows" },
   { run = 'code -w "%*"', block = true, desc = "code (block)", for = "windows" },
 ]
+
+# Default system opener
 open = [
   { run = 'xdg-open "$@"', desc = "Open", for = "linux" },
   { run = 'open "$@"', desc = "Open", for = "macos" },
   { run = 'start "" "%1"', orphan = true, desc = "Open", for = "windows" },
 ]
+
+# File reveal in system file manager
 reveal = [
   { run = 'open -R "$1"', desc = "Reveal", for = "macos" },
   { run = 'explorer /select, "%1"', orphan = true, desc = "Reveal", for = "windows" },
   { run = '''exiftool "$1"; echo "Press enter to exit"; read _''', block = true, desc = "Show EXIF", for = "unix" },
 ]
+
+
+# Archive extraction (unified)
 extract = [
-  { run = 'unzip "$1"', desc = "Extract here", for = "unix" },
-  { run = 'unzip "%1"', desc = "Extract here", for = "windows" },
-
+  { run = 'aunpack "$1"', desc = "Extract here (atool)", for = "unix" },
+  { run = 'bsdtar -xf "$1"', desc = "Extract here (bsdtar)", for = "unix" },
+  { run = '7z x "$1"', desc = "Extract here (7z)", for = "unix" },
+  { run = '7z x "%1"', desc = "Extract here (7z)", for = "windows" },
 ]
-
-extract2 = [
-  { run = 'unrar x "$1"', desc = "Extract here", for = "unix" },
-  { run = 'unrar x "%1"', desc = "Extract here", for = "windows" },
-
-]
+# Media player
 play = [
   { run = 'mpv "$@"', orphan = true, for = "unix" },
   { run = 'mpv "%1"', orphan = true, for = "windows" },
@@ -57,83 +58,46 @@ play = [
 
 [open]
 rules = [
-  { name = "*/", use = [
-    "edit",
-    "open",
-    "reveal",
-  ] },
+  # Directories
+  { name = "*/", use = ["edit", "open", "reveal"] },
 
-  { mime = "text/*", use = [
-    "edit",
-    "reveal",
-  ] },
-  { mime = "image/*", use = [
-    "open",
-    "reveal",
-  ] },
-  { mime = "video/*", use = [
-    "play",
-    "reveal",
-  ] },
-  { mime = "audio/*", use = [
-    "play",
-    "reveal",
-  ] },
-  { mime = "inode/x-empty", use = [
-    "edit",
-    "reveal",
-  ] },
+  # Text files
+  { mime = "text/*", use = ["edit", "reveal"] },
+  { mime = "application/json", use = ["edit", "reveal"] },
+  { mime = "*/javascript", use = ["edit", "reveal"] },
+  { mime = "*/xml", use = ["edit", "reveal"] },
+  { mime = "inode/x-empty", use = ["edit", "reveal"] },
 
-  { mime = "application/json", use = [
-    "edit",
-    "reveal",
-  ] },
-  { mime = "*/javascript", use = [
-    "edit",
-    "reveal",
-  ] },
+  # Images
+  { mime = "image/*", use = ["open", "reveal"] },
 
-  { mime = "application/zip", use = [
-    "extract",
-    "reveal",
-  ] },
-  { mime = "application/gzip", use = [
-    "extract",
-    "reveal",
-  ] },
-  { mime = "application/x-tar", use = [
-    "extract",
-    "reveal",
-  ] },
-  { mime = "application/x-bzip", use = [
-    "extract",
-    "reveal",
-  ] },
-  { mime = "application/x-bzip2", use = [
-    "extract",
-    "reveal",
-  ] },
-  { mime = "application/x-7z-compressed", use = [
-    "extract",
-    "reveal",
-  ] },
-  { mime = "application/x-rar", use = [
-    "extract",
-    "reveal",
-  ] },
-  { mime = "application/xz", use = [
-    "extract",
-    "reveal",
-  ] },
-  { mime = "application/vnd.rar", use = [
-    "extract2",
-    "reveal",
-  ] },
+  # Video
+  { mime = "video/*", use = ["play", "reveal"] },
 
-  { mime = "*", use = [
-    "open",
-    "reveal",
-  ] },
+  # Audio
+  { mime = "audio/*", use = ["play", "reveal"] },
+
+  # Archives - comprehensive list
+  { mime = "application/zip", use = ["extract", "reveal"] },
+  { mime = "application/x-zip-compressed", use = ["extract", "reveal"] },
+  { mime = "application/gzip", use = ["extract", "reveal"] },
+  { mime = "application/x-gzip", use = ["extract", "reveal"] },
+  { mime = "application/x-tar", use = ["extract", "reveal"] },
+  { mime = "application/x-bzip", use = ["extract", "reveal"] },
+  { mime = "application/x-bzip2", use = ["extract", "reveal"] },
+  { mime = "application/x-7z-compressed", use = ["extract", "reveal"] },
+  { mime = "application/x-rar", use = ["extract", "reveal"] },
+  { mime = "application/x-rar-compressed", use = ["extract", "reveal"] },
+  { mime = "application/vnd.rar", use = ["extract", "reveal"] },
+  { mime = "application/x-xz", use = ["extract", "reveal"] },
+  { mime = "application/xz", use = ["extract", "reveal"] },
+  { mime = "application/x-lzip", use = ["extract", "reveal"] },
+  { mime = "application/x-compress", use = ["extract", "reveal"] },
+  { mime = "application/x-compressed-tar", use = ["extract", "reveal"] },
+  { mime = "application/x-lzma", use = ["extract", "reveal"] },
+
+  # Fallback
+  { mime = "*", use = ["open", "reveal"] },
 ]
 
 [tasks]
@@ -149,15 +113,14 @@ prepend_previewers = [
   { mime = "{audio,video}/*", run = "mediainfo" },
   { mime = "application/x-subrip", run = "mediainfo" },
 ]
+
 preloaders = [
-  # Image
   { mime = "image/vnd.djvu", run = "noop" },
   { mime = "image/*", run = "image" },
-  # Video
   { mime = "video/*", run = "video" },
-  # PDF
   { mime = "application/pdf", run = "pdf" },
 ]
+
 previewers = [
   { name = "*/", run = "folder", sync = true },
   # Code
@@ -176,70 +139,59 @@ previewers = [
   # PDF
   { mime = "application/pdf", run = "pdf" },
   # Archive
-  { mime = "application/zip", run = "archive" },
+  { mime = "application/*zip*", run = "archive" },
+  { mime = "application/*tar*", run = "archive" },
+  { mime = "application/*rar*", run = "archive" },
+  { mime = "application/*7z*", run = "archive" },
+  { mime = "application/*compress*", run = "archive" },
   { mime = "application/gzip", run = "archive" },
-  { mime = "application/x-tar", run = "archive" },
-  { mime = "application/x-bzip", run = "archive" },
-  { mime = "application/x-bzip2", run = "archive" },
-  { mime = "application/x-7z-compressed", run = "archive" },
-  { mime = "application/x-rar", run = "archive" },
-  { mime = "application/xz", run = "archive" },
+  { mime = "application/x-bzip*", run = "archive" },
+  { mime = "application/*xz*", run = "archive" },
   # Fallback
   { name = "*", run = "file" },
 ]
 
 [input]
-# cd
 cd_title = "Change directory:"
 cd_origin = "top-center"
 cd_offset = [0, 2, 50, 3]
 
-# create
-create_title = "Create:"
+create_title = ["Create:", ""]
 create_origin = "top-center"
 create_offset = [0, 2, 50, 3]
 
-# rename
 rename_title = "Rename:"
 rename_origin = "hovered"
 rename_offset = [0, 1, 50, 3]
 
-# trash
 trash_title = "Move {n} selected file{s} to trash? (y/N)"
 trash_origin = "top-center"
 trash_offset = [0, 2, 50, 3]
 
-# delete
 delete_title = "Delete {n} selected file{s} permanently? (y/N)"
 delete_origin = "top-center"
 delete_offset = [0, 2, 50, 3]
 
-# filter
 filter_title = "Filter:"
 filter_origin = "top-center"
 filter_offset = [0, 2, 50, 3]
 
-# find
 find_title = ["Find next:", "Find previous:"]
 find_origin = "top-center"
 find_offset = [0, 2, 50, 3]
 
-# search
 search_title = "Search via {n}:"
 search_origin = "top-center"
 search_offset = [0, 2, 50, 3]
 
-# shell
 shell_title = ["Shell:", "Shell (block):"]
 shell_origin = "top-center"
 shell_offset = [0, 2, 50, 3]
 
-# overwrite
 overwrite_title = "Overwrite an existing file? (y/N)"
 overwrite_origin = "top-center"
 overwrite_offset = [0, 2, 50, 3]
 
-# quit
 quit_title = "{n} task{s} running, sure to quit? (y/N)"
 quit_origin = "top-center"
 quit_offset = [0, 2, 50, 3]
@@ -256,5 +208,3 @@ sort_reverse = false
 
 [log]
 enabled = false
-
-[headsup]

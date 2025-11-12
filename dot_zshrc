@@ -137,6 +137,7 @@ alias waifu="yazi .waifus"
 alias picture="yazi ~/Pictures/Wallpapers"
 alias podc='bluetoothctl connect F4:6F:C6:F6:3D:43'
 alias podd='bluetoothctl disconnect F4:6F:C6:F6:3D:43'
+alias idf='. $HOME/esp-idf/export.sh'
 alias podb='bluetoothctl info'
 alias bye="poweroff"
 alias goodbye ="poweroff"
@@ -147,3 +148,11 @@ alias taovoucher="python generate_voucher.py"
 alias g4f='docker run -p 8080:8080 -p 1337:1337 -p 7900:7900 --shm-size="2g" -v ${PWD}/har_and_cookies:/app/har_and_cookies -v $HOME/Pictures/generated_images:/app/generated_images hlohaus789/g4f:latest'
 eval "$(zoxide init zsh)"
 alias uzipa="for i in *.zip; do unzip $i; done"
+
+# pnpm
+export PNPM_HOME="/home/phong/.local/share/pnpm"
+case ":$PATH:" in
+  *":$PNPM_HOME:"*) ;;
+  *) export PATH="$PNPM_HOME:$PATH" ;;
+esac
+# pnpm end
