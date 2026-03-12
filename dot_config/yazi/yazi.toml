@@ -129,6 +129,8 @@ previewers = [
   { mime = "*/cs", run = "bat" },
   { mime = "*/javascript", run = "bat" },
   { mime = "*/x-wine-extension-ini", run = "bat" },
+  { mime = "*/js", run = "bat" },
+
   # JSON
   { mime = "application/json", run = "json" },
   # Image
