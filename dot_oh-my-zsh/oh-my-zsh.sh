@@ -68,7 +68,7 @@ mkdir -p "$ZSH_CACHE_DIR/completions"
 (( ${fpath[(Ie)$ZSH_CACHE_DIR/completions]} )) || fpath=("$ZSH_CACHE_DIR/completions" $fpath)
 
 # Check for updates on initial load...
-#source "$ZSH/tools/check_for_upgrade.sh"
+source "$ZSH/tools/check_for_upgrade.sh"
 
 # Initializes Oh My Zsh
 
@@ -99,8 +99,8 @@ done
 
 # Figure out the SHORT hostname
 if [[ "$OSTYPE" = darwin* ]]; then
-  # macOS's $HOST changes with dhcp, etc. Use ComputerName if possible.
-  SHORT_HOST=$(scutil --get ComputerName 2>/dev/null) || SHORT_HOST="${HOST/.*/}"
+  # macOS's $HOST changes with dhcp, etc. Use LocalHostName if possible.
+  SHORT_HOST=$(scutil --get LocalHostName 2>/dev/null) || SHORT_HOST="${HOST/.*/}"
 else
   SHORT_HOST="${HOST/.*/}"
 fi
@@ -122,11 +122,11 @@ if ! command grep -q -Fx "$zcompdump_revision" "$ZSH_COMPDUMP" 2>/dev/null \
 fi
 
 if [[ "$ZSH_DISABLE_COMPFIX" != true ]]; then
-  #source "$ZSH/lib/compfix.zsh"
+  source "$ZSH/lib/compfix.zsh"
   # Load only from secure directories
   compinit -i -d "$ZSH_COMPDUMP"
   # If completion insecurities exist, warn the user
-  # handle_completion_insecurities &|
+  handle_completion_insecurities &|
 else
   # If the user wants it, load from all found directories
   compinit -u -d "$ZSH_COMPDUMP"
@@ -192,12 +192,12 @@ _omz_source() {
   fi
 }
 
-# Load all of the lib files in ~/oh-my-zsh/lib that end in .zsh
+# Load all of the lib files in ~/.oh-my-zsh/lib that end in .zsh
 # TIP: Add files you don't want in git to .gitignore
-#for lib_file ("$ZSH"/lib/*.zsh); do
-#  _omz_source "lib/${lib_file:t}"
-#done
-#unset lib_file
+for lib_file ("$ZSH"/lib/*.zsh); do
+  _omz_source "lib/${lib_file:t}"
+done
+unset lib_file
 
 # Load all of the plugins that were defined in ~/.zshrc
 for plugin ($plugins); do
