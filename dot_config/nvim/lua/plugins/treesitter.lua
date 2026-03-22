@@ -3,22 +3,15 @@ return {
 		"nvim-treesitter/nvim-treesitter",
 		opts = {
 			ensure_installed = {
-				"c", -- ✅ for ESP32 C
-				"cpp", -- ✅ for ESP32 C++
-				"cmake", -- ✅ useful for ESP-IDF / build configs
-				"rust",
-				"go",
 				"java",
 				"sql",
 				"graphql",
 				"http",
 				"php",
-				"astro",
 				"scss",
 				"css",
 				"svelte",
 				"gitignore",
-				"fish",
 			},
 
 			highlight = { enable = true },
