@@ -1,7 +1,7 @@
 [[plugin.deps]]
 use = "Ape/mediainfo"
 rev = "c69314e"
-hash = ""
+hash = "99aa06d3014798d86001c324468d497f"
 
 [[plugin.deps]]
 use = "AnirudhG07/rich-preview"

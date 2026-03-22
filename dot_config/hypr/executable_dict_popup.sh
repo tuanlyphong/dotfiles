@@ -52,5 +52,5 @@ else
   [ -z "$result" ] && result="No EN definition found"
 
   rofi -theme ~/.config/rofi/dict.rasi \
-    -e "$word_lower\n\n$result"
+    -e "$word_lower$result"
 fi
