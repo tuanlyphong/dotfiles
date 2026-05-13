@@ -14,6 +14,9 @@ vim.opt.rtp:prepend(lazypath)
 require("lazy").setup({
 	spec = {
 		-- add LazyVim and import its plugins
+		rocks = {
+			hererocks = true,
+		},
 		{
 			"LazyVim/LazyVim",
 			import = "lazyvim.plugins",

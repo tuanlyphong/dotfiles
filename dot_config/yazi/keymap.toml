@@ -1,3 +1,36 @@
+# at the bottom of your keymap.toml, before or after [[mgr.prepend_keymap]]
+
+# ── Plugins ───────────────────────────────────────────────────────────────
+
+[[mgr.prepend_keymap]]
+on  = "M"
+run = "plugin mount"
+desc = "Mount/unmount drives (mount)"
+
+[[mgr.prepend_keymap]]
+on  = ["<C-p>"]
+run = "plugin rich-preview"
+desc = "Toggle rich preview (rich-preview)"
+
+[[mgr.prepend_keymap]]
+on  = ["i"]
+run = "plugin mediainfo"
+desc = "Show media info (mediainfo)"
+
+[[mgr.prepend_keymap]]
+on  = ["<C-o>"]
+run = "plugin open-with-cmd"
+desc = "Open with command (open-with-cmd)"
+
+[[mgr.prepend_keymap]]
+on  = ["<C-g>"]
+run = "plugin glow"
+desc = "Preview markdown with glow"
+
+[[mgr.prepend_keymap]]
+on  = ["<C-x>"]
+run = "plugin ouch"
+desc = "Compress/extract with ouch"
 [manager]
 
 keymap = [
@@ -413,7 +446,9 @@ keymap = [
     "~",
   ], run = "help", desc = "Open help" },
 ]
-
+[[mgr.prepend_keymap]]
+on  = "M"
+run = "plugin mount"
 [tasks]
 
 keymap = [

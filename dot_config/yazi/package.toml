@@ -1,17 +1,42 @@
 [[plugin.deps]]
-use = "Ape/mediainfo"
-rev = "c69314e"
-hash = "99aa06d3014798d86001c324468d497f"
-
-[[plugin.deps]]
 use = "AnirudhG07/rich-preview"
-rev = "831234e"
-hash = "ed3363e256e210593f0f8e4cec3e36a9"
+rev = "7d616ad"
+hash = "d64feec9761392cbc250d199ab4b8a3a"
 
 [[plugin.deps]]
 use = "yazi-rs/plugins:piper"
-rev = "eaf6920"
-hash = "64713dcd74daf9ec644883a5895e5d1"
+rev = "1db18bb"
+hash = "384464b6df8cb807425c521f8cd790f3"
+
+[[plugin.deps]]
+use = "yazi-rs/plugins:mount"
+rev = "1db18bb"
+hash = "e3260d0b1feded8c8e3ae3afa1169e30"
+
+[[plugin.deps]]
+use = "yazi-rs/plugins:duckdb"
+rev = "1db18bb"
+hash = "99aa06d3014798d86001c324468d497f"
+
+[[plugin.deps]]
+use = "yazi-rs/plugins:glow"
+rev = "1db18bb"
+hash = "99aa06d3014798d86001c324468d497f"
+
+[[plugin.deps]]
+use = "yazi-rs/plugins:ouch"
+rev = "1db18bb"
+hash = "99aa06d3014798d86001c324468d497f"
+
+[[plugin.deps]]
+use = "Ape/open-with-cmd"
+rev = "eba191d"
+hash = "722a60eca1b338c9c24bb508d2d48578"
+
+[[plugin.deps]]
+use = "boydaihungst/mediainfo"
+rev = "49f5ab7"
+hash = "6e3b5e58f985cc2d625e0030dc35b1b2"
 
 [flavor]
 deps = []
