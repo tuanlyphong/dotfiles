@@ -1740,3 +1740,8 @@ sudo systemctl reset-failed\
 : 1778793773:0;ls -a
 : 1778793820:0;chezmoi add .zsh_history warp.conf 
 : 1778793890:0;dotsave
+: 1778793910:0;z chez
+: 1778793911:0;ls
+: 1778793931:0;z
+: 1778793940:0;chezmoi add .pkglist.txt
+: 1778793945:0;dotsave
