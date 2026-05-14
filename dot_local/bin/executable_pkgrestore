@@ -1,0 +1,26 @@
+#!/bin/bash
+# pkgrestore - reinstall packages from a saved list
+# Usage: pkgrestore
+
+BACKUP_DIR="${PKGBACKUP_DIR:-$HOME/.pkgbackup}"
+INPUT="$BACKUP_DIR/pkglist.txt"
+AUR_INPUT="$BACKUP_DIR/pkglist-aur.txt"
+
+if [ ! -f "$INPUT" ]; then
+  echo "✗ Package list not found: $INPUT"
+  echo "  Clone your backup repo first: git clone https://github.com/YOUR_USERNAME/pkglist.git ~/.pkgbackup"
+  exit 1
+fi
+
+COUNT=$(wc -l < "$INPUT")
+echo "→ Restoring $COUNT packages from $INPUT..."
+sudo pacman -S --needed - < "$INPUT"
+
+if [ -f "$AUR_INPUT" ]; then
+  AUR_COUNT=$(wc -l < "$AUR_INPUT")
+  echo ""
+  echo "→ Found $AUR_COUNT AUR packages in $AUR_INPUT"
+  echo "  Reinstall with: yay -S --needed - < $AUR_INPUT"
+fi
+
+echo "✓ Done."

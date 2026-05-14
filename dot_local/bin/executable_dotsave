@@ -1,0 +1,21 @@
+#!/bin/bash
+# dotsave - sync dotfiles from system to chezmoi repo and push to git
+
+CHEZMOI_DIR=$(chezmoi source-path 2>/dev/null)
+
+if [ -z "$CHEZMOI_DIR" ] || [ ! -d "$CHEZMOI_DIR/.git" ]; then
+  echo "✗ Chezmoi repo not found"
+  exit 1
+fi
+
+# Re-add all files currently managed by chezmoi from the live system
+chezmoi re-add
+
+cd "$CHEZMOI_DIR"
+git add -A
+
+git diff --cached --quiet && echo "✓ No changes to dotfiles" && exit 0
+
+git commit -m "dotsave: $(date '+%Y-%m-%d %H:%M')"
+git push origin main
+echo "✓ Dotfiles pushed to git"

@@ -1,0 +1,26 @@
+#!/bin/bash
+# pkgsave - snapshot explicitly installed packages and push to git
+# Usage: pkgsave
+
+BACKUP_DIR="${PKGBACKUP_DIR:-$HOME/.pkgbackup}"
+OUTPUT="$BACKUP_DIR/pkglist.txt"
+AUR_OUTPUT="$BACKUP_DIR/pkglist-aur.txt"
+
+# Save official + AUR packages separately
+pacman -Qqe > "$OUTPUT"
+pacman -Qqem > "$AUR_OUTPUT"
+
+COUNT=$(wc -l < "$OUTPUT")
+AUR_COUNT=$(wc -l < "$AUR_OUTPUT")
+echo "✓ Saved $COUNT packages ($AUR_COUNT AUR) to $BACKUP_DIR"
+
+# Push to git
+if [ -d "$BACKUP_DIR/.git" ]; then
+  cd "$BACKUP_DIR"
+  git add pkglist.txt pkglist-aur.txt
+  git commit -m "pkgsave: $(date '+%Y-%m-%d %H:%M')"
+  git push origin main
+  echo "✓ Pushed to git"
+else
+  echo "⚠ Git not set up in $BACKUP_DIR — run: cd $BACKUP_DIR && git init"
+fi
