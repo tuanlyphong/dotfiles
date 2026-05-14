@@ -1,2 +1,2 @@
 #!/bin/sh
-pw-play --volume=5.0 ~/.local/share/sounds/sound.mp3
+pw-play --volume=0.3 ~/.local/share/sounds/sound.mp3
