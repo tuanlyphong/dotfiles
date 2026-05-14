@@ -1,3 +1,5 @@
+require("full-border"):setup()
+require("git"):setup()
 local skip_labels = {
 	["Complete name"] = true,
 	["CompleteName_Last"] = true,

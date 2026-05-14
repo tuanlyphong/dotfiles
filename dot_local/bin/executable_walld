@@ -1,6 +1,6 @@
 #!/bin/sh
 
-swww query
-if [ $? -eq 1 ] ; then
-    swww-daemon
+awww query
+if [ $? -eq 1 ]; then
+  awww-daemon
 fi

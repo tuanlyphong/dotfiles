@@ -3,9 +3,9 @@
   //### CONFIGURATION ###
   //#####################
   // "reload_style_on_change": true,
-  "margin-top": 3,
-  "margin-left": 10,
-  "margin-right": 10,
+  "margin-top": 0,
+  "margin-left": 0,
+  "margin-right": 0,
   "margin-bottom": 0,
   "layer": "bottom",
   "position": "top",
