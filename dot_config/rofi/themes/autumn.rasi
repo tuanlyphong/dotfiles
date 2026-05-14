@@ -1,0 +1,25 @@
+// github.com/pahasara/HyprDots
+
+/* Autumn Theme */
+* {
+  bg:         #0000008B; //window
+  main-bg:    #0A0805AA; //main
+  main-br:    #4D4038;   //windowBorder
+  main-fg:    #FFEFDF;   //main
+  input-bg:   #0000004F; //input
+  input-fg:   #ffffffee; //input
+  input-br:   #2A2420;   //inputBorder
+  select-fg:  #FF9933;   //selected
+  select-bg:  #2D2318AA; //selected
+
+  black   : #000000;
+  red     : #F7768E;
+  green   : #9ECE6A;
+  yellow  : #E0AF68;
+  blue    : #7AA2F7;
+  magenta : #9AAECC;
+  grey    : #BCBDBF;
+  cyan    : #FF7700;
+  accent: @cyan;
+  urgent: @yellow;
+}

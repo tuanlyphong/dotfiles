@@ -1,0 +1,81 @@
+//  Source: https://github.com/sejjy/hyprrice
+//  Modified: https://github.com/pahasara/hyprdots
+
+configuration {
+    matching: "regex";
+    drun-match-fields: "name";
+    terminal: "/usr/bin/kitty";
+}
+
+@theme "theme"
+
+* {
+    font: "Ubuntu Nerd Font 28";
+
+    background-color: @bg;
+    text-color: @main-fg;
+
+    margin: 0px;
+    padding: 0px;
+    spacing: 2px;
+}
+
+/* Window */
+window {
+    location: east;
+    y-offset: 0;
+    x-offset: -3;
+    width: 64;
+    border-radius: 18px;
+
+    border: 2px;
+    border-color: @main-br;
+    background-color: @main-bg;
+}
+
+mainbox {
+    padding: 8px;
+}
+
+inputbar {
+    enabled: false;
+}
+
+prompt {
+    enabled: false;
+}
+
+listview {
+    background-color: transparent;
+    margin: 1px 0 0;
+    columns: 1;
+    lines: 6;
+    fixed-height: false;
+}
+
+/* Elements */
+element {
+    orientation: horizontal;
+    padding: 6px 0px;
+    spacing: 8px;
+    border-radius: 14px;
+}
+
+element normal urgent {
+    text-color: @urgent;
+}
+
+element normal active {
+    text-color: @accent;
+}
+
+element selected normal, element selected active {
+    background-color: @select-bg;
+    text-color: @select-fg;
+}
+
+element-text {
+    text-color: inherit;
+    horizontal-align: 0.5;
+    background-color:         transparent;
+}
