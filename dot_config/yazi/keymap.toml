@@ -225,9 +225,9 @@ keymap = [
   { on = [
     "D",
   ], run = [
-    "remove --permanently",
+    "shell 'bash ~/.config/yazi/purge.sh \"$@\"' --confirm",
     "escape --visual --select",
-  ], desc = "Permanently delete the files" },
+  ], desc = "Fast purge from Google Drive" },
   { on = [
     "a",
   ], run = "create", desc = "Create a file or directory (ends with / for directories)" },

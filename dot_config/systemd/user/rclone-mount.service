@@ -1,0 +1,27 @@
+[Unit]
+Description=Rclone Union Library Mount
+After=network-online.target
+Wants=network-online.target
+
+[Service]
+Type=simple
+ExecStart=/usr/bin/rclone mount union_library: %h/mnt/library \
+  --vfs-cache-mode minimal \
+  --vfs-cache-max-size 2G \
+  --vfs-cache-max-age 1m \
+  --vfs-cache-poll-interval 30s \
+  --dir-cache-time 1000h \
+  --poll-interval 1h \
+  --buffer-size 64M \
+  --vfs-read-ahead 32M \
+  --drive-use-trash=false \
+  --no-modtime \
+  --read-only \
+  --vfs-fast-fingerprint \
+  --attr-timeout 6h
+ExecStop=/usr/bin/fusermount3 -u %h/mnt/library
+Restart=on-failure
+RestartSec=10
+
+[Install]
+WantedBy=default.target

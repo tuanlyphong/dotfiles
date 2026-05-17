@@ -1,0 +1,13 @@
+[Unit]
+Description=tasknotify — run notification checker every 5 minutes
+After=graphical-session.target
+
+[Timer]
+# Fire 1 minute after login, then every 5 minutes
+OnStartupSec=1min
+OnUnitActiveSec=5min
+Unit=tasknotify-check.service
+Persistent=true
+
+[Install]
+WantedBy=timers.target

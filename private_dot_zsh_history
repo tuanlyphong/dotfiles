@@ -28,7 +28,6 @@ if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]
 fi
 : 1778669744:0;sudo pacman -S ls
 : 1778669752:0;sudo pacman -S eza
-: 1778669759:0;clear
 : 1778669811:0;sudo pacman -S cat
 : 1778669815:0;sudo pacman -S lolcat
 : 1778669819:0;cat $XDG_RUNTIME_DIR/hypr/$(ls -t $XDG_RUNTIME_DIR/hypr/ | head -n 1)/hyprland.log | grep -E "\[ERR\]|\[CRITICAL\]"
@@ -54,7 +53,6 @@ luarocks --lua-version 5.1 install xml2lua
 : 1778670152:0;luarocks install nvim-nio\
 luarocks install mimetypes\
 luarocks install xml2lua
-: 1778670209:0;source ~/.zshrc
 : 1778670287:0;sudo pacman -S lua51
 : 1778670302:0;luarocks config variables.LUA_INCDIR /usr/include/lua5.1
 : 1778670325:0;sudo rm /usr/bin/lua5.1\
@@ -63,7 +61,6 @@ sudo pacman -S lua51
 : 1778670515:0;sudo pacman -S ttf-jetbrains-mono-nerd
 : 1778670544:0;vim https://claude.ai/chat/858654e5-bd0e-45e9-9a64-f6f1725aa552
 : 1778670560:0;vim ~/.config/gtk-3.0/settings.ini
-: 1778670754:0;cd hypr
 : 1778670849:0;vim hyprland.conf
 : 1778670863:0;vim rules.conf
 : 1778670936:0;hyprctl version
@@ -72,11 +69,9 @@ sudo pacman -S lua51
 : 1778671175:0;hyprctl configerrors\
 
 : 1778671393:0;rofi
-: 1778671407:0;cd .
 : 1778671431:0;sudo pacman -S rofi
 : 1778671443:0;cd .local
 : 1778671561:0;sudo pacman -S npm
-: 1778671683:0;yay -S hyprdict
 : 1778672631:0;yazi\
 TOML parse error at line 1, column 1\
   |\
@@ -183,9 +178,7 @@ print('done')\
 : 1778673408:0;sudo pacman -S cmake
 : 1778673420:0;sudo pacman -S gcc
 : 1778673490:0;z ya
-: 1778673493:0;z conf
 : 1778673495:0;cd yazi
-: 1778673544:0;sudo pacman -S yazi
 : 1778673550:0;topgrade
 : 1778682673:0;sudo pacman -S anki
 : 1778682692:0;sudo pacman -S neofetch
@@ -202,15 +195,10 @@ print('done')\
 : 1778683146:0;./configure && make && sudo make install
 : 1778683153:0;sudo luarocks install luasocket
 : 1778683164:0;lua
-: 1778683272:0;z share
 : 1778683279:0;cd share
 : 1778683306:0;cd nvim
 : 1778683313:0;cd lazy
-: 1778683419:0;quit
 : 1778683531:0;vim test.txt
-: 1778683726:0;z config
-: 1778683739:0;z kitty
-: 1778683746:0;vim kitty.conf
 : 1778683818:0;sudo pacman -S hyprlock hypridle
 : 1778683914:0;vim nmcpmp
 : 1778683925:0;sudo pacman -S mpv
@@ -221,7 +209,6 @@ print('done')\
 touch ~/.config/aria2/aria2.conf\
 touch ~/.config/aria2/session.txt
 : 1778684110:0;z aria2
-: 1778684693:0;z vim
 : 1778684724:0;z lazy
 : 1778684754:0;cd lua
 : 1778684777:0;sudo pacman -S bat
@@ -252,14 +239,9 @@ rm -rf /tmp/hyprdots
 : 1778685706:0;z .config
 : 1778685707:0;cd rofi
 : 1778685741:0;hyprc
-: 1778686037:0;z .local
-: 1778686041:0;cd bin
-: 1778686125:0;z rofi
 : 1778686176:0;z pacman
 : 1778686189:0;sudo nvim /etc/aria2-pacman.conf
-: 1778686194:0;z etc
 : 1778686199:0;cd /etc
-: 1778686264:0;sudo yazi
 : 1778686278:0;vim pacman.conf
 : 1778686306:0;sudo nvim pacman.conf
 : 1778686329:0;sudo pacman -S calc
@@ -289,8 +271,6 @@ rm -rf /tmp/hyprdots
 : 1778688134:0;grep -R "extras.editor.refactoring" ~/.config/nvim
 : 1778688141:0;z nvim
 : 1778688149:0;vim lazyvim.json
-: 1778688189:0;bindc
-: 1778688245:0;vim execs.conf
 : 1778688257:0;sudo pacman -S grimblast
 : 1778688262:0;sudo pacman -S grim
 : 1778688287:0;yay -S grimblast
@@ -344,7 +324,6 @@ ya pkg add Ape/open-with-cmd
 rm -rf ~/.cache/yazi/packages\
 mkdir -p ~/.config/yazi/plugins
 : 1778689701:0;ya pkg install --discard
-: 1778689784:0;;s
 : 1778689803:0;ya
 : 1778689810:0;ya pkg
 : 1778689814:0;ya pg list
@@ -352,32 +331,24 @@ mkdir -p ~/.config/yazi/plugins
 : 1778689860:0;ya pkg delete yazi-rs/plugins:mediainfo
 : 1778689910:0;ya pkg add boydaihungst/mediainfo\
 
-: 1778689945:0;vim keymap.toml
 : 1778690094:0;z plugins 
 : 1778690121:0;ya pkg delete Ape/mediainfo
 : 1778690427:0;cat ~/.config/yazi/init.lua
 : 1778690487:0;yazo
 : 1778690564:0;cat ~/.config/yazi/yazi.toml
 : 1778690572:0;cat ~/.config/yazi/plugins/piper.yazi/main.lua
-: 1778690585:0;vim init.lua
 : 1778690759:0;ls ~/.config/yazi/plugins/\
 rm -rf ~/.config/yazi/plugins/bat.yazi
 : 1778690834:0;ls ~/.config/yazi/plugins/\
 
-: 1778690869:0;vim\
-
 : 1778690921:0;head -30 ~/.config/yazi/yazi.toml
 : 1778691119:0;yazi\
 
-: 1778691133:0;cd plugins
 : 1778691161:0;ya pkg list
-: 1778691167:0;ya pkg upgrade
 : 1778691273:0;ls ~/.config/yazi/plugins/bat.yazi/
 : 1778691283:0;find ~/.config/yazi -name "*.lua" 2>/dev/null\
 find ~/.local/share/yazi -name "*.lua" 2>/dev/null
-: 1778691310:0;vim package.toml
 : 1778691380:0;ya pack -i
-: 1778691390:0;ya pkg install
 : 1778691405:0;bat
 : 1778691441:0;ls ~/.config/yazi/plugins/
 : 1778691445:0;yazi --version
@@ -387,8 +358,6 @@ find ~/.local/share/yazi -name "*.lua" 2>/dev/null
 : 1778691550:0;git clone https://github.com/yazi-rs/plugins.git /tmp/yazi-plugins\
 cp -r /tmp/yazi-plugins/bat.yazi ~/.config/yazi/plugins/
 : 1778691576:0;ls /tmp/yazi-plugins/
-: 1778691608:0;z yazi
-: 1778691614:0;vim yazi.toml
 : 1778691765:0;sudo pacman -S fcitx5 fcitx5-configtool fcitx5-unikey fcitx5-mozc fcitx5-qt fcitx5-gtk
 : 1778691781:0;vim ~/.config/environment.d/fcitx5.conf
 : 1778691877:0;sudo nano /etc/pacman.conf
@@ -396,7 +365,6 @@ cp -r /tmp/yazi-plugins/bat.yazi ~/.config/yazi/plugins/
 : 1778691914:0;sudo pacman -Sy wine wine-mono winetricks giflib lib32-giflib
 : 1778691937:0;sudo pacman -S lutris\
 sudo pacman -S lib32-vulkan-icd-loader vulkan-icd-loader
-: 1778691975:0;fastfetch
 : 1778692024:0;sudo pacman -S nvidia-utils lib32-nvidia-utils vulkan-intel lib32-vulkan-intel\
 \
 # Intel\
@@ -416,9 +384,7 @@ prime-run steam
 : 1778692685:0;pkill steam\
 steam -noreactlogin 2>&1 | head -50
 : 1778693249:0;lspci -k | grep -A 3 "3D"
-: 1778693253:0;btop
 : 1778694117:0;cd download
-: 1778694123:0;z Downloads
 : 1778694134:0;# Make executable and put in PATH\
 chmod +x pkgsave pkgrestore\
 sudo mv pkgsave pkgrestore /usr/local/bin/\
@@ -432,11 +398,6 @@ cd ~/.pkgbackup\
 git init\
 git remote add origin https://github.com/tuanlyphong/pkglist.git
 : 1778694512:0;zbin
-: 1778694539:0;cd ..
-: 1778694541:0;z usr
-: 1778694544:0;z local
-: 1778694547:0;z bin
-: 1778694591:0;z down
 : 1778694594:0;# Install scripts\
 chmod +x pkgsave pkgrestore\
 sudo mv pkgsave pkgrestore /usr/local/bin/\
@@ -450,7 +411,6 @@ git remote add origin https://github.com/YOUR_USERNAME/pkglist.git\
 # Save and push for the first time\
 pkgsave
 : 1778694666:0;git status
-: 1778694675:0;gp
 : 1778694683:0;git push --set-upstream origin master
 : 1778694733:0;# Create the service\
 sudo tee /etc/systemd/system/pkgsave.service << 'EOF'\
@@ -478,7 +438,6 @@ EOF\
 \
 # Enable and start\
 sudo systemctl enable --now pkgsave.timer
-: 1778694741:0;systemctl status pkgsave.timer
 : 1778694847:0;cd ~/.pkgbackup\
 git remote set-url origin git@github.com:tuanlyphong/pkglist.git\
 git push --set-upstream origin master
@@ -512,91 +471,58 @@ WantedBy=timers.target\
 EOF\
 \
 sudo systemctl enable --now dotsave.timer
-: 1778697211:0;z usr bin
 : 1778697466:0;chezmoi source-path
 : 1778697477:0;cd $(chezmoi source-path)\
 git remote -v
-: 1778697577:0;z dow
 : 1778697581:0;chmod +x dotsave\
 sudo mv dotsave /usr/local/bin/\
 dotsave
 : 1778697619:0;cd $(chezmoi source-path)\
 git branch
 : 1778697626:0;sudo sed -i 's/origin master/origin main/' /usr/local/bin/dotsave
-: 1778697641:0;dotsave
-: 1778697684:0;z chez
-: 1778697737:0;z 
 : 1778697841:0;la -lah
 : 1778698029:0;# Append this to ~/.zshrc\
 echo "setopt GLOB_DOTS" >> ~/.zshrc\
 source ~/.zshrc\
 
-: 1778698035:0;zshc
 : 1778698074:0;z .pkgbackup
 : 1778698179:0;git branch
 : 1778698220:0;git branch main
 : 1778698252:0;git switch main
-: 1778698268:0;git push --set-upstream origin main
 : 1778698350:0;yay -S HexChat
-: 1778732867:0;z hypr
-: 1778732874:0;vim general.conf
-: 1778732937:0;z bar
 : 1778732949:0;vim config.jsonc
-: 1778732989:0;vim style.css
-: 1778733007:0;yazi
-: 1778733060:0;vim
 : 1778733298:0;yay -S nyaa
-: 1778734990:0;nyaa
-: 1778735010:0;z nyaa
 : 1778735335:0;yay -S wireproxy
 : 1778735401:0;yay -S wgcf
-: 1778735564:0;ls
 : 1778735836:0;sudo pacman -S proxychains-ng
 : 1778735844:0;proxychains4 nyaa
 : 1778736366:0;z way
 : 1778736385:0;wgcf register\
 wgcf generate
 : 1778736505:0;cat wgcf-profile.conf
-: 1778736585:0;z
-: 1778736587:0;vim warp.conf
 : 1778736664:0;wireproxy -c warp.conf
 : 1778736676:0;curl --proxy socks5h://127.0.0.1:1080 https://www.cloudflare.com/cdn-cgi/trace/
 : 1778736799:0;yay -S cloudflare-warp-bin
 : 1778737024:0;yay -S warp-go
-: 1778737058:0;sudo pacman -S wireguard-tools proxychains-ng
 : 1778737109:0;sudo cp wgcf-profile.conf /etc/wireguard/warp.conf\
 sudo wg-quick up warp
 : 1778737133:0;sudo pacman -S openresolv\
 sudo wg-quick up warp
-: 1778737149:0;sudo resolvconf -u
 : 1778737153:0;sudo wg-quick up warp
-: 1778737219:0;sudo nvim /etc/proxychains.conf
-: 1778737248:0;proxychains nyaa
 : 1778737413:0;sudo pacman -R wireguard-tools proxychains-ng
 : 1778737427:0;yay -R warp-go
 : 1778737438:0;yay -R cloudflare-warp-bin
 : 1778737451:0;rm wgcf-account.toml wgcf-profile.conf
 : 1778737463:0;sudo pacman -R proxychains-ng
-: 1778737483:0;yay -R wgcf wireproxy
-: 1778737516:0;z hypr
-: 1778737522:0;z
-: 1778737524:0;startupc
 : 1778737573:0;sudo resolvconf -u
 : 1778737629:0;sudo nvim /etc/proxychains.conf
-: 1778737637:0;yazi
-: 1778737708:0;z etc
-: 1778737709:0;ls
 : 1778737711:0;cd wire
 : 1778737717:0;cd wireguard
 : 1778737731:0;sudo cd wireguard
-: 1778737752:0;ls
 : 1778737779:0;cd -s wireguard
 : 1778737785:0;sudo cd -s wireguard
-: 1778737995:0;sudo wg-quick down warp
 : 1778738026:0;sudo pacman -S wireguard-tools proxychains-ng
-: 1778738032:0;sudo wg-quick down warp
 : 1778738060:0;sudo pacman -S openresolv
-: 1778738063:0;sudo wg-quick down warp
 : 1778738120:0;sudo ip link delete warp
 : 1778738141:0;ping -c 3 google.com
 : 1778738234:0;sudo vim /etc/wireguard/warp.conf
@@ -610,10 +536,8 @@ sudo wg-quick up /etc/wireguard/warp.conf
 : 1778738384:0;nyaa -h
 : 1778738391:0;ldd nyaa
 : 1778738396:0;sudo pacman -S tldr
-: 1778738409:0;tldr nyaa
 : 1778739473:0;sudo wg-quick down warp
 : 1778739494:0;tldr nyaa
-: 1778739553:0;z
 : 1778739612:0;expac --timefmt='%Y-%m-%d %T' '%l\t%n' | sort | tail -n 20\
 
 : 1778739619:0;grep -E "installed|upgrade" /var/log/pacman.log | tail -n 20\
@@ -622,49 +546,20 @@ sudo wg-quick up /etc/wireguard/warp.conf
 : 1778739670:0;sudo pacman -R wireguard-tools proxychains-ng openresolv
 : 1778739676:0;yay -R wgcf wireproxy
 : 1778739940:0;z config
-: 1778739941:0;ls
-: 1778739948:0;yazi
-: 1778740000:0;nyaa
 : 1778740051:0;sudo pacman -S warp-cli
 : 1778740073:0;yay -S cloudflare-warp-bin\
 
-: 1778740117:0;warp-cli mode proxy\
-warp-cli connect\
-
 : 1778740126:0;sudo systemctl start warp-svc.service
-: 1778740138:0;sudo systemctl enable --now warp-svc.service
-: 1778740142:0;warp-cli mode proxy\
-warp-cli connect\
-
-: 1778740167:0;nyaa
-: 1778740178:0;warp-cli mode warp\
-warp-cli connect\
-
-: 1778740181:0;nyaa
 : 1778740202:0;warp-cli 
-: 1778740215:0;warp-cli status
 : 1778740239:0;sudo systemctl enable --now warp-svc.service
-: 1778740245:0;warp-cli status
 : 1778740253:0;sudo systemctl restart warp-svc
-: 1778740255:0;warp-cli status
-: 1778740264:0;warp-cli registration new
-: 1778740269:0;warp-cli status
 : 1778740276:0;warp-cli mode proxy\
 warp-cli connect\
 
-: 1778740283:0;warp-cli status
-: 1778740288:0;nyaa
 : 1778740299:0;z nya
-: 1778740304:0;ls
-: 1778740308:0;z nyaa
-: 1778740310:0;ls
 : 1778740313:0;vim 
-: 1778740324:0;vim config.toml
-: 1778740330:0;zshc
 : 1778740381:0;warp-cli mode warp\
 warp-cli connect\
-
-: 1778740410:0;warp-cli disconnect\
 
 : 1778740480:0;# 1. Switch WARP from system-wide routing to local proxy routing\
 warp-cli mode proxy\
@@ -675,86 +570,25 @@ warp-cli proxy port 8118\
 # 3. Establish the network connection tunnel \
 warp-cli connect\
 
-: 1778740500:0;nyaa
 : 1778740683:0;sudo pacman -S noto-fonts-cjk adobe-source-han-sans-jp-fonts adobe-source-han-serif-jp-fonts\
 
-: 1778740743:0;z app
 : 1778740749:0;z .local
-: 1778740751:0;z bin
-: 1778740751:0;ls
-: 1778740753:0;z
-: 1778740756:0;z usr bin
-: 1778740757:0;ls
-: 1778740762:0;cd ..
 : 1778740764:0;z app
-: 1778740771:0;z usr
-: 1778740777:0;yazi
-: 1778740849:0;z usr share
-: 1778740851:0;z usr
-: 1778740852:0;z share
 : 1778740857:0;z applications
-: 1778740858:0;ls
 : 1778740866:0;vim nyaa.desktop
-: 1778740928:0;sudo nvim
 : 1778740956:0;sudo nvim nyaa.desktop
 : 1778741103:0;vim anki.desktop
-: 1778741297:0;z
-: 1778741298:0;mkdir -p ~/.local/share/icons/\
-curl -L -o ~/.local/share/icons/nyaa.png "nyaa.si"\
-
-: 1778741315:0;warp-cli connect
-: 1778741317:0;mkdir -p ~/.local/share/icons/\
-curl -L -o ~/.local/share/icons/nyaa.png "nyaa.si"\
-
-: 1778741334:0;warp-cli status
-: 1778741408:0;warp-cli proxy port 8118
-: 1778741415:0;warp-cli connect
 : 1778741422:0;mkdir -p ~/.local/share/icons/\
 curl -L -o ~/.local/share/icons/nyaa.png "nyaa.si"\
 
-: 1778741440:0;warp-cli disconnect\
-
-: 1778741442:0;ls
-: 1778741453:0;warp-cli status
-: 1778741466:0;warp-cli mode proxy 
-: 1778741477:0;warp-cli proxy port 8118
-: 1778741484:0;warp-cli connect
-: 1778741486:0;nyaa
-: 1778741498:0;z nyaa
-: 1778741499:0;ls
-: 1778741505:0;vim config.toml
-: 1778741510:0;nyaa
-: 1778741516:0;warp-cli status
-: 1778741535:0;warp-cli proxy port 8118\
-
-: 1778741537:0;nyaa
-: 1778741612:0;ls
-: 1778741622:0;warp-cli disconnect\
-
-: 1778741639:0;warp-cli mode warp
-: 1778741644:0;warp-cli status
-: 1778741713:0;vim config.toml
-: 1778741722:0;nyaa
-: 1778741767:0;vim config.toml
-: 1778741780:0;nyaa
-: 1778741782:0;vim config.toml
-: 1778741788:0;nyaa
-: 1778741844:0;vim config.toml
-: 1778741852:0;nyaa
 : 1778741863:0;# Terminate the proxy listening tunnel\
 warp-cli disconnect\
 \
 # Optional: Put WARP back to default system mode if you plan to use it later\
 warp-cli mode warp\
 
-: 1778741868:0;nyaa
-: 1778741921:0;vim config.toml
-: 1778741931:0;nyaa
-: 1778741970:0;vim config.toml
-: 1778741974:0;nyaa
 : 1778741980:0;XDG_CONFIG_HOME="~/.config" nyaa\
 
-: 1778741989:0;nyaa
 : 1778742038:0;# Force WARP out of global system VPN mode\
 warp-cli mode proxy\
 \
@@ -764,17 +598,6 @@ warp-cli proxy port 8118\
 # Launch the tunnel service\
 warp-cli connect\
 
-: 1778742043:0;vim config.toml
-: 1778742050:0;nyaa
-: 1778742067:0;vim config.toml
-: 1778742246:0;nyaa
-: 1778742258:0;warp-cli status
-: 1778742261:0;vim config.toml
-: 1778742380:0;z nyaa
-: 1778742382:0;vim config.toml
-: 1778742387:0;nyaa
-: 1778742457:0;vim config.toml
-: 1778742465:0;nyaa
 : 1778742476:0;# Check if warp-cli is in proxy mode and running\
 warp-cli status\
 \
@@ -785,151 +608,49 @@ warp-cli proxy port 8188\
 # Connect to the network\
 warp-cli connect\
 
-: 1778742526:0;nyaa
-: 1778742600:0;warp-cli disconnect\
-
-: 1778742605:0;warp-cli mode warp
 : 1778742628:0;z nyaa
-: 1778742630:0;vim config.toml
 : 1778742723:0;sudo pacman -S qbittorrent
-: 1778742743:0;nyaa
 : 1778742777:0;curl -s -o /dev/null -w "%{http_code}" https://nyaa.iss.one/\
 curl -s -o /dev/null -w "%{http_code}" https://nyaa.si/\
 curl -s -o /dev/null -w "%{http_code}" https://nyaa.land/
-: 1778742813:0;nyaa
-: 1778742848:0;vim config.toml
-: 1778742859:0;nyaa
 : 1778742896:0;curl -s -o /dev/null -w "%{http_code}" https://nyaa.net/\
 curl -s -o /dev/null -w "%{http_code}" https://nyaa.lol/
-: 1778742916:0;vim config.toml
-: 1778742952:0;nyaa
-: 1778742984:0;vim config.toml
 : 1778742992:0;nyaa
 : 1778743026:0;curl -s "https://nyaa.lol/?q=one+piece&c=0_0&f=0&p=1" | head -50
 : 1778743070:0;curl -s "https://nyaa.show/?q=one+piece&c=0_0&f=0&p=1" | grep -i "<title>"
 : 1778743074:0;vim config.toml
 : 1778743110:0;quit
-: 1778743113:0;z
 : 1778743119:0;sudo pacman -R nnyaa
 : 1778743127:0;sudo pacman -R nyaa
-: 1778743341:0;warp-cli mode warp
-: 1778743346:0;warp-cli connect
-: 1778743385:0;warp-cli status
-: 1778743440:0;warp-cli -h
-: 1778743553:0;warp-cli registration new\
-
-: 1778743560:0;warp-cli registration delete\
-
-: 1778743564:0;warp-cli registration new\
-
-: 1778743568:0;warp-cli status
-: 1778743599:0;warp-cli disconnect\
-
-: 1778743603:0;warp-cli registration delete\
-
-: 1778743613:0;warp-cli mode warp\
-
-: 1778743618:0;warp-cli registration new\
-
-: 1778743648:0;warp-cli proxy port 8118\
-
-: 1778743662:0;warp-cli mode proxy 
-: 1778743669:0;warp-cli connect
-: 1778743742:0;clear
 : 1778743786:0;yay -S sddm-silent-theme
-: 1778743872:0;z etc
-: 1778743875:0;z sddm
-: 1778743876:0;ls
-: 1778744012:0;sudo nvim sddm.conf
 : 1778744043:0;z /usr/share/sddm/themes/silent/\
 ./test.sh
-: 1778744069:0;yazi
-: 1778744183:0;z etc
-: 1778744186:0;vim sddm.conf
-: 1778744228:0;z sddm
 : 1778744236:0;z /usr/share/sddm/\
 ./test.sh
-: 1778744238:0;ls
-: 1778744241:0;yazi
-: 1778744273:0;z silent
-: 1778744274:0;ls
-: 1778744282:0;cd configs
-: 1778744283:0;ls
-: 1778744287:0;cd ..
-: 1778744295:0;:w
-: 1778744360:0;ls
-: 1778744362:0;cd ..
-: 1778744363:0;ls
-: 1778744374:0;cd ..
-: 1778744375:0;ls
-: 1778744377:0;yazi
-: 1778744416:0;cd themes
-: 1778744418:0;ls
-: 1778744423:0;cd silent
-: 1778744423:0;ls
-: 1778744428:0;sudo nvim metadata.desktop
-: 1778744459:0;z theme
-: 1778744460:0;ls
-: 1778744465:0;cd silent
-: 1778744465:0;ls
-: 1778744471:0;yazi
-: 1778744486:0;./test.sh
-: 1778744536:0;ls
-: 1778744538:0;yazi
-: 1778745349:0;sudo yazi
-: 1778745410:0;ls
-: 1778745412:0;cd configs
 : 1778745418:0;sudo nvim ken.conf
 : 1778745483:0;z theme\
 ./test.sh
-: 1778745487:0;./test.sh
-: 1778745488:0;ls
-: 1778745491:0;cd silent
-: 1778745493:0;./test.sh
-: 1778745584:0;yazi
-: 1778745608:0;./test.sh
-: 1778745640:0;yazi
-: 1778745960:0;z
 : 1778745961:0;sudo git clone -b master --depth 1 https://github.com/keyitdev/sddm-astronaut-theme.git /usr/share/sddm/themes/sddm-astronaut-theme
-: 1778745978:0;z sddm
-: 1778745981:0;ls
 : 1778745985:0;z etc 
 : 1778745987:0;vim sddm.conf
 : 1778746007:0;sudo nvim sddm.conf
-: 1778746038:0;z
 : 1778746040:0;sudo cp -r /usr/share/sddm/themes/sddm-astronaut-theme/Fonts/* /usr/share/fonts/
 : 1778746056:0;echo "[General]\
 InputMethod=qtvirtualkeyboard" | sudo tee /etc/sddm.conf.d/virtualkbd.conf
-: 1778746078:0;z theme
-: 1778746078:0;ls
-: 1778746080:0;yazi
-: 1778746094:0;sddm-greeter-qt6 --test-mode --theme /usr/share/sddm/themes/sddm-astronaut-theme/
-: 1778746135:0;ls
 : 1778746137:0;cd sddm-astronaut-theme
-: 1778746138:0;ls
-: 1778746146:0;sudo nvim metadata.desktop
 : 1778746158:0;z theme
-: 1778746159:0;yazi
 : 1778746407:0;sddm-greeter-qt6 --test-mode --theme /usr/share/sddm/themes/sddm-astronaut-theme/
 : 1778746864:0;sudo pacman -S mpv fmpeg libplacebo
 : 1778746884:0;sudo pacman -S ffmpeg
 : 1778747108:0;echo "[Theme]\
 Current=silent" | sudo tee /etc/sddm.conf
-: 1778747116:0;ls
 : 1778747123:0;silent
-: 1778747123:0;ls
 : 1778747129:0;./change_avatar.sh
 : 1778747155:0;./change_avatar.sh phong icons/art_download.png
 : 1778747162:0;sudo nvim metadata.desktop
-: 1778747180:0;./test.sh
-: 1778747233:0;yazi
 : 1778747299:0;sudo pacman -S mediainfo
-: 1778747385:0;yazi
 : 1778747427:0;yazi -debug
-: 1778747434:0;yazi --debug
 : 1778747504:0;sudo pacman -S mediainfo fzf fd fzf chafa ueberzugpp zoxide 7-zip resvg
-: 1778747562:0;z yazi
-: 1778747564:0;vim yazi.toml
 : 1778747601:0;sudo pacman -S fd fzf chafa resvg 7zip\
 
 : 1778747625:0;ya pkg upgrade
@@ -954,32 +675,14 @@ ya pkg add boydaihungst/mediainfo\
 ya pkg add duckdb.yazi\
 ya pkg add Ape/open-with-cmd\
 ya pkg add yazi-rs/plugins:jump-to-char
-: 1778747780:0;ya pkg install
 : 1778747800:0;ls ~/.local/share/yazi/plugins
-: 1778747805:0;z yazi
-: 1778747806:0;ls
 : 1778747809:0;cd plugins
-: 1778747810:0;ls
-: 1778747820:0;cd ..
-: 1778747821:0;ls
-: 1778747823:0;vim init.lua
 : 1778747831:0;vim p
-: 1778747838:0;vim
-: 1778747855:0;vim init.lua
-: 1778747862:0;yazi
-: 1778747867:0;vim init.lua
-: 1778747920:0;yazi
 : 1778747941:0;ya pkg install
-: 1778747956:0;yazi
-: 1778747974:0;ls
 : 1778747977:0;vim package.toml
-: 1778748026:0;ls
 : 1778748033:0;ls /plugins
-: 1778748045:0;yazi
 : 1778748054:0;ls plugins/
 : 1778748077:0;sed -n '110,120p' ~/.config/yazi/init.lua
-: 1778748107:0;vim init.lua
-: 1778748127:0;yazi
 : 1778748141:0;sed -n '1,10p' ~/.config/yazi/init.lua
 : 1778748146:0;ls ~/.config/yazi/plugins/full-border.yazi/\
 ls ~/.config/yazi/plugins/git.yazi/\
@@ -987,125 +690,37 @@ ls ~/.config/yazi/plugins/smart-filter.yazi/
 : 1778748167:0;cp ~/.config/yazi/plugins/full-border.yazi/main.lua ~/.config/yazi/plugins/full-border.yazi/init.lua\
 cp ~/.config/yazi/plugins/git.yazi/main.lua ~/.config/yazi/plugins/git.yazi/init.lua\
 cp ~/.config/yazi/plugins/smart-filter.yazi/main.lua ~/.config/yazi/plugins/smart-filter.yazi/init.lua
-: 1778748170:0;yazi
 : 1778748191:0;grep -n "setup\|return\|M\." ~/.config/yazi/plugins/smart-filter.yazi/main.lua | head -20
 : 1778748201:0;grep -n "setup\|return\|M\." ~/.config/yazi/plugins/full-border.yazi/main.lua | head -10\
 grep -n "setup\|return\|M\." ~/.config/yazi/plugins/git.yazi/main.lua | head -10
 : 1778748220:0;vim init.lua
-: 1778748236:0;yazi
 : 1778748405:0;mediainfo /usr/share/sddm/themes/silent/backgrounds/rei.mp4
 : 1778748485:0;grep -n "mpeg\|codec\|format\|MPEG" ~/.config/yazi/plugins/mediainfo.yazi/main.lua
-: 1778748512:0;yazi
-: 1778749216:0;btop
 : 1778749321:0;z them
-: 1778749322:0;ls
-: 1778749326:0;cd silent
-: 1778749327:0;ls
-: 1778749336:0;sudo yazi
-: 1778749406:0;z down
-: 1778749407:0;ls
-: 1778749414:0;mpv fox-girl-ice-cream-break.1920x1080.mp4
-: 1778749439:0;bindc
 : 1778749445:0;mpv fox-girl-ice-cream-break.1920x1080.mp4
-: 1778749487:0;z hypr
-: 1778749491:0;vim general.conf
 : 1778749497:0;vim execs.conf
-: 1778749506:0;yazi
-: 1778749622:0;sudo yazi
-: 1778749685:0;./test.sh
-: 1778749717:0;ls
 : 1778749720:0;cd configs
-: 1778749721:0;ls
 : 1778749724:0;vim rei.conf
-: 1778749735:0;sudo nvim rei.conf
-: 1778749815:0;z sddm
-: 1778749823:0;./test.sh
-: 1778749827:0;z silent
-: 1778749829:0;./test.sh
 : 1778749879:0;sudo nvim rei.conf
-: 1778749897:0;./test.sh
-: 1778749969:0;ls
-: 1778749978:0;z
-: 1778749979:0;exec
-: 1778749984:0;startupc
-: 1778749992:0;z bin
-: 1778749998:0;ls
 : 1778750003:0;z .local bin
-: 1778750003:0;ls
-: 1778750006:0;vim random-wall
-: 1778750522:0;bindc
-: 1778750552:0;random-wall
-: 1778750565:0;vim random-wall
-: 1778750580:0;random-wall
-: 1778750583:0;vim random-wall
-: 1778750593:0;random-wall
 : 1778750609:0;sudo pacman -S swww
 : 1778750618:0;vim random-wall
 : 1778750627:0;random-wall
-: 1778750648:0;walld
-: 1778750652:0;vim walld
-: 1778750663:0;walld
-: 1778750671:0;vim walld
-: 1778750685:0;walld
-: 1778750689:0;vim walld
 : 1778750697:0;walld
 : 1778750716:0;vim walld
-: 1778750725:0;awww-daemon
 : 1778750846:0;swww-daemon &
 : 1778750848:0;awww-daemon
 : 1778750909:0;awww img /home/phong/Pictures/Wallpapers/wp5595374-chilling-at-night-anime-wallpapers.jpg
 : 1778750930:0;systemctl --user enable --now awww-daemon
 : 1778751034:0;z bar
 : 1778751040:0;vim style.css
-: 1778751058:0;z themes
-: 1778751059:0;ls
 : 1778751060:0;vim miku.css
-: 1778751130:0;z kitty
-: 1778751131:0;ls
-: 1778751134:0;vim kitty.conf
-: 1778751227:0;z hypr
-: 1778751228:0;ls
 : 1778751234:0;vim general.conf
-: 1778751296:0;yazi
-: 1778751882:0;warp-cli connect
-: 1778751897:0;warp-cli disconnect\
-
-: 1778751914:0;warp-cli registration new\
-
-: 1778751928:0;warp-cli registration delete\
-
-: 1778751931:0;warp-cli registration new\
-
-: 1778751940:0;warp-cli connect
-: 1778751952:0;warp-cli registration delete\
-
-: 1778751961:0;warp-cli disconnect\
-
-: 1778751965:0;warp-cli registration delete\
-
-: 1778751972:0;warp-cli registration new\
-
-: 1778752011:0;warp-cli mode proxy\
-
-: 1778752019:0;warp-cli proxy\
-
 : 1778752170:0;warp-cli proxy 4000\
 
 : 1778752192:0;warp-cli proxy port 4000\
 
 : 1778752196:0;warp-cli proxy port 40000\
-
-: 1778752207:0;warp-cli connect\
-
-: 1778752215:0;warp-cli status\
-
-: 1778752239:0;warp-cli mode warp\
-
-: 1778752246:0;warp-cli connect\
-
-: 1778752250:0;warp-cli status\
-
-: 1778752268:0;warp-cli disconnect\
 
 : 1778752278:0;warp-cli registration delete\
 
@@ -1113,51 +728,11 @@ grep -n "setup\|return\|M\." ~/.config/yazi/plugins/git.yazi/main.lua | head -10
 
 : 1778752292:0;warp-cli mode warp\
 
-: 1778752297:0;warp-cli connect
 : 1778752303:0;warp-cli sta
-: 1778752306:0;warp-cli status\
-
-: 1778752350:0;warp-cli disconnect\
-
-: 1778752435:0;warp-cli mode proxy\
-
-: 1778752438:0;warp-cli connect
-: 1778752441:0;warp-cli status\
-
-: 1778752468:0;warp-cli disconnect\
-
-: 1778752478:0;warp-cli proxy port 8118
 : 1778752490:0;warp-cli connect
-: 1778752497:0;warp-cli status\
-
-: 1778752516:0;ls
-: 1778752518:0;warp-cli status\
-
-: 1778752530:0;warp-cli disconnect\
-
-: 1778752540:0;warp-cli registration delete
-: 1778752560:0;warp-cli status\
-
-: 1778752565:0;warp-cli disconnect\
-
-: 1778752567:0;warp-cli status\
-
-: 1778752575:0;warp-cli registration new
-: 1778752578:0;warp-cli status\
-
 : 1778752586:0;warp-cli mode proxy\
 
 : 1778752597:0;warp-cli proxy port 8118\
-
-: 1778752601:0;warp-cli status\
-
-: 1778752607:0;warp-cli connect\
-
-: 1778752609:0;warp-cli status\
-
-: 1778752611:0;warp-cli connect\
-
-: 1778752613:0;warp-cli status\
 
 : 1778752662:0;warp-cli proxy\
 
@@ -1165,200 +740,65 @@ grep -n "setup\|return\|M\." ~/.config/yazi/plugins/git.yazi/main.lua | head -10
 
 : 1778752685:0;warp-cli proxy port 8443\
 
-: 1778752688:0;warp-cli connect\
-
-: 1778752691:0;warp-cli status\
-
-: 1778752698:0;warp-cli disconnect\
-
-: 1778752699:0;warp-cli status\
-
-: 1778752702:0;warp-cli connect\
-
-: 1778752703:0;warp-cli status\
-
 : 1778752763:0;warp-cli set-mode warp
 : 1778752768:0;warp-cli mode warp
-: 1778752776:0;warp-cli disconnect\
-
-: 1778752780:0;warp-cli connect\
-
-: 1778752784:0;warp-cli status\
-
-: 1778752847:0;warp-cli disconnect\
-
-: 1778753158:0;warp-cli settings
 : 1778753186:0;warp-cli enable-split-tunneling
 : 1778753281:0;warp-cli mode proxy\
 warp-cli connect
-: 1778753283:0;warp-cli settings
-: 1778753304:0;warp-cli status
 : 1778753363:0;curl --proxy http://127.0.0.1:8443 https://ifconfig.me
 : 1778753400:0;curl --proxy http://127.0.0.1:8443 https://nyaa.si
 : 1778753416:0;curl https://nyaa.si
-: 1778753498:0;ls
-: 1778753499:0;z
-: 1778753500:0;ls
 : 1778753503:0;lsa
-: 1778753516:0;yazi
-: 1778753550:0;clear
-: 1778753561:0;warp-cli proxy port 8118
-: 1778753566:0;vim
 : 1778753584:0;warp-cli settings
-: 1778753603:0;ls
-: 1778753610:0;warp-cli disconnect\
-
-: 1778753615:0;warp-cli connect\
-
-: 1778753628:0;warp-cli status\
-
-: 1778753631:0;warp-cli disconnect\
-
 : 1778753643:0;zshc\
 
-: 1778753661:0;z
-: 1778753671:0;warp-cli registration delete
-: 1778753676:0;warp-cli registration new
 : 1778753685:0;warp-cli mode proxy
 : 1778753692:0;warp-cli proxy port 8118
 : 1778753697:0;warp-cli connect\
 
-: 1778753703:0;warp-cli status\
-
-: 1778753803:0;warp-cli mode warp\
-warp-cli connect
-: 1778753805:0;warp-cli status\
-
-: 1778753826:0;warp-cli disconnect\
-
 : 1778753831:0;warp-cli registration delete
 : 1778753835:0;warp-cli registration new
-: 1778753842:0;warp-cli disconnect\
-
 : 1778753846:0;warp-cli mode warp\
 warp-cli connect
-: 1778753853:0;warp-cli status\
-
 : 1778753889:0;warp-cli disconnect\
 
 : 1778753964:0;warp-cli -h
-: 1778754017:0;ls
-: 1778754024:0;z hypr
-: 1778754024:0;ls
 : 1778754027:0;cd scripts
 : 1778754028:0;;s
-: 1778754028:0;ls
 : 1778754038:0;vim warp.conf
-: 1778754066:0;exec
-: 1778754070:0;z
 : 1778754072:0;exec
-: 1778754083:0;bindc
-: 1778754104:0;z hypr
-: 1778754104:0;ls
-: 1778754122:0;vim warp.sh
 : 1778754223:0;chmod +x warp.sh
-: 1778754234:0;z
-: 1778754238:0;bindc
-: 1778754287:0;warp-cli status\
-
 : 1778754424:0;sudo pacman -S hypridle hyprlovk
 : 1778754433:0;sudo pacman -S hyprlock
 : 1778754791:0;n
-: 1778754795:0;z hypr
 : 1778754804:0;vim hypridle.conf
-: 1778754811:0;ls
-: 1778754818:0;vim hyprlock.conf
-: 1778754911:0;yazi
-: 1778755052:0;z down
-: 1778755138:0;z yazi
-: 1778755139:0;ls
 : 1778755141:0;vim keymap.toml
-: 1778755149:0;vim
-: 1778755252:0;z
-: 1778755253:0;yazi
 : 1778755280:0;sudo pacman -S p7zip
-: 1778755310:0;yazi
 : 1778755424:0;sudo pacman -S yazi
-: 1778755427:0;yazi
 : 1778755447:0;sudo pacman -S aunpack
-: 1778755454:0;z yazi
-: 1778755456:0;vim
-: 1778755488:0;yazi
-: 1778755525:0;ls
 : 1778755528:0;z Downloads
-: 1778755529:0;ls
-: 1778755538:0;mv PowerofDragon-Regular.ttf ~/.local/share/fonts/
 : 1778755556:0;~/.local/share/
-: 1778755557:0;ls
-: 1778755563:0;yazi
-: 1778755572:0;mv PowerofDragon-Regular.ttf ~/.local/share/fonts/
-: 1778755576:0;z dow
 : 1778755577:0;mv PowerofDragon-Regular.ttf ~/.local/share/fonts/
-: 1778755669:0;z bin
-: 1778755670:0;ls
-: 1778755677:0;vim rofi-powermenu
 : 1778755700:0;sudo pacman -S powermenu
-: 1778755803:0;yazi
-: 1778755817:0;ls
 : 1778755825:0;mv GothTitan-0W5md.ttf ~/.local/share/fonts/
-: 1778755861:0;ls
-: 1778756008:0;z rofi
-: 1778756009:0;ls
-: 1778756011:0;yazi
-: 1778756024:0;z local bin
-: 1778756025:0;ls
 : 1778756034:0;./rofi-powermenu
-: 1778756090:0;z
-: 1778756093:0;bindc
-: 1778756096:0;startupc
-: 1778756113:0;rofi -show powermenu -modi powermenu:~/.local/bin/rofi-powermenu -config ~/.config/rofi/powermenu.rasi\
-
-: 1778756179:0;z rofi
-: 1778756179:0;ls
-: 1778756182:0;yazi
 : 1778756306:0;sudo pacman -S rofi-power-menu
 : 1778756332:0;yay -S rofi-power-menu
 : 1778756360:0;sudo pacman -S dmenu
 : 1778756370:0;sudo pacman -S rofi-script-to-dmenu
 : 1778756375:0;yay -S rofi-script-to-dmenu
-: 1778756467:0;z sddm
-: 1778756468:0;ls
-: 1778756476:0;cd themes
-: 1778756477:0;ls
 : 1778756480:0;cd silent
-: 1778756480:0;ls
-: 1778756492:0;yazi
 : 1778770339:0;rofi \\
   -show p \\
   -modi p:'rofi-power-menu --symbols-font "Symbols Nerd Font Mono"' \\
   -font "JetBrains Mono NF 16" \\
   -theme Paper \\
   -theme-str 'window {width: 8em;} listview {lines: 6;}'
-: 1778770361:0;z bin
-: 1778770362:0;ls
 : 1778770367:0;vim rofi-powermenu
-: 1778770450:0;rofi -show powermenu -modi powermenu
 : 1778770467:0;./rofi-power-menu
-: 1778770500:0;z rofi
-: 1778770501:0;ls
-: 1778770503:0;cd themes
-: 1778770504:0;ls
-: 1778770507:0;cd ..
 : 1778770511:0;cd presets
-: 1778770512:0;ls
-: 1778770516:0;vim powermenu.rasi
 : 1778770524:0;sudo pacman -S drun
-: 1778770547:0;z rofi
-: 1778770548:0;ls
-: 1778770550:0;yazi
 : 1778770603:0;rofi -show powermenu -modi powermenu
-: 1778770636:0;rofi \\
-  -show p \\
-  -modi p:'rofi-power-menu --symbols-font "Symbols Nerd Font Mono"' \\
-  -font "JetBrains Mono NF 16" \\
-  -theme powermenu \\
-  -theme-str 'window {width: 8em;} listview {lines: 6;}'
-: 1778770654:0;yazi
 : 1778770663:0;rofi \\
   -show p \\
   -modi p:'rofi-power-menu --symbols-font "Symbols Nerd Font Mono"' \\
@@ -1376,29 +816,14 @@ warp-cli connect
   -modi p:'rofi-power-menu --symbols-font "Symbols Nerd Font Mono"' \\
   -font "JetBrains Mono NF 16" \\
   -theme theme
-: 1778770739:0;startupc
-: 1778770759:0;clear
 : 1778770760:0;rofi -show powermenu -modi powermenu:~/.local/bin/rofi-powermenu -config ~/.config/rofi/powermenu.rasi\
 
-: 1778770799:0;ls
 : 1778770805:0;vim powermenu.rasi
 : 1778771441:0;z kitty
-: 1778771442:0;ls
 : 1778771444:0;vim kitty.conf
-: 1778771553:0;z
-: 1778773726:0;z dow
-: 1778773728:0;yazi
-: 1778773771:0;z
-: 1778773772:0;z task
 : 1778773784:0;chmod +x install.sh\
 ./install.sh
-: 1778773805:0;z bin
-: 1778773806:0;ls
-: 1778773833:0;vim play-notify-sound
-: 1778773858:0;z share
 : 1778773860:0;cd tasknotify
-: 1778773871:0;cd sounds
-: 1778773872:0;ls
 : 1778773900:0;cp ~/.local/share/sounds/notification.wav\
 \
 
@@ -1406,145 +831,46 @@ warp-cli connect
 ~/.local/share/tasknotify/sounds \
 
 : 1778773924:0;cp --h
-: 1778773952:0;ls
 : 1778773959:0;cp ~/.local/share/tasknotify/sounds --h
 : 1778773984:0;cp ~/.local/share/tasknotify/sounds .
 : 1778774017:0;cp ~/.local/share/sounds/notification.wav .
 : 1778774028:0;z share sounds
-: 1778774030:0;ls
-: 1778774035:0;z share
-: 1778774037:0;cd sounds
-: 1778774038:0;ls
 : 1778774187:0;cp ~/Downloads/anime_girl.mp3 ~/.local/share/sound
-: 1778774194:0;yazi
-: 1778774243:0;z task
-: 1778774243:0;ls
-: 1778774246:0;cd sounds
-: 1778774260:0;cp ~/.local/share/sounds/sound.mp3 .
-: 1778774262:0;ls
-: 1778774303:0;cd ..
-: 1778774309:0;vim config.json
-: 1778774398:0;ls
-: 1778774404:0;cd ..
-: 1778774405:0;ls
 : 1778774410:0;tasknotify
-: 1778774421:0;tasknotify.sh
-: 1778774471:0;ls
-: 1778774475:0;tasknotify.sh
-: 1778774500:0;tasknotify.sh add
-: 1778774522:0;ls
-: 1778774527:0;vim tasks.json
-: 1778774563:0;tasknotify.sh add
-: 1778775685:0;ls
-: 1778775688:0;cd ..
-: 1778775689:0;ls
-: 1778775695:0;yazi
-: 1778775705:0;z
-: 1778775707:0;ls
-: 1778775713:0;cd task
-: 1778775713:0;ls
-: 1778775719:0;yazi
-: 1778775830:0;ls
 : 1778775841:0;vim install.sh
 : 1778775882:0;vim uninstall.sh
 : 1778775894:0;chmod +x uninstall.sh
 : 1778775897:0;./uninstall.sh
-: 1778775914:0;ls
-: 1778775924:0;vim
-: 1778776178:0;chmod +x tasknotify.sh
-: 1778776185:0;./tasknotify.sh
-: 1778776236:0;ls
 : 1778776278:0;./install.sh
 : 1778776296:0;z sound
-: 1778776297:0;ls
 : 1778776310:0;z local sound
-: 1778776314:0;z share
-: 1778776315:0;ls
-: 1778776326:0;z bin
-: 1778776327:0;ls
 : 1778776338:0;play-notify-sound
 : 1778776345:0;z share
-: 1778776348:0;cd sounds
-: 1778776349:0;ls
-: 1778776380:0;vim play-notify-sound
-: 1778776391:0;z bin
-: 1778776392:0;ls
-: 1778776395:0;vim play-notify-sound
 : 1778776410:0;z sounds
-: 1778776413:0;ls
 : 1778776417:0;cp ~/.local/share/sounds/sound.mp3 .
-: 1778776418:0;ls
 : 1778776421:0;cd .
-: 1778776423:0;ls
-: 1778776425:0;cd ..
-: 1778776426:0;ls
-: 1778776431:0;vim tasks.json
 : 1778776446:0;vim config.json
-: 1778776466:0;tasknotify.sh
-: 1778776530:0;clear
 : 1778776543:0;btop
 : 1778776620:0;systemctl --user status tasknotify-check.timer
 : 1778776627:0;systemctl --user list-timers
-: 1778776638:0;tasknotify.sh check
 : 1778776648:0;journalctl --user -fu tasknotify-check.service
 : 1778776666:0;notify-send "test" "tasknotify works"
 : 1778776688:0;systemctl --user is-enabled tasknotify-check.timer
-: 1778776733:0;z
-: 1778776733:0;ls
-: 1778776736:0;yazi
-: 1778776760:0;z bin
-: 1778776760:0;ls
-: 1778776769:0;z chez
-: 1778776770:0;ls
-: 1778776785:0;z
-: 1778776785:0;ls
-: 1778776787:0;yazi
-: 1778776807:0;ls
-: 1778776971:0;yazi
-: 1778777323:0;ls
-: 1778777327:0;z chez
-: 1778777328:0;ls
-: 1778777332:0;yazi
 : 1778777345:0;z usr local bin
-: 1778777346:0;ls
-: 1778777352:0;yazi
 : 1778777397:0;systemctl status pkgsave.timer
 : 1778777430:0;z usr
-: 1778777431:0;ls
 : 1778777436:0;bin
-: 1778777437:0;ls
-: 1778777441:0;cd ..
 : 1778777444:0;z local
-: 1778777444:0;ls
-: 1778777446:0;z bin
-: 1778777447:0;ls
 : 1778777469:0;chezmoi usr/local/bin
 : 1778777474:0;chezmoi
 : 1778777492:0;chezmoi add /usr/local/bin
-: 1778777506:0;ls
-: 1778777509:0;yazi
-: 1778777566:0;ls
-: 1778777622:0;pkgsave
-: 1778777634:0;dotsave
-: 1778777698:0;ls
-: 1778777707:0;z
-: 1778777709:0;ls
-: 1778777712:0;cd task
-: 1778777712:0;ls
-: 1778777741:0;tasknotify.sh
-: 1778777872:0;systemctl list-timers\
-
 : 1778777885:0;systemctl list-timers -all\
 
-: 1778777971:0;ls
 : 1778777978:0;git init
-: 1778777997:0;git remote add
 : 1778778025:0;git remote add main task git@github.com:tuanlyphong/task.git
 : 1778778052:0;git remote add
 : 1778778073:0;git remote add -m task git@github.com:tuanlyphong/task.git
 : 1778778081:0;git remote add -m main task git@github.com:tuanlyphong/task.git
-: 1778778088:0;ls
-: 1778778094:0;git push --set-upstream origin main
 : 1778778116:0;git remote add origin git@github.com:tuanlyphong/task.git\
 git branch -M main\
 git push -u origin main
@@ -1565,183 +891,405 @@ sudo systemctl reset-failed\
 
 : 1778778284:0;systemctl list-timers\
 
-: 1778778312:0;tasknotify.sh check
-: 1778778323:0;ls
-: 1778778352:0;z task
-: 1778778353:0;ls
 : 1778778357:0;cd sounds
-: 1778778358:0;ls
 : 1778778361:0;z 
-: 1778778362:0;ls
 : 1778778364:0;cd task
-: 1778778364:0;ls
 : 1778778386:0;vim tasknotify-check.service
 : 1778778428:0;vim tasknotify-check.timer
-: 1778778443:0;vim tasknotify.sh
 : 1778778479:0;send_notify critical "1 hour: $name" "$body"
 : 1778778610:0;sudo pacman -S nmtui
 : 1778778625:0;startupc
-: 1778778647:0;z bin
-: 1778778649:0;ls
 : 1778778659:0;vim rofi-wifi
-: 1778778702:0;vim
 : 1778778746:0;grep -R "notify-send" .
-: 1778778799:0;z rofi
-: 1778778800:0;ls
-: 1778778801:0;yazi
 : 1778778995:0;rg "Nothing is copied"
 : 1778779002:0;sudo rg "Nothing is copied" /usr /etc ~/.config 2>/dev/null
 : 1778779036:0;z rofi
-: 1778779038:0;ls
-: 1778779042:0;yazi
-: 1778779048:0;z bin
-: 1778779049:0;ls
 : 1778779056:0;vim grimblast
-: 1778779075:0;vim
-: 1778779095:0;z hypr
-: 1778779096:0;ls
-: 1778779098:0;vim
 : 1778779116:0;z clip
-: 1778779146:0;journalctl --user -f
-: 1778779156:0;z bin
-: 1778779157:0;ls
 : 1778779161:0;z usr bin
-: 1778779161:0;ls
 : 1778779176:0;z etc bin
-: 1778779184:0;z
 : 1778779188:0;hyprctl
-: 1778779198:0;z
 : 1778779208:0;yay -S hyprdict
-: 1778779227:0;ls
-: 1778779229:0;z
 : 1778779233:0;cd yay-bin
-: 1778779234:0;ls
 : 1778779237:0;cd pkg
-: 1778779238:0;ls
-: 1778779241:0;cd ..
 : 1778779242:0;cd src
-: 1778779243:0;ls
 : 1778779313:0;dbus-monitor "interface='org.freedesktop.Notifications'"
-: 1778779321:0;z
 : 1778779354:0;rg 'notify-send.*clipboard|notify-send.*copied|notify-send.*Nothing'
 : 1778779359:0;rg -i 'clipboard|Nothing is copied|notify-send' \\
 ~/.config ~/.local /usr/bin /usr/local/bin 2>/dev/null
-: 1778779392:0;clear
 : 1778779416:0;which notify-send
-: 1778779423:0;z bin
-: 1778779423:0;ls
 : 1778779431:0;vim play-notify-sound
 : 1778779669:0;wl-paste --no-newline
 : 1778779688:0;wl-paste
 : 1778779704:0;wl-copy
-: 1778779720:0;clear
 : 1778779737:0;systemctl --user list-units --type=service
 : 1778779743:0;systemctl --user list-units --type=service -all
 : 1778779862:0;sudo pacman -S wl-clipboard
 : 1778779885:0;grep -rnw ~/ -e "Nothing is copied" 2>/dev/null\
 
-: 1778782030:0;warp-cli status\
-
-: 1778782041:0;z hypr
-: 1778782042:0;ls
 : 1778782049:0;vim warp.sh
 : 1778782132:0;warp-cli status\
 
 : 1778782136:0;warp-cli settings\
 
-: 1778782169:0;warp-cli status
-: 1778782170:0;ls
-: 1778782266:0;warp-cli status
 : 1778785357:0;z dow
-: 1778785359:0;ls
-: 1778785361:0;yazi
-: 1778785402:0;ls
 : 1778785421:0;mediainfo \[Erai-raws\]\ Mato\ Seihei\ no\ Slave\ -\ 12\ \[1080p\]\[3F6562A0\].mkv
 : 1778786501:0;fastfetch
-: 1778786786:0;yazi
 : 1778787025:0;z con
-: 1778787027:0;z mpv
-: 1778787028:0;ls
-: 1778787033:0;yazi
-: 1778787045:0;vim mpv.conf
-: 1778791611:0;yazi
 : 1778791747:0;z mpv
 : 1778791749:0;vim mpv.conf
 : 1778792085:0;z yazi
-: 1778792087:0;ls
 : 1778792092:0;vim yazi.toml
-: 1778792201:0;yazi
-: 1778793102:0;z hypr
 : 1778793106:0;vim hyprlock.conf
-: 1778793219:0;dotsave
 : 1778793241:0;pkgsave
-: 1778793253:0;ls
-: 1778793261:0;cd ..
-: 1778793263:0;ls
-: 1778793274:0;z chez
-: 1778793275:0;ls
 : 1778793287:0;cd dot_config
-: 1778793289:0;ls
-: 1778793304:0;cd hypr
-: 1778793306:0;ls
-: 1778793358:0;z hypr
-: 1778793359:0;ls
-: 1778793367:0;chezmoi add .
-: 1778793372:0;ls
-: 1778793374:0;cd ..
-: 1778793375:0;ls
-: 1778793400:0;chezmoi add .
-: 1778793414:0;z chez
-: 1778793416:0;ls
-: 1778793419:0;cd dot_
-: 1778793423:0;z dot
-: 1778793426:0;ls
 : 1778793433:0;cd hypr
-: 1778793434:0;ls
 : 1778793448:0;z hypr
-: 1778793449:0;ls
-: 1778793453:0;cd ..
-: 1778793453:0;ls
 : 1778793478:0;chezmoi add mpv
 : 1778793497:0;chezmoi add aria2
 : 1778793518:0;chezmoi add ncmpcpp
-: 1778793525:0;z chez
-: 1778793526:0;ls
 : 1778793529:0;cd dot_
 : 1778793531:0;z dot
-: 1778793531:0;ls
 : 1778793536:0;z conf
-: 1778793537:0;ls
 : 1778793558:0;chezmoi add zen
 : 1778793607:0;chezmoi add fcitx
 : 1778793611:0;chezmoi add fcitx5
 : 1778793623:0;chezmoi add rofi
-: 1778793636:0;z chez
-: 1778793647:0;ls
 : 1778793651:0;z dot_c
-: 1778793653:0;ls
-: 1778793658:0;z
-: 1778793661:0;dotsave
-: 1778793687:0;ls
-: 1778793693:0;z chez
-: 1778793694:0;ls
 : 1778793700:0;cd dot_local
-: 1778793702:0;ls
 : 1778793705:0;cd bin
-: 1778793706:0;ls
 : 1778793714:0;z local bin
-: 1778793715:0;ls
 : 1778793731:0;chezmoi add .
-: 1778793740:0;dotsave
-: 1778793751:0;z chez
-: 1778793752:0;ls
-: 1778793764:0;z
-: 1778793765:0;ls
 : 1778793773:0;ls -a
 : 1778793820:0;chezmoi add .zsh_history warp.conf 
-: 1778793890:0;dotsave
 : 1778793910:0;z chez
-: 1778793911:0;ls
-: 1778793931:0;z
 : 1778793940:0;chezmoi add .pkglist.txt
 : 1778793945:0;dotsave
+: 1778821409:0;tasknotify.sh check
+: 1778822018:0;systemctl --user daemon-reload\
+systemctl --user restart tasknotify-check.timer\
+# Test it fires:\
+systemctl --user start tasknotify-check.service\
+journalctl --user -u tasknotify-check.service -n 20
+: 1778822048:0;systemd-run --user --pty notify-send "test" "does this show?"
+: 1778822087:0;cp tasknotify.sh ~/.local/bin/tasknotify.sh\
+cp tasknotify-check.service ~/.config/systemd/user/tasknotify-check.service
+: 1778822092:0;systemctl --user daemon-reload\
+systemctl --user restart tasknotify-check.timer
+: 1778822107:0;tasknotify.sh add
+: 1778822139:0;systemctl --user start tasknotify-check.service
+: 1778822500:0;z local task
+: 1778822508:0;cd ..
+: 1778822618:0;chmod +x tasknotify.sh
+: 1778823274:0;tasknotify.sh edit
+: 1778823516:0;z down
+: 1778823518:0;cp tasknotify.sh ~/.local/bin/tasknotify.sh
+: 1778823586:0;bindc
+: 1778823785:0;journalctl --user -u tasknotify-check.service -f
+: 1778823815:0;notify-send -h
+: 1778823821:0;journalctl --user -f | grep -i notify
+: 1778823834:0;journalctl --user -u dunst -f
+: 1778823923:0;journalctl --user -f
+: 1778823980:0;dbus-monitor "interface='org.freedesktop.Notifications'" | grep -A5 "member=Notify"
+: 1778823996:0;z vim
+: 1778824129:0;z
+: 1778824137:0;dunst -h
+: 1778824189:0;dbus-monitor "interface='org.freedesktop.Notifications'" 2>/dev/null >> ~/notify-debug.log &
+: 1778830291:0;systemctl --user list-timers tasknotify-check.timer
+: 1778830300:0;tasknotify.sh
+: 1778832667:0;z task
+: 1778832679:0;vim tasks.json
+: 1778832715:0;z bin
+: 1778833828:0;vim tasknotify.sh
+: 1778833881:0;clear
+: 1778833883:0;./tasknotify.sh
+: 1778833942:0;:w
+: 1778841202:0;warp-cli status
+: 1778841984:0;gn
+: 1778855577:0;git clone https://github.com/catppuccin/grub.git && cd grub
+: 1778855585:0;sudo cp -r src/* /usr/share/grub/themes/
+: 1778855597:0;GRUB_THEME="/usr/share/grub/themes/catppuccin-<flavor>-grub-theme/theme.txt"
+: 1778855655:0;z etc
+: 1778855661:0;z default/
+: 1778855937:0;sudo yazi
+: 1778856319:0;sudo grub-script-check /etc/default/grub
+: 1778856443:0;z usr share
+: 1778856450:0;z themes
+: 1778856469:0;vim catppuccin-macchiato-grub-theme
+: 1778856482:0;cd catppuccin-macchiato-grub-theme
+: 1778856489:0;vim theme.txt
+: 1778856504:0;sudo nvim theme.txt
+: 1778857121:0;z grub
+: 1778857129:0;z usr grub
+: 1778857147:0;z etc def
+: 1778857155:0;vim grub
+: 1778857252:0;sudo nvim grub
+: 1778857406:0;sudo grub-mkconfig -o /boot/grub/grub.cfg
+: 1778857411:0;reboot
+: 1778857714:0;cd themes
+: 1778857920:0;yazi
+: 1778858189:0;z sddm
+: 1778858364:0;vim Main.qml
+: 1778858370:0;sudo nvim Main.qml
+: 1778858471:0;nvim
+: 1778858732:0;zshc
+: 1778858741:0;source ~/.zshrc
+: 1778858751:0;z silent
+: 1778858765:0;vim
+: 1778858842:0;sudo nvim
+: 1778858865:0;cd components
+: 1778858866:0;ls
+: 1778858976:0;./test.sh
+: 1778858997:0;sudo nvim LoginScreen.qml
+: 1778859057:0;z silent
+: 1778859059:0;ls
+: 1778859108:0;cd components
+: 1778859109:0;ls
+: 1778859117:0;vim LoginScreen.qml
+: 1778859121:0;sudo nvim LoginScreen.qml
+: 1778859191:0;z silent
+: 1778859191:0;ls
+: 1778859194:0;./test.sh
+: 1778859252:0;z silent
+: 1778859252:0;ls
+: 1778859259:0;vim
+: 1778859278:0;cd components
+: 1778859280:0;vim
+: 1778859379:0;./test.sh
+: 1778859421:0;ls
+: 1778859437:0;vim LoginScreen.qml
+: 1778859517:0;vim LockScreen.qml
+: 1778859585:0;sudo nvim LockScreen.qml
+: 1778859632:0;./test.sh
+: 1778862007:0;vim
+: 1778862014:0;z vim
+: 1778862016:0;vim
+: 1778862225:0;z bin
+: 1778862240:0;vim play-notify-sound
+: 1778862407:0;vim --version | grep clipboard
+: 1778862412:0;vim --version | grep clipboardn
+: 1778862417:0;nvim --version | grep clipboard
+: 1778862440:0;vim
+: 1778862584:0;grep -R "Nothing is copied" ~/.config/nvim ~/.vim ~/.local/share/nvim
+: 1778862594:0;grep -R "Nothing is copied" ~/.config/nvim
+: 1778862599:0;z
+: 1778862604:0;grep -R "Nothing is copied" ~/.local/share/nvim ~/.config/nvim /usr/share/nvim 2>/dev/null
+: 1778862631:0;vim
+: 1778862680:0;:lua print(vim.inspect(vim.notify))
+: 1778862687:0;z ~/.local/share/nvim/lazy/nvim-notify
+: 1778862688:0;ls
+: 1778862691:0;yazi
+: 1778862695:0;vim
+: 1778909737:0;z down
+: 1778909740:0;yazi
+: 1778997110:0;rclone config\
+
+: 1778997116:0;sudo pacman -S rclone
+: 1778997142:0;rclone config\
+
+: 1778997349:0;mkdir -p ~/mnt/gdrive1\
+
+: 1778997358:0;mkdir -p ~/.config/systemd/user/\
+nano ~/.config/systemd/user/rclone-mount.service\
+
+: 1778997369:0;vim ~/.config/systemd/user/rclone-mount.service\
+
+: 1778997387:0;systemctl --user daemon-reload\
+systemctl --user enable --now rclone-mount.service\
+
+: 1778997394:0;systemctl --user status rclone-mount.service\
+
+: 1778997406:0;yazi
+: 1778997429:0;z mnt
+: 1778997429:0;ls
+: 1778997450:0;cd mnt
+: 1778997453:0;ls
+: 1778997460:0;yazi
+: 1778998254:0;rclone purge gdrive-pool:\
+
+: 1778998265:0;rclone purge gdrive1:\
+
+: 1778998268:0;ls
+: 1778998270:0;yazi
+: 1778998304:0;z yazi
+: 1778998305:0;ls
+: 1778998308:0;vim keymap.toml
+: 1778998566:0;yazi
+: 1778998663:0;vim ~/.config/systemd/user/rclone-mount.service\
+
+: 1778998730:0;systemctl --user daemon-reload\
+systemctl --user restart rclone-gdrive1
+: 1778998746:0;systemctl --user daemon-reload\
+systemctl --user restart rclone-mount
+: 1778998891:0;z yazi
+: 1778998895:0;vim keymap.toml
+: 1778999053:0;vim purge.sh
+: 1778999081:0;chmod +x purge.sh
+: 1778999099:0;z
+: 1778999100:0;yazi
+: 1778999110:0;vim keymap.toml
+: 1778999114:0;z yazi
+: 1778999115:0;vim keymap.toml
+: 1778999122:0;yazi
+: 1779007978:0;ls
+: 1779007988:0;cd .È≠É¥ÈÉ£ΩÁ≤æÂÉ•µ„ÅÆ„Çπ„É£¨„Ç§„É£É∂
+: 1779007990:0;ls
+: 1779008013:0;vim Mato\ Seihei\ no\ Sureibu\ -\ S02E09.vi.srt
+: 1779008027:0;yazi
+: 1779008406:0;python3 -c "\
+import re\
+from pathlib import Path\
+from datetime import timedelta\
+\
+f = Path('Mato Seihei no Sureibu - S02E09.vi.srt')\
+offset = timedelta(seconds=11)\
+pat = re.compile(r'(\d{2}:\d{2}:\d{2},\d{3})')\
+\
+def parse(t):\
+    h,m,s,ms = map(int, re.split(r'[:,]', t))\
+    return timedelta(hours=h,minutes=m,seconds=s,milliseconds=ms)\
+\
+def fmt(td):\
+    total = int(td.total_seconds()*1000)\
+    return f'{total//3600000:02}:{(total//60000)%60:02}:{(total//1000)%60:02},{total%1000:03}'\
+\
+lines = f.read_text(encoding='utf-8-sig').splitlines()\
+out = [pat.sub(lambda m: fmt(parse(m.group())+offset), l) if '-->' in l else l for l in lines]\
+f.write_text('\n'.join(out), encoding='utf-8')\
+"
+: 1779008458:0;python3 -c "\
+import re\
+from pathlib import Path\
+from datetime import timedelta\
+\
+f = Path('Mato Seihei no Sureibu - S02E09.vi.srt')\
+offset = timedelta(seconds=1)\
+pat = re.compile(r'(\d{2}:\d{2}:\d{2},\d{3})')\
+\
+def parse(t):\
+    h,m,s,ms = map(int, re.split(r'[:,]', t))\
+    return timedelta(hours=h,minutes=m,seconds=s,milliseconds=ms)\
+\
+def fmt(td):\
+    total = int(td.total_seconds()*1000)\
+    return f'{total//3600000:02}:{(total//60000)%60:02}:{(total//1000)%60:02},{total%1000:03}'\
+\
+lines = f.read_text(encoding='utf-8-sig').splitlines()\
+out = [pat.sub(lambda m: fmt(parse(m.group())+offset), l) if '-->' in l else l for l in lines]\
+f.write_text('\n'.join(out), encoding='utf-8')\
+"
+: 1779008466:0;z .È≠É¥ÈÉ£ΩÁ≤æÂÉ•µ„ÅÆ„Çπ„É£¨„Ç§„É£É∂
+: 1779008469:0;yazi
+: 1779008533:0;python3 -c "\
+import re\
+from pathlib import Path\
+from datetime import timedelta\
+\
+f = Path('Mato Seihei no Sureibu - S02E09.vi.srt')\
+offset = timedelta(seconds=-2)\
+pat = re.compile(r'(\d{2}:\d{2}:\d{2},\d{3})')\
+\
+def parse(t):\
+    h,m,s,ms = map(int, re.split(r'[:,]', t))\
+    return timedelta(hours=h,minutes=m,seconds=s,milliseconds=ms)\
+\
+def fmt(td):\
+    total = int(td.total_seconds()*1000)\
+    return f'{total//3600000:02}:{(total//60000)%60:02}:{(total//1000)%60:02},{total%1000:03}'\
+\
+lines = f.read_text(encoding='utf-8-sig').splitlines()\
+out = [pat.sub(lambda m: fmt(parse(m.group())+offset), l) if '-->' in l else l for l in lines]\
+f.write_text('\n'.join(out), encoding='utf-8')\
+"
+: 1779010187:0;cd ..
+: 1779010198:0;chmod +x subshift\
+sudo mv subshift /usr/local/bin/
+: 1779011464:0;yazi
+: 1779024374:0;z .È≠É¥ÈÉ£ΩÁ≤æÂÉ•µ„ÅÆ„Çπ„É£¨„Ç§„É£É∂
+: 1779024377:0;ls
+: 1779024392:0;subshift Mato\ Seihei\ no\ Sureibu\ -\ S02E12.vi.ass 1
+: 1779024396:0;yazi
+: 1779024426:0;z local bin
+: 1779024427:0;ls
+: 1779024441:0;z usr bin
+: 1779024442:0;l
+: 1779024450:0;sudo vim subshift
+: 1779024458:0;sudo nvim subshift
+: 1779024596:0;z dow
+: 1779024598:0;chmod +x subshift\
+sudo mv subshift /usr/local/bin/
+: 1779024605:0;subshift Mato\ Seihei\ no\ Sureibu\ -\ S02E12.vi.ass 1
+: 1779024609:0;yazi
+: 1779033331:0;ls
+: 1779033334:0;cd ..
+: 1779033339:0;ls -a
+: 1779033347:0;yazi
+: 1779038034:0;z rclone
+: 1779038053:0;vim ~/.config/systemd/user/rclone-mount.service\
+
+: 1779038098:0;systemctl status rclone-mount
+: 1779038107:0;systemctl status rclonemount
+: 1779038129:0;systemctl --user status rclone-mount
+: 1779038210:0;ps -p 3574958 -o %cpu,%mem,cmd\
+
+: 1779038329:0;z hypr
+: 1779038330:0;ls
+: 1779038340:0;vim rclone.sh
+: 1779038347:0;z
+: 1779038348:0;bindc
+: 1779038454:0;z hypr
+: 1779038465:0;chmod +x rclone.sh
+: 1779038482:0;systemctl --user status rclone-mount
+: 1779038539:0;systemctl --user disable rclone-mount.service\
+
+: 1779038553:0;ls
+: 1779038557:0;bindc
+: 1779038561:0;vim rclone.sh
+: 1779038710:0;systemctl --user status rclone-mount
+: 1779038724:0;yazi
+: 1779042931:0;vim ~/.config/systemd/user/rclone-mount.service\
+
+: 1779047365:0;z mnt
+: 1779047367:0;ls
+: 1779047382:0;rclone
+: 1779047426:0;rclone config\
+
+: 1779047586:0;z conf
+: 1779047592:0;cd rclone
+: 1779047593:0;ls
+: 1779047596:0;cd ..
+: 1779047598:0;z rclone
+: 1779047599:0;ls
+: 1779047603:0;vim rclone.conf
+: 1779047705:0;mkdir -p ~/mnt/library\
+\
+
+: 1779047780:0;rmdir ~/mnt/gdrive1\
+rmdir ~/mnt/gdrive1
+: 1779047783:0;yazi
+: 1779047874:0;yazi\
+
+: 1779047900:0;rclone about union_library:\
+
+: 1779047923:0;yazi
+: 1779047948:0;systemctl --user status rclone-mount
+: 1779047960:0;yazi
+: 1779048222:0;watch -n 5 'ps -o pid,rss,vsz,comm -p $(pgrep rclone)'
+: 1779048240:0;yazi
+: 1779048308:0;z hypr
+: 1779048309:0;ls
+: 1779048318:0;chezmoi add rclone.sh
+: 1779048329:0;z usr bin
+: 1779048330:0;ls
+: 1779048335:0;z
+: 1779048349:0;z service
+: 1779048405:0;z conf
+: 1779048409:0;z systemd/user
+: 1779048411:0;ls
+: 1779048431:0;chezmoi add ~/.config/systemd/user/
+: 1779048435:0;ls
+: 1779048437:0;cd ..
+: 1779048438:0;ls
+: 1779048445:0;z
+: 1779048468:0;clear
+: 1779048479:0;dotsave
