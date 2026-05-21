@@ -1,79 +1,71 @@
 #!/bin/bash
 
-cachedir=~/.cache/rbn
-cachefile=${0##*/}-$1
+cachedir="$HOME/.cache/rbn"
+cachefile="${0##*/}"
+cache="$cachedir/$cachefile"
 
-if [ ! -d $cachedir ]; then
-  mkdir -p $cachedir
+mkdir -p "$cachedir"
+
+# Cache age in seconds
+if [ -f "$cache" ]; then
+  cacheage=$(($(date +%s) - $(stat -c '%Y' "$cache")))
+else
+  cacheage=999999
 fi
 
-if [ ! -f $cachedir/$cachefile ]; then
-  touch $cachedir/$cachefile
+# Refresh every 29 minutes
+if [ "$cacheage" -gt 1740 ] || [ ! -s "$cache" ]; then
+  curl -s 'https://wttr.in/Hanoi?format=%l\n%C\n%t&lang=en' |
+    sed 's/\x1b\[[0-9;]*m//g' \
+      >"$cache"
 fi
+# Read cache safely
+mapfile -t weather <"$cache"
 
-# Save current IFS
-SAVEIFS=$IFS
-# Change IFS to new line.
-IFS=$'\n'
+location="${weather[0]}"
+condition_raw="$(echo "${weather[1]}" | xargs)"
+temperature="$(echo "${weather[2]}" | xargs)"
 
-cacheage=$(($(date +%s) - $(stat -c '%Y' "$cachedir/$cachefile")))
-if [ $cacheage -gt 1740 ] || [ ! -s $cachedir/$cachefile ]; then
-  data=($(curl -s https://en.wttr.in/$1\?0qnT 2>&1))
-  echo ${data[0]} | cut -f1 -d, >$cachedir/$cachefile
-  echo ${data[1]} | sed -E 's/^.{15}//' >>$cachedir/$cachefile
-  echo ${data[2]} | sed -E 's/^.{15}//' >>$cachedir/$cachefile
-fi
+condition=$(echo "$condition_raw" | tr '[:upper:]' '[:lower:]')
 
-weather=($(cat $cachedir/$cachefile))
-
-# Restore IFSClear
-IFS=$SAVEIFS
-
-temperature=$(echo ${weather[2]} | sed -E 's/([[:digit:]]+)\.\./\1 to /g')
-
-#echo ${weather[1]##*,}
-
-# https://fontawesome.com/icons?s=solid&c=weather
-case $(echo ${weather[1]##*,} | tr '[:upper:]' '[:lower:]') in
+case "$condition" in
 "clear" | "sunny")
-  condition=""
+  icon="☀️"
   ;;
 "partly cloudy")
-  condition=""
+  icon="⛅"
   ;;
-"cloudy")
-  condition=""
-  ;;
-"overcast")
-  condition=" "
+"cloudy" | "overcast")
+  icon="☁️"
   ;;
 "mist" | "fog" | "freezing fog")
-  condition=""
+  icon="🌫️"
   ;;
 "patchy rain possible" | "patchy light drizzle" | "light drizzle" | "patchy light rain" | "light rain" | "light rain shower" | "rain")
-  condition=""
+  icon="🌦️"
   ;;
 "moderate rain at times" | "moderate rain" | "heavy rain at times" | "heavy rain" | "moderate or heavy rain shower" | "torrential rain shower" | "rain shower")
-  condition=""
+  icon="🌧️"
   ;;
 "patchy snow possible" | "patchy sleet possible" | "patchy freezing drizzle possible" | "freezing drizzle" | "heavy freezing drizzle" | "light freezing rain" | "moderate or heavy freezing rain" | "light sleet" | "ice pellets" | "light sleet showers" | "moderate or heavy sleet showers")
-  condition=""
+  icon="🌨️"
   ;;
 "blowing snow" | "moderate or heavy sleet" | "patchy light snow" | "light snow" | "light snow showers")
-  condition=""
+  icon="❄️"
   ;;
 "blizzard" | "patchy moderate snow" | "moderate snow" | "patchy heavy snow" | "heavy snow" | "moderate or heavy snow with thunder" | "moderate or heavy snow showers")
-  condition=""
+  icon="☃️"
   ;;
 "thundery outbreaks possible" | "patchy light rain with thunder" | "moderate or heavy rain with thunder" | "patchy light snow with thunder")
-  condition=""
+  icon="⛈️"
   ;;
 *)
-  condition=" "
-  echo -e "{\"text\":\""$condition"\", \"alt\":\""${weather[0]}"\", \"tooltip\":\""${weather[0]}: $temperature ${weather[1]}"\"}"
+  icon="🌡️"
   ;;
 esac
 
-#echo $temp $condition
+tooltip="$location\nCondition: $condition_raw\nTemperature: $temperature"
 
-echo -e "{\"text\":\""$temperature $condition"\", \"alt\":\""${weather[0]}"\", \"tooltip\":\""${weather[0]}: $temperature ${weather[1]}"\"}"
+printf '{"text":"%s","tooltip":"%s"}\n' \
+  "$icon" \
+  "$tooltip"

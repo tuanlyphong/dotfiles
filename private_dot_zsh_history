@@ -58,7 +58,6 @@ luarocks install xml2lua
 : 1778670325:0;sudo rm /usr/bin/lua5.1\
 sudo pacman -S lua51
 : 1778670418:0;sudo pacman -S tree-sitter-cli
-: 1778670515:0;sudo pacman -S ttf-jetbrains-mono-nerd
 : 1778670544:0;vim https://claude.ai/chat/858654e5-bd0e-45e9-9a64-f6f1725aa552
 : 1778670560:0;vim ~/.config/gtk-3.0/settings.ini
 : 1778670849:0;vim hyprland.conf
@@ -198,7 +197,6 @@ print('done')\
 : 1778683279:0;cd share
 : 1778683306:0;cd nvim
 : 1778683313:0;cd lazy
-: 1778683531:0;vim test.txt
 : 1778683818:0;sudo pacman -S hyprlock hypridle
 : 1778683914:0;vim nmcpmp
 : 1778683925:0;sudo pacman -S mpv
@@ -209,7 +207,6 @@ print('done')\
 touch ~/.config/aria2/aria2.conf\
 touch ~/.config/aria2/session.txt
 : 1778684110:0;z aria2
-: 1778684724:0;z lazy
 : 1778684754:0;cd lua
 : 1778684777:0;sudo pacman -S bat
 : 1778684814:0;lua -v
@@ -265,11 +262,9 @@ rm -rf /tmp/hyprdots
 : 1778687416:0;ya pkg add yazi-rs/plugins:mount\
 
 : 1778687942:0;grep -R "refactoring.nvim" ~/.config/nvim
-: 1778687962:0;vim coding.lua
 : 1778688018:0;ld
 : 1778688063:0;z nvim/lua/plugins
 : 1778688134:0;grep -R "extras.editor.refactoring" ~/.config/nvim
-: 1778688141:0;z nvim
 : 1778688149:0;vim lazyvim.json
 : 1778688257:0;sudo pacman -S grimblast
 : 1778688262:0;sudo pacman -S grim
@@ -342,8 +337,6 @@ rm -rf ~/.config/yazi/plugins/bat.yazi
 : 1778690834:0;ls ~/.config/yazi/plugins/\
 
 : 1778690921:0;head -30 ~/.config/yazi/yazi.toml
-: 1778691119:0;yazi\
-
 : 1778691161:0;ya pkg list
 : 1778691273:0;ls ~/.config/yazi/plugins/bat.yazi/
 : 1778691283:0;find ~/.config/yazi -name "*.lua" 2>/dev/null\
@@ -490,13 +483,11 @@ source ~/.zshrc\
 : 1778698220:0;git branch main
 : 1778698252:0;git switch main
 : 1778698350:0;yay -S HexChat
-: 1778732949:0;vim config.jsonc
 : 1778733298:0;yay -S nyaa
 : 1778735335:0;yay -S wireproxy
 : 1778735401:0;yay -S wgcf
 : 1778735836:0;sudo pacman -S proxychains-ng
 : 1778735844:0;proxychains4 nyaa
-: 1778736366:0;z way
 : 1778736385:0;wgcf register\
 wgcf generate
 : 1778736505:0;cat wgcf-profile.conf
@@ -693,7 +684,6 @@ cp ~/.config/yazi/plugins/smart-filter.yazi/main.lua ~/.config/yazi/plugins/smar
 : 1778748191:0;grep -n "setup\|return\|M\." ~/.config/yazi/plugins/smart-filter.yazi/main.lua | head -20
 : 1778748201:0;grep -n "setup\|return\|M\." ~/.config/yazi/plugins/full-border.yazi/main.lua | head -10\
 grep -n "setup\|return\|M\." ~/.config/yazi/plugins/git.yazi/main.lua | head -10
-: 1778748220:0;vim init.lua
 : 1778748405:0;mediainfo /usr/share/sddm/themes/silent/backgrounds/rei.mp4
 : 1778748485:0;grep -n "mpeg\|codec\|format\|MPEG" ~/.config/yazi/plugins/mediainfo.yazi/main.lua
 : 1778749321:0;z them
@@ -712,7 +702,6 @@ grep -n "setup\|return\|M\." ~/.config/yazi/plugins/git.yazi/main.lua | head -10
 : 1778750848:0;awww-daemon
 : 1778750909:0;awww img /home/phong/Pictures/Wallpapers/wp5595374-chilling-at-night-anime-wallpapers.jpg
 : 1778750930:0;systemctl --user enable --now awww-daemon
-: 1778751034:0;z bar
 : 1778751040:0;vim style.css
 : 1778751060:0;vim miku.css
 : 1778751234:0;vim general.conf
@@ -772,7 +761,6 @@ warp-cli connect
 : 1778754433:0;sudo pacman -S hyprlock
 : 1778754791:0;n
 : 1778754804:0;vim hypridle.conf
-: 1778755141:0;vim keymap.toml
 : 1778755280:0;sudo pacman -S p7zip
 : 1778755424:0;sudo pacman -S yazi
 : 1778755447:0;sudo pacman -S aunpack
@@ -840,8 +828,6 @@ warp-cli connect
 : 1778775841:0;vim install.sh
 : 1778775882:0;vim uninstall.sh
 : 1778775894:0;chmod +x uninstall.sh
-: 1778775897:0;./uninstall.sh
-: 1778776278:0;./install.sh
 : 1778776296:0;z sound
 : 1778776310:0;z local sound
 : 1778776338:0;play-notify-sound
@@ -851,8 +837,6 @@ warp-cli connect
 : 1778776421:0;cd .
 : 1778776446:0;vim config.json
 : 1778776543:0;btop
-: 1778776620:0;systemctl --user status tasknotify-check.timer
-: 1778776627:0;systemctl --user list-timers
 : 1778776648:0;journalctl --user -fu tasknotify-check.service
 : 1778776666:0;notify-send "test" "tasknotify works"
 : 1778776688:0;systemctl --user is-enabled tasknotify-check.timer
@@ -864,8 +848,6 @@ warp-cli connect
 : 1778777469:0;chezmoi usr/local/bin
 : 1778777474:0;chezmoi
 : 1778777492:0;chezmoi add /usr/local/bin
-: 1778777885:0;systemctl list-timers -all\
-
 : 1778777978:0;git init
 : 1778778025:0;git remote add main task git@github.com:tuanlyphong/task.git
 : 1778778052:0;git remote add
@@ -889,8 +871,6 @@ sudo rm -f /etc/systemd/system/pkgsave.service\
 : 1778778280:0;sudo systemctl daemon-reload\
 sudo systemctl reset-failed\
 
-: 1778778284:0;systemctl list-timers\
-
 : 1778778357:0;cd sounds
 : 1778778361:0;z 
 : 1778778364:0;cd task
@@ -898,7 +878,6 @@ sudo systemctl reset-failed\
 : 1778778428:0;vim tasknotify-check.timer
 : 1778778479:0;send_notify critical "1 hour: $name" "$body"
 : 1778778610:0;sudo pacman -S nmtui
-: 1778778625:0;startupc
 : 1778778659:0;vim rofi-wifi
 : 1778778746:0;grep -R "notify-send" .
 : 1778778995:0;rg "Nothing is copied"
@@ -906,7 +885,6 @@ sudo systemctl reset-failed\
 : 1778779036:0;z rofi
 : 1778779056:0;vim grimblast
 : 1778779116:0;z clip
-: 1778779161:0;z usr bin
 : 1778779176:0;z etc bin
 : 1778779188:0;hyprctl
 : 1778779208:0;yay -S hyprdict
@@ -918,7 +896,6 @@ sudo systemctl reset-failed\
 : 1778779359:0;rg -i 'clipboard|Nothing is copied|notify-send' \\
 ~/.config ~/.local /usr/bin /usr/local/bin 2>/dev/null
 : 1778779416:0;which notify-send
-: 1778779431:0;vim play-notify-sound
 : 1778779669:0;wl-paste --no-newline
 : 1778779688:0;wl-paste
 : 1778779704:0;wl-copy
@@ -932,25 +909,20 @@ sudo systemctl reset-failed\
 
 : 1778782136:0;warp-cli settings\
 
-: 1778785357:0;z dow
 : 1778785421:0;mediainfo \[Erai-raws\]\ Mato\ Seihei\ no\ Slave\ -\ 12\ \[1080p\]\[3F6562A0\].mkv
 : 1778786501:0;fastfetch
 : 1778787025:0;z con
 : 1778791747:0;z mpv
 : 1778791749:0;vim mpv.conf
-: 1778792085:0;z yazi
 : 1778792092:0;vim yazi.toml
 : 1778793106:0;vim hyprlock.conf
-: 1778793241:0;pkgsave
 : 1778793287:0;cd dot_config
 : 1778793433:0;cd hypr
-: 1778793448:0;z hypr
 : 1778793478:0;chezmoi add mpv
 : 1778793497:0;chezmoi add aria2
 : 1778793518:0;chezmoi add ncmpcpp
 : 1778793529:0;cd dot_
 : 1778793531:0;z dot
-: 1778793536:0;z conf
 : 1778793558:0;chezmoi add zen
 : 1778793607:0;chezmoi add fcitx
 : 1778793611:0;chezmoi add fcitx5
@@ -958,14 +930,10 @@ sudo systemctl reset-failed\
 : 1778793651:0;z dot_c
 : 1778793700:0;cd dot_local
 : 1778793705:0;cd bin
-: 1778793714:0;z local bin
 : 1778793731:0;chezmoi add .
-: 1778793773:0;ls -a
 : 1778793820:0;chezmoi add .zsh_history warp.conf 
 : 1778793910:0;z chez
 : 1778793940:0;chezmoi add .pkglist.txt
-: 1778793945:0;dotsave
-: 1778821409:0;tasknotify.sh check
 : 1778822018:0;systemctl --user daemon-reload\
 systemctl --user restart tasknotify-check.timer\
 # Test it fires:\
@@ -978,30 +946,19 @@ cp tasknotify-check.service ~/.config/systemd/user/tasknotify-check.service
 systemctl --user restart tasknotify-check.timer
 : 1778822107:0;tasknotify.sh add
 : 1778822139:0;systemctl --user start tasknotify-check.service
-: 1778822500:0;z local task
-: 1778822508:0;cd ..
 : 1778822618:0;chmod +x tasknotify.sh
 : 1778823274:0;tasknotify.sh edit
-: 1778823516:0;z down
 : 1778823518:0;cp tasknotify.sh ~/.local/bin/tasknotify.sh
-: 1778823586:0;bindc
 : 1778823785:0;journalctl --user -u tasknotify-check.service -f
 : 1778823815:0;notify-send -h
 : 1778823821:0;journalctl --user -f | grep -i notify
 : 1778823834:0;journalctl --user -u dunst -f
 : 1778823923:0;journalctl --user -f
 : 1778823980:0;dbus-monitor "interface='org.freedesktop.Notifications'" | grep -A5 "member=Notify"
-: 1778823996:0;z vim
-: 1778824129:0;z
 : 1778824137:0;dunst -h
 : 1778824189:0;dbus-monitor "interface='org.freedesktop.Notifications'" 2>/dev/null >> ~/notify-debug.log &
 : 1778830291:0;systemctl --user list-timers tasknotify-check.timer
 : 1778830300:0;tasknotify.sh
-: 1778832667:0;z task
-: 1778832679:0;vim tasks.json
-: 1778832715:0;z bin
-: 1778833828:0;vim tasknotify.sh
-: 1778833881:0;clear
 : 1778833883:0;./tasknotify.sh
 : 1778833942:0;:w
 : 1778841202:0;warp-cli status
@@ -1027,115 +984,55 @@ systemctl --user restart tasknotify-check.timer
 : 1778857406:0;sudo grub-mkconfig -o /boot/grub/grub.cfg
 : 1778857411:0;reboot
 : 1778857714:0;cd themes
-: 1778857920:0;yazi
 : 1778858189:0;z sddm
 : 1778858364:0;vim Main.qml
 : 1778858370:0;sudo nvim Main.qml
 : 1778858471:0;nvim
 : 1778858732:0;zshc
 : 1778858741:0;source ~/.zshrc
-: 1778858751:0;z silent
-: 1778858765:0;vim
 : 1778858842:0;sudo nvim
-: 1778858865:0;cd components
-: 1778858866:0;ls
-: 1778858976:0;./test.sh
-: 1778858997:0;sudo nvim LoginScreen.qml
-: 1778859057:0;z silent
-: 1778859059:0;ls
-: 1778859108:0;cd components
-: 1778859109:0;ls
-: 1778859117:0;vim LoginScreen.qml
 : 1778859121:0;sudo nvim LoginScreen.qml
-: 1778859191:0;z silent
-: 1778859191:0;ls
-: 1778859194:0;./test.sh
 : 1778859252:0;z silent
-: 1778859252:0;ls
-: 1778859259:0;vim
 : 1778859278:0;cd components
-: 1778859280:0;vim
-: 1778859379:0;./test.sh
-: 1778859421:0;ls
 : 1778859437:0;vim LoginScreen.qml
 : 1778859517:0;vim LockScreen.qml
 : 1778859585:0;sudo nvim LockScreen.qml
 : 1778859632:0;./test.sh
-: 1778862007:0;vim
-: 1778862014:0;z vim
-: 1778862016:0;vim
-: 1778862225:0;z bin
-: 1778862240:0;vim play-notify-sound
 : 1778862407:0;vim --version | grep clipboard
 : 1778862412:0;vim --version | grep clipboardn
 : 1778862417:0;nvim --version | grep clipboard
-: 1778862440:0;vim
 : 1778862584:0;grep -R "Nothing is copied" ~/.config/nvim ~/.vim ~/.local/share/nvim
 : 1778862594:0;grep -R "Nothing is copied" ~/.config/nvim
-: 1778862599:0;z
 : 1778862604:0;grep -R "Nothing is copied" ~/.local/share/nvim ~/.config/nvim /usr/share/nvim 2>/dev/null
-: 1778862631:0;vim
 : 1778862680:0;:lua print(vim.inspect(vim.notify))
 : 1778862687:0;z ~/.local/share/nvim/lazy/nvim-notify
-: 1778862688:0;ls
-: 1778862691:0;yazi
-: 1778862695:0;vim
 : 1778909737:0;z down
-: 1778909740:0;yazi
-: 1778997110:0;rclone config\
-
 : 1778997116:0;sudo pacman -S rclone
-: 1778997142:0;rclone config\
-
 : 1778997349:0;mkdir -p ~/mnt/gdrive1\
 
 : 1778997358:0;mkdir -p ~/.config/systemd/user/\
 nano ~/.config/systemd/user/rclone-mount.service\
-
-: 1778997369:0;vim ~/.config/systemd/user/rclone-mount.service\
 
 : 1778997387:0;systemctl --user daemon-reload\
 systemctl --user enable --now rclone-mount.service\
 
 : 1778997394:0;systemctl --user status rclone-mount.service\
 
-: 1778997406:0;yazi
-: 1778997429:0;z mnt
-: 1778997429:0;ls
 : 1778997450:0;cd mnt
-: 1778997453:0;ls
-: 1778997460:0;yazi
 : 1778998254:0;rclone purge gdrive-pool:\
 
 : 1778998265:0;rclone purge gdrive1:\
-
-: 1778998268:0;ls
-: 1778998270:0;yazi
-: 1778998304:0;z yazi
-: 1778998305:0;ls
-: 1778998308:0;vim keymap.toml
-: 1778998566:0;yazi
-: 1778998663:0;vim ~/.config/systemd/user/rclone-mount.service\
 
 : 1778998730:0;systemctl --user daemon-reload\
 systemctl --user restart rclone-gdrive1
 : 1778998746:0;systemctl --user daemon-reload\
 systemctl --user restart rclone-mount
-: 1778998891:0;z yazi
-: 1778998895:0;vim keymap.toml
 : 1778999053:0;vim purge.sh
 : 1778999081:0;chmod +x purge.sh
-: 1778999099:0;z
-: 1778999100:0;yazi
-: 1778999110:0;vim keymap.toml
 : 1778999114:0;z yazi
 : 1778999115:0;vim keymap.toml
-: 1778999122:0;yazi
-: 1779007978:0;ls
 : 1779007988:0;cd .È≠É¥ÈÉ£ΩÁ≤æÂÉ•µ„ÅÆ„Çπ„É£¨„Ç§„É£É∂
-: 1779007990:0;ls
 : 1779008013:0;vim Mato\ Seihei\ no\ Sureibu\ -\ S02E09.vi.srt
-: 1779008027:0;yazi
 : 1779008406:0;python3 -c "\
 import re\
 from pathlib import Path\
@@ -1178,8 +1075,6 @@ lines = f.read_text(encoding='utf-8-sig').splitlines()\
 out = [pat.sub(lambda m: fmt(parse(m.group())+offset), l) if '-->' in l else l for l in lines]\
 f.write_text('\n'.join(out), encoding='utf-8')\
 "
-: 1779008466:0;z .È≠É¥ÈÉ£ΩÁ≤æÂÉ•µ„ÅÆ„Çπ„É£¨„Ç§„É£É∂
-: 1779008469:0;yazi
 : 1779008533:0;python3 -c "\
 import re\
 from pathlib import Path\
@@ -1201,17 +1096,8 @@ lines = f.read_text(encoding='utf-8-sig').splitlines()\
 out = [pat.sub(lambda m: fmt(parse(m.group())+offset), l) if '-->' in l else l for l in lines]\
 f.write_text('\n'.join(out), encoding='utf-8')\
 "
-: 1779010187:0;cd ..
-: 1779010198:0;chmod +x subshift\
-sudo mv subshift /usr/local/bin/
-: 1779011464:0;yazi
 : 1779024374:0;z .È≠É¥ÈÉ£ΩÁ≤æÂÉ•µ„ÅÆ„Çπ„É£¨„Ç§„É£É∂
-: 1779024377:0;ls
-: 1779024392:0;subshift Mato\ Seihei\ no\ Sureibu\ -\ S02E12.vi.ass 1
-: 1779024396:0;yazi
 : 1779024426:0;z local bin
-: 1779024427:0;ls
-: 1779024441:0;z usr bin
 : 1779024442:0;l
 : 1779024450:0;sudo vim subshift
 : 1779024458:0;sudo nvim subshift
@@ -1219,77 +1105,421 @@ sudo mv subshift /usr/local/bin/
 : 1779024598:0;chmod +x subshift\
 sudo mv subshift /usr/local/bin/
 : 1779024605:0;subshift Mato\ Seihei\ no\ Sureibu\ -\ S02E12.vi.ass 1
-: 1779024609:0;yazi
-: 1779033331:0;ls
-: 1779033334:0;cd ..
 : 1779033339:0;ls -a
-: 1779033347:0;yazi
-: 1779038034:0;z rclone
-: 1779038053:0;vim ~/.config/systemd/user/rclone-mount.service\
-
 : 1779038098:0;systemctl status rclone-mount
 : 1779038107:0;systemctl status rclonemount
-: 1779038129:0;systemctl --user status rclone-mount
 : 1779038210:0;ps -p 3574958 -o %cpu,%mem,cmd\
 
-: 1779038329:0;z hypr
-: 1779038330:0;ls
-: 1779038340:0;vim rclone.sh
-: 1779038347:0;z
-: 1779038348:0;bindc
-: 1779038454:0;z hypr
 : 1779038465:0;chmod +x rclone.sh
-: 1779038482:0;systemctl --user status rclone-mount
 : 1779038539:0;systemctl --user disable rclone-mount.service\
 
-: 1779038553:0;ls
-: 1779038557:0;bindc
 : 1779038561:0;vim rclone.sh
-: 1779038710:0;systemctl --user status rclone-mount
-: 1779038724:0;yazi
 : 1779042931:0;vim ~/.config/systemd/user/rclone-mount.service\
 
 : 1779047365:0;z mnt
-: 1779047367:0;ls
 : 1779047382:0;rclone
 : 1779047426:0;rclone config\
 
-: 1779047586:0;z conf
 : 1779047592:0;cd rclone
-: 1779047593:0;ls
-: 1779047596:0;cd ..
 : 1779047598:0;z rclone
-: 1779047599:0;ls
 : 1779047603:0;vim rclone.conf
 : 1779047705:0;mkdir -p ~/mnt/library\
 \
 
 : 1779047780:0;rmdir ~/mnt/gdrive1\
 rmdir ~/mnt/gdrive1
-: 1779047783:0;yazi
 : 1779047874:0;yazi\
 
 : 1779047900:0;rclone about union_library:\
 
-: 1779047923:0;yazi
 : 1779047948:0;systemctl --user status rclone-mount
-: 1779047960:0;yazi
 : 1779048222:0;watch -n 5 'ps -o pid,rss,vsz,comm -p $(pgrep rclone)'
-: 1779048240:0;yazi
 : 1779048308:0;z hypr
-: 1779048309:0;ls
 : 1779048318:0;chezmoi add rclone.sh
 : 1779048329:0;z usr bin
-: 1779048330:0;ls
-: 1779048335:0;z
 : 1779048349:0;z service
 : 1779048405:0;z conf
 : 1779048409:0;z systemd/user
-: 1779048411:0;ls
 : 1779048431:0;chezmoi add ~/.config/systemd/user/
-: 1779048435:0;ls
-: 1779048437:0;cd ..
-: 1779048438:0;ls
-: 1779048445:0;z
 : 1779048468:0;clear
 : 1779048479:0;dotsave
+: 1779048497:0;pkgsave
+: 1779084778:0;z way
+: 1779085241:0;sudo pacman -S ttf-nerd-fonts-symbols
+: 1779085266:0;sudo pacman -S ttf-jetbrains-mono-nerd
+: 1779085318:0;sudo pacman xdotool
+: 1779085340:0;sudo pacman -S xdotool
+: 1779085397:0;rofi-emoji
+: 1779085436:0;rofi -show emoji -modi emoji
+: 1779085478:0;vim rofi-emoji-picker
+: 1779085509:0;chmod +x ~/.local/bin/rofi-emoji-picker
+: 1779085614:0;./rofi-emoji-picker 
+: 1779085643:0;bindc
+: 1779085656:0;startupc
+: 1779085673:0;sudo pacman -R xdotool
+: 1779085686:0;sudo pacman -R wtype
+: 1779085689:0;sudo pacman -S wtype
+: 1779085819:0;sudo pacman -S noto-fonts-emoji
+: 1779085889:0;echo "ÔÉºø ÔÉ´Éº ÔÉ¶É• ÔÉ£Ç ÉøÉ∏Ä ÉøÉ¨ßÔ∏ÉØ"
+: 1779086881:0;sudo pacman -S ttf-font-awesome
+: 1779095557:0;z module
+: 1779095631:0;curl -s "https://wttr.in/?0qnT"
+: 1779095708:0;cat "$cache"
+: 1779095823:0;~/.config/waybar/modules/weather.sh hanoi
+: 1779095830:0;~/.config/waybar/modules/weather.sh Hanoi
+: 1779095954:0;~/.config/waybar/modules/weather.sh
+: 1779095958:0;~/.config/waybar/modules/weather.sh Tokyo
+: 1779096023:0;curl https://wttr.in/Hanoi
+: 1779096065:0;z cache
+: 1779096072:0;z .cache
+: 1779096077:0;z rbn
+: 1779097505:0;z mol
+: 1779097515:0;cd modules
+: 1779097518:0;./weather.sh
+: 1779097572:0;vim weather.sh
+: 1779136454:0;yay -S onlyoffice-bin
+: 1779136713:0;sudo pacman -S ttf-ms-fonts otf-takao gst-libav gst-plugins-good 
+: 1779136724:0;sudo pacman -S gst-libav gst-plugins-good 
+: 1779136747:0;yay -S ttf-ms-fonts otf-takao
+: 1779250790:0;./play-notify-sound
+: 1779250808:0;play-notify 
+: 1779250821:0;notify-send 1
+: 1779250974:0;vim play-notify-sound
+: 1779250997:0;tasknotify.sh check
+: 1779251564:0;systemctl list-timers\
+
+: 1779251621:0;z task notif
+: 1779251664:0;./uninstall.sh
+: 1779251684:0;chmod +x install.sh
+: 1779251687:0;./install.sh
+: 1779252838:0;z task
+: 1779252847:0;z local task
+: 1779252849:0;vim task
+: 1779252853:0;vim tasks.json
+: 1779252867:0;systemctl list-timers -all\
+
+: 1779253104:0;systemctl status tasknotify-check
+: 1779253112:0;systemctl list
+: 1779253115:0;systemctl list-jobs
+: 1779253199:0;systemctl --user list-timers
+: 1779253210:0;systemctl --user status tasknotify-check.timer
+: 1779253258:0;# See next trigger time and last run\
+systemctl --user list-timers tasknotify-check.timer\
+\
+# See logs from the service runs\
+journalctl --user -u tasknotify-check.service -n 20
+: 1779253285:0;z bin task
+: 1779253287:0;z bin
+: 1779253289:0;vim tasknotify.sh
+: 1779254001:0;yay -S bibata-cursor-theme-bin
+: 1779254054:0;hyprctl setcursor Bibata-Modern-Ice 24
+: 1779262500:0;sudo pacman -S lazygit
+: 1779262723:0;npm install -g @mermaid-js/mermaid-cli
+: 1779262737:0;sudo pacman -S tectonic
+: 1779262763:0;npm install -g neovim
+: 1779262778:0;sudo npm install -g neovim
+: 1779263001:0;sudo npm install -g @mermaid-js/mermaid-cli
+: 1779263681:0;ks
+: 1779264166:0;vim init.lua
+: 1779264497:0;mkdir test
+: 1779264501:0;cd test
+: 1779264506:0;vim test.txt
+: 1779265792:0;vim modules
+: 1779265861:0;z bar
+: 1779265867:0;vim config.jsonc
+: 1779266355:0;z plugin
+: 1779266363:0;z nvim plug
+: 1779266369:0;vim coding.lua
+: 1779269214:0;z nvim
+: 1779269268:0;z coding
+: 1779269348:0;vim
+: 1779270308:0;z lazy
+: 1779270316:0;cd ..
+: 1779270327:0;z
+: 1779270329:0;z vim
+: 1779270331:0;ls
+: 1779270334:0;yazi
+: 1779270344:0;:q
+: 1779270363:0;z
+: 1779270367:0;z lazy
+: 1779270368:0;ls
+: 1779270371:0;z vim
+: 1779270372:0;ls
+: 1779270375:0;yazi
+: 1779270383:0;z vim
+: 1779270384:0;ls
+: 1779270386:0;cd lua
+: 1779270421:0;ls
+: 1779270425:0;yazi
+: 1779270490:0;vim
+: 1779270496:0;ls
+: 1779270498:0;yazi
+: 1779270557:0;ls
+: 1779270562:0;yazo
+: 1779270564:0;yazi
+: 1779270574:0;ls
+: 1779270577:0;cd plugins
+: 1779270577:0;ls
+: 1779270580:0;vim codecompanion.lua
+: 1779270625:0;vim
+: 1779270633:0;vim codecompanion.lua
+: 1779270665:0;yazi
+: 1779271517:0;vim
+: 1779271760:0;rm -rf ~/.cache/nvim/luac\
+
+: 1779271817:0;vim
+: 1779271932:0;z code
+: 1779271936:0;z lazy
+: 1779271936:0;ls
+: 1779271940:0;z vim lazy
+: 1779271942:0;z vim
+: 1779271943:0;ls
+: 1779271947:0;z vim
+: 1779271948:0;ls
+: 1779271949:0;yazi
+: 1779272395:0;ls
+: 1779272395:0;z
+: 1779272401:0;z test
+: 1779272401:0;ls
+: 1779272403:0;yazi
+: 1779272412:0;vim test.java
+: 1779272464:0;ls
+: 1779272468:0;z vim
+: 1779272469:0;ls
+: 1779272470:0;z vim
+: 1779272471:0;ls
+: 1779272472:0;yazi
+: 1779272716:0;ls
+: 1779272718:0;cd lua
+: 1779272719:0;ls
+: 1779272722:0;cd plugins
+: 1779272722:0;ls
+: 1779272727:0;vim codecompanion.lua
+: 1779272891:0;z test
+: 1779272892:0;ls
+: 1779272895:0;vim test.java
+: 1779273481:0;yazi
+: 1779273486:0;z vim
+: 1779273489:0;z plugin
+: 1779273490:0;ls
+: 1779273496:0;vim codecompanion.lua
+: 1779273609:0;z test
+: 1779273619:0;vim test.html
+: 1779273690:0;yazi
+: 1779273693:0;ls
+: 1779273696:0;yazi
+: 1779273701:0;vim test.py
+: 1779273766:0;z plugin
+: 1779273767:0;ls
+: 1779273772:0;vim codecompanion.lua
+: 1779273835:0;vim test.py
+: 1779273947:0;vim
+: 1779274007:0;z plugin
+: 1779274011:0;vim codecompanion.lua
+: 1779274158:0;z test
+: 1779274159:0;ls
+: 1779274166:0;vim test.py
+: 1779274802:0;z plugin
+: 1779274803:0;ls
+: 1779274808:0;vim codecompanion.lua
+: 1779274957:0;z test
+: 1779274958:0;ls
+: 1779274961:0;vim test.py
+: 1779275058:0;npm install -g mcp-hub@latest
+: 1779275061:0;sudo npm install -g mcp-hub@latest
+: 1779275103:0;vim test.py
+: 1779277459:0;sudo npm install -g @modelcontextprotocol/server-filesystem
+: 1779277479:0;vim codecompanion.lua
+: 1779277566:0;vim test.py
+: 1779288107:0;zls
+: 1779288108:0;ls
+: 1779288122:0;vim json_tools.lua
+: 1779288233:0;vim codecompanion.lua
+: 1779288255:0;cd ..
+: 1779288256:0;ls
+: 1779288262:0;cd plugins
+: 1779288263:0;ls
+: 1779288265:0;vim codecompanion.lua
+: 1779288310:0;vim
+: 1779288327:0;vim test.py
+: 1779288341:0;ls
+: 1779288349:0;cd ..
+: 1779288350:0;ls
+: 1779288353:0;cd ..
+: 1779288353:0;ls
+: 1779288357:0;vim init.lua
+: 1779288368:0;z lua
+: 1779288368:0;ls
+: 1779288373:0;cd plugins
+: 1779288374:0;ls
+: 1779288378:0;vim coding.lua
+: 1779288438:0;cd ..
+: 1779288439:0;ls
+: 1779288441:0;cd ..
+: 1779288441:0;ls
+: 1779288444:0;vim init.lua
+: 1779288458:0;vim test.py
+: 1779288463:0;vim init.lua
+: 1779288522:0;z lazy
+: 1779288523:0;ls
+: 1779288524:0;z
+: 1779288527:0;ls
+: 1779288530:0;cd Downloads
+: 1779288531:0;ls
+: 1779288532:0;z
+: 1779288543:0;z lazy
+: 1779288548:0;z plugins
+: 1779288549:0;ls
+: 1779288553:0;vim codecompanion.lua
+: 1779288582:0;vim json_tools.lua
+: 1779288586:0;yazi
+: 1779288607:0;ls
+: 1779288611:0;z test
+: 1779288612:0;ls
+: 1779288613:0;vim test.py
+: 1779288657:0;vim init.lua
+: 1779288686:0;cd lua
+: 1779288686:0;ls
+: 1779288689:0;cd craftzdog
+: 1779288690:0;ls
+: 1779288693:0;vim  discipline.lua
+: 1779288916:0;vim test.py
+: 1779288931:0;cd ..
+: 1779288933:0;vim
+: 1779288958:0;yazi
+: 1779289004:0;z test
+: 1779289005:0;ls
+: 1779289009:0;z plugins
+: 1779289010:0;yazi
+: 1779289030:0;vim test.py
+: 1779289086:0;ls
+: 1779289090:0;vim cod
+: 1779289096:0;vim codecompanion.lua
+: 1779289651:0;curl https://executable-lustered-brittanie.ngrok-free.dev/v1/chat/completions \\
+  -H "Content-Type: application/json" \\
+  -H "Authorization: Bearer ollama" \\
+  -d '{\
+    "model": "qwen2.5-coder:14b",\
+    "tools": [{\
+      "type": "function",\
+      "function": {\
+        "name": "insert_edit_into_file",\
+        "parameters": {\
+          "type": "object",\
+          "properties": {\
+            "filepath": { "type": "string" },\
+            "edits": { "type": "array" }\
+          }\
+        }\
+      }\
+    }],\
+    "messages": [{"role": "user", "content": "add a divide function to test.py"}]\
+  }'
+: 1779289684:0;curl https://executable-lustered-brittanie.ngrok-free.dev/api/tags
+: 1779289745:0;curl https://executable-lustered-brittanie.ngrok-free.dev/api/show \\
+  -d '{"name": "qwen2.5-coder-14b:latest"}' | python3 -m json.tool | grep -A5 "template"
+: 1779289822:0;clear
+: 1779289833:0;curl https://executable-lustered-brittanie.ngrok-free.dev/v1/chat/completions \\
+  -H "Content-Type: application/json" \\
+  -H "Authorization: Bearer ollama" \\
+  -d '{\
+    "model": "qwen2.5-coder-14b:latest",\
+    "tools": [{\
+      "type": "function",\
+      "function": {\
+        "name": "insert_edit_into_file",\
+        "parameters": {\
+          "type": "object",\
+          "properties": {\
+            "filepath": { "type": "string" },\
+            "edits": { "type": "array", "items": { "type": "object" } }\
+          },\
+          "required": ["filepath", "edits"]\
+        }\
+      }\
+    }],\
+    "messages": [{"role": "user", "content": "add a divide function to /home/phong/test/test.py"}]\
+  }' | python3 -m json.tool
+: 1779289853:0;vim test.py
+: 1779291387:0;curl https://executable-lustered-brittanie.ngrok-free.dev/v1/chat/completions \\
+  -H "Content-Type: application/json" \\
+  -H "Authorization: Bearer ollama" \\
+  -d '{\
+    "model": "hf.co/Qwen/Qwen2.5-Coder-32B-Instruct-GGUF:latest",\
+    "stream": false,\
+    "tools": [{\
+      "type": "function",\
+      "function": {\
+        "name": "insert_edit_into_file",\
+        "parameters": {\
+          "type": "object",\
+          "properties": {\
+            "filepath": { "type": "string" },\
+            "edits": { "type": "array", "items": { "type": "object" } }\
+          },\
+          "required": ["filepath", "edits"]\
+        }\
+      }\
+    }],\
+    "messages": [{"role": "user", "content": "add a divide function to /home/phong/test/test.py"}]\
+  }' | python3 -m json.tool
+: 1779291606:0;curl https://executable-lustered-brittanie.ngrok-free.dev/v1/chat/completions \\
+  -H "Content-Type: application/json" \\
+  -H "Authorization: Bearer ollama" \\
+  -d '{\
+    "model": "hf.co/Qwen/Qwen2.5-Coder-14B-Instruct-GGUF:latest",\
+    "tools": [{\
+      "type": "function",\
+      "function": {\
+        "name": "insert_edit_into_file",\
+        "parameters": {\
+          "type": "object",\
+          "properties": {\
+            "filepath": { "type": "string" },\
+            "edits": { "type": "array", "items": { "type": "object" } }\
+          },\
+          "required": ["filepath", "edits"]\
+        }\
+      }\
+    }],\
+    "messages": [{"role": "user", "content": "add a divide function to /home/phong/test/test.py"}]\
+  }' | python3 -m json.tool
+: 1779291656:0;vim test.py
+: 1779292114:0;ls
+: 1779292699:0;vim codecompanion.lua
+: 1779292777:0;vim test.py
+: 1779292922:0;vim codecompanion.lua
+: 1779292991:0;vim test.py
+: 1779292998:0;vim codecompanion.lua
+: 1779293650:0;vim test.py
+: 1779294194:0;vim codecompanion.lua
+: 1779294371:0;vim test.py
+: 1779294478:0;vim codecompanion.lua
+: 1779296529:0;z plugins
+: 1779296531:0;ls
+: 1779296533:0;vim codecompanion.lua
+: 1779299385:0;z test
+: 1779299387:0;;s
+: 1779299389:0;ls
+: 1779299393:0;vim test.py
+: 1779299520:0;z plugins
+: 1779299522:0;ls
+: 1779299526:0;vim codecompanion.lua
+: 1779300103:0;vim test.py
+: 1779329937:0;z task
+: 1779329938:0;ls
+: 1779329942:0;local task
+: 1779329942:0;ls
+: 1779329953:0;z task
+: 1779329954:0;ls
+: 1779329958:0;vim tasks.json
+: 1779330786:0;z hypr
+: 1779330787:0;ls
+: 1779330803:0;cd ..
+: 1779330809:0;chezmoi add hypr
+: 1779330813:0;ls
+: 1779330827:0;z local bin
+: 1779330829:0;cd ..
+: 1779330830:0;ls
+: 1779330834:0;chezmoi add bin
+: 1779330847:0;dotsave

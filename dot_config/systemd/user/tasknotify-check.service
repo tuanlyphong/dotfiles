@@ -7,13 +7,13 @@ Description=tasknotify — task notification checker
 
 [Service]
 Type=oneshot
-ExecStart=%h/.local/bin/tasknotify.sh check
+ExecStart=/home/phong/.local/bin/tasknotify.sh check
 
 # Provide a known-good DBUS path; the script will override if needed.
 Environment=DBUS_SESSION_BUS_ADDRESS=unix:path=/run/user/%U/bus
 
-StandardOutput=append:%h/.local/share/tasknotify/tasknotify.log
-StandardError=append:%h/.local/share/tasknotify/tasknotify.log
+StandardOutput=append:/home/phong/.local/share/tasknotify/tasknotify.log
+StandardError=append:/home/phong/.local/share/tasknotify/tasknotify.log
 
 [Install]
 WantedBy=default.target

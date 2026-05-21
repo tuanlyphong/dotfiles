@@ -54,7 +54,6 @@ send_notify() {
   local args=(-u "$urgency" "$summary" "$body")
   [[ -n "$icon" ]] && args+=(-i "$icon")
   notify-send "${args[@]}"
-  play_sound
   log "NOTIFY [$urgency] $summary — $body"
 }
 
@@ -352,13 +351,13 @@ _do_edit_task() {
 
   local day_pick
   day_pick=$({
-    printf "* keep: %d  %s\n" "$cur_day" "$(date -d "$cur_year-$month-$cur_day" '+%a')"
-    for d in $(seq 1 "$days_in_month"); do
-      printf "%d  %s\n" "$d" "$(date -d "$cur_year-$month-$d" '+%a')"
-    done
+    echo "* keep: $cur_day"
+    echo "$cur_day"
+    seq 1 "$days_in_month" | grep -v "^${cur_day}$"
   } | rofi_input_list "Day") || return 1
   local day
-  [[ "$day_pick" == "* keep:"* || -z "$day_pick" ]] && day="$cur_day" || day=$(echo "$day_pick" | awk '{print $1}')
+  [[ "$day_pick" == "* keep:"* || -z "$day_pick" ]] && day="$cur_day" || day="$day_pick"
+
   # ── Hour: current hour first ─────────────────────────────────────────────
   local hour_pick
   hour_pick=$({
@@ -457,10 +456,8 @@ run_checker() {
 
     local fired_key_base="$DATA_DIR/.notified_${id}"
     local body="$dt_str"
-    if [[ -n "$link" ]]; then
-      short_link=$(echo "$link" | sed 's|https\?://||;s|www\.||;s|/.*||')
-      body="$body  •  $short_link"
-    fi
+    [[ -n "$link" ]] && body="$body  •  $link"
+
     # 1) Day before  → 24h..25h window
     if [[ $diff -ge $((day)) && $diff -lt $((day + 3600)) ]]; then
       local key="${fired_key_base}_daybefore"
@@ -492,7 +489,7 @@ run_checker() {
     fi
 
     # 4) Deadline  → overdue by 0..10min
-    if [[ $diff -le 0 && $diff -ge -600 ]]; then
+    if [[ $diff -le 600 && $diff -ge -600 ]]; then
       local key="${fired_key_base}_deadline"
       if [[ ! -f "$key" ]]; then
         send_notify critical "DEADLINE: $name" "$body"

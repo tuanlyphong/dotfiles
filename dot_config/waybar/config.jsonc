@@ -37,6 +37,7 @@
     "custom/storage",
     "custom/seperator",
     "clock#cal",
+    "custom/weather",
     "clock",
   ],
   //################
@@ -79,10 +80,30 @@
     "max-length": 40,
     "tooltip": false,
   },
+
   "clock#cal": {
     "format": "{:%a, %d %b}",
     "tooltip-format": "<big>{:%Y %B}</big>\n<tt><small>{calendar}</small></tt>",
+    "calendar": {
+      "mode": "month",
+      "mode-mon-col": 3,
+      "on-scroll": 1,
+
+      "format": {
+        "months": "<span color='#ffead3'><b>{}</b></span>",
+        "days": "<span color='#ecc6d9'><b>{}</b></span>",
+        "weekdays": "<span color='#ffcc66'><b>{}</b></span>",
+        "today": "<span background='#1eb4ff' color='#1e1e2e'><b>{}</b></span>",
+      },
+    },
   },
+
+  "custom/weather": {
+    "exec": "~/.config/waybar/scripts/weather.sh",
+    "interval": 1800,
+    "return-type": "json",
+  },
+
   "clock": {
     "format": "{:%I:%M %p}",
     "tooltip-format": "{:%a, %d %b}",
