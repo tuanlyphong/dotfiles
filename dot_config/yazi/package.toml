@@ -35,8 +35,8 @@ hash = "722a60eca1b338c9c24bb508d2d48578"
 
 [[plugin.deps]]
 use = "boydaihungst/mediainfo"
-rev = "49f5ab7"
-hash = "6e3b5e58f985cc2d625e0030dc35b1b2"
+rev = "4f80288"
+hash = "40e0a6a769045ada6aafafd33c27f3de"
 
 [[plugin.deps]]
 use = "yazi-rs/plugins:full-border"

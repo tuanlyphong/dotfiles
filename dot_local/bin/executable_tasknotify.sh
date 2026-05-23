@@ -345,18 +345,25 @@ _do_edit_task() {
     month=$(echo "$month_pick" | awk '{print $1}')
   fi
 
-  # ── Day: current day first ───────────────────────────────────────────────
+  # ── Day: current day first ─────────────────────────────────────────────
   local days_in_month
   days_in_month=$(cal "$month" "$cur_year" | awk 'NF {DAYS = $NF}; END {print DAYS}')
 
   local day_pick
   day_pick=$({
-    echo "* keep: $cur_day"
-    echo "$cur_day"
-    seq 1 "$days_in_month" | grep -v "^${cur_day}$"
+    echo "* keep: $cur_day  $(date -d $cur_year-$month-$cur_day '+%a')"
+    printf "%d  %s\n" "$cur_day" "$(date -d $cur_year-$month-$cur_day '+%a')"
+    for d in $(seq 1 "$days_in_month"); do
+      [[ "$d" -eq "$cur_day" ]] && continue
+      printf "%d  %s\n" "$d" "$(date -d $cur_year-$month-$d '+%a')"
+    done
   } | rofi_input_list "Day") || return 1
   local day
-  [[ "$day_pick" == "* keep:"* || -z "$day_pick" ]] && day="$cur_day" || day="$day_pick"
+  if [[ "$day_pick" == "* keep:"* || -z "$day_pick" ]]; then
+    day="$cur_day"
+  else
+    day=$(echo "$day_pick" | awk '{print $1}')
+  fi
 
   # ── Hour: current hour first ─────────────────────────────────────────────
   local hour_pick

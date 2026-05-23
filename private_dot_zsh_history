@@ -7,7 +7,6 @@
 : 1778668792:0;which zoxide
 : 1778668836:0;export PATH="$HOME/.local/bin:$PATH"
 : 1778668847:0;zoxide home
-: 1778668888:0;cd Downloads
 : 1778668893:0;cd..
 : 1778668901:0;z do
 : 1778668911:0;cd home
@@ -168,8 +167,6 @@ print('done')\
 : 1778673048:0;yazi:q
 : 1778673151:0;grep -rn "refactoring" ~/.config/nvim/lua/
 : 1778673167:0;sed -n '20,40p' ~/.config/nvim/lua/plugins/coding.lua
-: 1778673215:0;z plugins
-: 1778673219:0;z lua
 : 1778673225:0;z confi
 : 1778673291:0;head -50 ~/.local/share/nvim/lazy/refactoring.nvim/lua/refactoring.lua
 : 1778673316:0;:Lazy update refactoring.nvim
@@ -178,7 +175,6 @@ print('done')\
 : 1778673420:0;sudo pacman -S gcc
 : 1778673490:0;z ya
 : 1778673495:0;cd yazi
-: 1778673550:0;topgrade
 : 1778682673:0;sudo pacman -S anki
 : 1778682692:0;sudo pacman -S neofetch
 : 1778682699:0;sudo pacman -S nfetch
@@ -207,7 +203,6 @@ print('done')\
 touch ~/.config/aria2/aria2.conf\
 touch ~/.config/aria2/session.txt
 : 1778684110:0;z aria2
-: 1778684754:0;cd lua
 : 1778684777:0;sudo pacman -S bat
 : 1778684814:0;lua -v
 : 1778685036:0;z aria
@@ -215,7 +210,6 @@ touch ~/.config/aria2/session.txt
 : 1778685105:0;vim ~/.config/systemd/user/aria2.service
 : 1778685121:0;systemctl --user enable --now aria2\
 systemctl --user status aria2
-: 1778685137:0;sudo pacman -Syu
 : 1778685415:0;sudo pacman -S cliphist
 : 1778685434:0;hypc
 : 1778685676:0;# 1. Create a temp dir and init sparse checkout\
@@ -319,7 +313,6 @@ ya pkg add Ape/open-with-cmd
 rm -rf ~/.cache/yazi/packages\
 mkdir -p ~/.config/yazi/plugins
 : 1778689701:0;ya pkg install --discard
-: 1778689803:0;ya
 : 1778689810:0;ya pkg
 : 1778689814:0;ya pg list
 : 1778689851:0;ya delete yazi-rs/plugins:mediainfo
@@ -329,7 +322,6 @@ mkdir -p ~/.config/yazi/plugins
 : 1778690094:0;z plugins 
 : 1778690121:0;ya pkg delete Ape/mediainfo
 : 1778690427:0;cat ~/.config/yazi/init.lua
-: 1778690487:0;yazo
 : 1778690564:0;cat ~/.config/yazi/yazi.toml
 : 1778690572:0;cat ~/.config/yazi/plugins/piper.yazi/main.lua
 : 1778690759:0;ls ~/.config/yazi/plugins/\
@@ -362,7 +354,6 @@ sudo pacman -S lib32-vulkan-icd-loader vulkan-icd-loader
 \
 # Intel\
 
-: 1778692062:0;winecfg
 : 1778692107:0;sudo pacman -S wine wine-mono winetricks lutris steam giflib lib32-giflib lib32-vulkan-icd-loader vulkan-icd-loader
 : 1778692134:0;sudo pacman -S gamemode lib32-gamemode
 : 1778692164:0;1sudo pacman -S nvidia-prime
@@ -436,7 +427,6 @@ git remote set-url origin git@github.com:tuanlyphong/pkglist.git\
 git push --set-upstream origin master
 : 1778694857:0;gl
 : 1778696377:0;sudo pacman -S brightnessctl
-: 1778696453:0;ncmpcpp
 : 1778696849:0;sudo pacman -S hexchat
 : 1778696867:0;sudo pacman -S HexChat
 : 1778697190:0;chmod +x dotsave\
@@ -548,7 +538,6 @@ sudo wg-quick up /etc/wireguard/warp.conf
 warp-cli connect\
 
 : 1778740299:0;z nya
-: 1778740313:0;vim 
 : 1778740381:0;warp-cli mode warp\
 warp-cli connect\
 
@@ -564,8 +553,6 @@ warp-cli connect\
 : 1778740683:0;sudo pacman -S noto-fonts-cjk adobe-source-han-sans-jp-fonts adobe-source-han-serif-jp-fonts\
 
 : 1778740749:0;z .local
-: 1778740764:0;z app
-: 1778740857:0;z applications
 : 1778740866:0;vim nyaa.desktop
 : 1778740956:0;sudo nvim nyaa.desktop
 : 1778741103:0;vim anki.desktop
@@ -667,7 +654,6 @@ ya pkg add duckdb.yazi\
 ya pkg add Ape/open-with-cmd\
 ya pkg add yazi-rs/plugins:jump-to-char
 : 1778747800:0;ls ~/.local/share/yazi/plugins
-: 1778747809:0;cd plugins
 : 1778747831:0;vim p
 : 1778747941:0;ya pkg install
 : 1778747977:0;vim package.toml
@@ -702,7 +688,6 @@ grep -n "setup\|return\|M\." ~/.config/yazi/plugins/git.yazi/main.lua | head -10
 : 1778750848:0;awww-daemon
 : 1778750909:0;awww img /home/phong/Pictures/Wallpapers/wp5595374-chilling-at-night-anime-wallpapers.jpg
 : 1778750930:0;systemctl --user enable --now awww-daemon
-: 1778751040:0;vim style.css
 : 1778751060:0;vim miku.css
 : 1778751234:0;vim general.conf
 : 1778752170:0;warp-cli proxy 4000\
@@ -753,7 +738,6 @@ warp-cli connect
 
 : 1778753964:0;warp-cli -h
 : 1778754027:0;cd scripts
-: 1778754028:0;;s
 : 1778754038:0;vim warp.conf
 : 1778754072:0;exec
 : 1778754223:0;chmod +x warp.sh
@@ -831,20 +815,16 @@ warp-cli connect
 : 1778776296:0;z sound
 : 1778776310:0;z local sound
 : 1778776338:0;play-notify-sound
-: 1778776345:0;z share
 : 1778776410:0;z sounds
 : 1778776417:0;cp ~/.local/share/sounds/sound.mp3 .
 : 1778776421:0;cd .
 : 1778776446:0;vim config.json
-: 1778776543:0;btop
 : 1778776648:0;journalctl --user -fu tasknotify-check.service
 : 1778776666:0;notify-send "test" "tasknotify works"
 : 1778776688:0;systemctl --user is-enabled tasknotify-check.timer
 : 1778777345:0;z usr local bin
 : 1778777397:0;systemctl status pkgsave.timer
-: 1778777430:0;z usr
 : 1778777436:0;bin
-: 1778777444:0;z local
 : 1778777469:0;chezmoi usr/local/bin
 : 1778777474:0;chezmoi
 : 1778777492:0;chezmoi add /usr/local/bin
@@ -910,8 +890,6 @@ sudo systemctl reset-failed\
 : 1778782136:0;warp-cli settings\
 
 : 1778785421:0;mediainfo \[Erai-raws\]\ Mato\ Seihei\ no\ Slave\ -\ 12\ \[1080p\]\[3F6562A0\].mkv
-: 1778786501:0;fastfetch
-: 1778787025:0;z con
 : 1778791747:0;z mpv
 : 1778791749:0;vim mpv.conf
 : 1778792092:0;vim yazi.toml
@@ -959,9 +937,7 @@ systemctl --user restart tasknotify-check.timer
 : 1778824189:0;dbus-monitor "interface='org.freedesktop.Notifications'" 2>/dev/null >> ~/notify-debug.log &
 : 1778830291:0;systemctl --user list-timers tasknotify-check.timer
 : 1778830300:0;tasknotify.sh
-: 1778833883:0;./tasknotify.sh
 : 1778833942:0;:w
-: 1778841202:0;warp-cli status
 : 1778841984:0;gn
 : 1778855577:0;git clone https://github.com/catppuccin/grub.git && cd grub
 : 1778855585:0;sudo cp -r src/* /usr/share/grub/themes/
@@ -970,7 +946,6 @@ systemctl --user restart tasknotify-check.timer
 : 1778855661:0;z default/
 : 1778855937:0;sudo yazi
 : 1778856319:0;sudo grub-script-check /etc/default/grub
-: 1778856443:0;z usr share
 : 1778856450:0;z themes
 : 1778856469:0;vim catppuccin-macchiato-grub-theme
 : 1778856482:0;cd catppuccin-macchiato-grub-theme
@@ -1006,7 +981,6 @@ systemctl --user restart tasknotify-check.timer
 : 1778862604:0;grep -R "Nothing is copied" ~/.local/share/nvim ~/.config/nvim /usr/share/nvim 2>/dev/null
 : 1778862680:0;:lua print(vim.inspect(vim.notify))
 : 1778862687:0;z ~/.local/share/nvim/lazy/nvim-notify
-: 1778909737:0;z down
 : 1778997116:0;sudo pacman -S rclone
 : 1778997349:0;mkdir -p ~/mnt/gdrive1\
 
@@ -1097,11 +1071,9 @@ out = [pat.sub(lambda m: fmt(parse(m.group())+offset), l) if '-->' in l else l f
 f.write_text('\n'.join(out), encoding='utf-8')\
 "
 : 1779024374:0;z .é­ƒ´éƒ£½ç²¾åƒ¥µã®ã‚¹ãƒ£¬ã‚¤ãƒ£ƒ¶
-: 1779024426:0;z local bin
 : 1779024442:0;l
 : 1779024450:0;sudo vim subshift
 : 1779024458:0;sudo nvim subshift
-: 1779024596:0;z dow
 : 1779024598:0;chmod +x subshift\
 sudo mv subshift /usr/local/bin/
 : 1779024605:0;subshift Mato\ Seihei\ no\ Sureibu\ -\ S02E12.vi.ass 1
@@ -1134,16 +1106,12 @@ rmdir ~/mnt/gdrive1
 
 : 1779047948:0;systemctl --user status rclone-mount
 : 1779048222:0;watch -n 5 'ps -o pid,rss,vsz,comm -p $(pgrep rclone)'
-: 1779048308:0;z hypr
 : 1779048318:0;chezmoi add rclone.sh
 : 1779048329:0;z usr bin
 : 1779048349:0;z service
 : 1779048405:0;z conf
 : 1779048409:0;z systemd/user
 : 1779048431:0;chezmoi add ~/.config/systemd/user/
-: 1779048468:0;clear
-: 1779048479:0;dotsave
-: 1779048497:0;pkgsave
 : 1779084778:0;z way
 : 1779085241:0;sudo pacman -S ttf-nerd-fonts-symbols
 : 1779085266:0;sudo pacman -S ttf-jetbrains-mono-nerd
@@ -1154,8 +1122,6 @@ rmdir ~/mnt/gdrive1
 : 1779085478:0;vim rofi-emoji-picker
 : 1779085509:0;chmod +x ~/.local/bin/rofi-emoji-picker
 : 1779085614:0;./rofi-emoji-picker 
-: 1779085643:0;bindc
-: 1779085656:0;startupc
 : 1779085673:0;sudo pacman -R xdotool
 : 1779085686:0;sudo pacman -R wtype
 : 1779085689:0;sudo pacman -S wtype
@@ -1192,10 +1158,8 @@ rmdir ~/mnt/gdrive1
 : 1779251664:0;./uninstall.sh
 : 1779251684:0;chmod +x install.sh
 : 1779251687:0;./install.sh
-: 1779252838:0;z task
 : 1779252847:0;z local task
 : 1779252849:0;vim task
-: 1779252853:0;vim tasks.json
 : 1779252867:0;systemctl list-timers -all\
 
 : 1779253104:0;systemctl status tasknotify-check
@@ -1210,9 +1174,7 @@ systemctl --user list-timers tasknotify-check.timer\
 journalctl --user -u tasknotify-check.service -n 20
 : 1779253285:0;z bin task
 : 1779253287:0;z bin
-: 1779253289:0;vim tasknotify.sh
 : 1779254001:0;yay -S bibata-cursor-theme-bin
-: 1779254054:0;hyprctl setcursor Bibata-Modern-Ice 24
 : 1779262500:0;sudo pacman -S lazygit
 : 1779262723:0;npm install -g @mermaid-js/mermaid-cli
 : 1779262737:0;sudo pacman -S tectonic
@@ -1220,181 +1182,35 @@ journalctl --user -u tasknotify-check.service -n 20
 : 1779262778:0;sudo npm install -g neovim
 : 1779263001:0;sudo npm install -g @mermaid-js/mermaid-cli
 : 1779263681:0;ks
-: 1779264166:0;vim init.lua
 : 1779264497:0;mkdir test
-: 1779264501:0;cd test
 : 1779264506:0;vim test.txt
 : 1779265792:0;vim modules
-: 1779265861:0;z bar
-: 1779265867:0;vim config.jsonc
-: 1779266355:0;z plugin
 : 1779266363:0;z nvim plug
-: 1779266369:0;vim coding.lua
 : 1779269214:0;z nvim
 : 1779269268:0;z coding
-: 1779269348:0;vim
-: 1779270308:0;z lazy
-: 1779270316:0;cd ..
-: 1779270327:0;z
-: 1779270329:0;z vim
-: 1779270331:0;ls
-: 1779270334:0;yazi
-: 1779270344:0;:q
-: 1779270363:0;z
-: 1779270367:0;z lazy
-: 1779270368:0;ls
-: 1779270371:0;z vim
-: 1779270372:0;ls
-: 1779270375:0;yazi
-: 1779270383:0;z vim
-: 1779270384:0;ls
-: 1779270386:0;cd lua
-: 1779270421:0;ls
-: 1779270425:0;yazi
-: 1779270490:0;vim
-: 1779270496:0;ls
-: 1779270498:0;yazi
-: 1779270557:0;ls
 : 1779270562:0;yazo
-: 1779270564:0;yazi
-: 1779270574:0;ls
-: 1779270577:0;cd plugins
-: 1779270577:0;ls
-: 1779270580:0;vim codecompanion.lua
-: 1779270625:0;vim
-: 1779270633:0;vim codecompanion.lua
-: 1779270665:0;yazi
-: 1779271517:0;vim
 : 1779271760:0;rm -rf ~/.cache/nvim/luac\
 
-: 1779271817:0;vim
 : 1779271932:0;z code
-: 1779271936:0;z lazy
-: 1779271936:0;ls
 : 1779271940:0;z vim lazy
-: 1779271942:0;z vim
-: 1779271943:0;ls
-: 1779271947:0;z vim
-: 1779271948:0;ls
-: 1779271949:0;yazi
-: 1779272395:0;ls
-: 1779272395:0;z
-: 1779272401:0;z test
-: 1779272401:0;ls
-: 1779272403:0;yazi
-: 1779272412:0;vim test.java
-: 1779272464:0;ls
-: 1779272468:0;z vim
-: 1779272469:0;ls
-: 1779272470:0;z vim
-: 1779272471:0;ls
-: 1779272472:0;yazi
-: 1779272716:0;ls
-: 1779272718:0;cd lua
-: 1779272719:0;ls
-: 1779272722:0;cd plugins
-: 1779272722:0;ls
-: 1779272727:0;vim codecompanion.lua
-: 1779272891:0;z test
-: 1779272892:0;ls
 : 1779272895:0;vim test.java
-: 1779273481:0;yazi
 : 1779273486:0;z vim
-: 1779273489:0;z plugin
-: 1779273490:0;ls
-: 1779273496:0;vim codecompanion.lua
-: 1779273609:0;z test
 : 1779273619:0;vim test.html
-: 1779273690:0;yazi
-: 1779273693:0;ls
-: 1779273696:0;yazi
-: 1779273701:0;vim test.py
-: 1779273766:0;z plugin
-: 1779273767:0;ls
-: 1779273772:0;vim codecompanion.lua
-: 1779273835:0;vim test.py
-: 1779273947:0;vim
-: 1779274007:0;z plugin
-: 1779274011:0;vim codecompanion.lua
-: 1779274158:0;z test
-: 1779274159:0;ls
-: 1779274166:0;vim test.py
 : 1779274802:0;z plugin
-: 1779274803:0;ls
-: 1779274808:0;vim codecompanion.lua
-: 1779274957:0;z test
-: 1779274958:0;ls
-: 1779274961:0;vim test.py
 : 1779275058:0;npm install -g mcp-hub@latest
 : 1779275061:0;sudo npm install -g mcp-hub@latest
-: 1779275103:0;vim test.py
 : 1779277459:0;sudo npm install -g @modelcontextprotocol/server-filesystem
-: 1779277479:0;vim codecompanion.lua
-: 1779277566:0;vim test.py
 : 1779288107:0;zls
-: 1779288108:0;ls
-: 1779288122:0;vim json_tools.lua
-: 1779288233:0;vim codecompanion.lua
-: 1779288255:0;cd ..
-: 1779288256:0;ls
-: 1779288262:0;cd plugins
-: 1779288263:0;ls
-: 1779288265:0;vim codecompanion.lua
-: 1779288310:0;vim
-: 1779288327:0;vim test.py
-: 1779288341:0;ls
-: 1779288349:0;cd ..
-: 1779288350:0;ls
-: 1779288353:0;cd ..
-: 1779288353:0;ls
-: 1779288357:0;vim init.lua
 : 1779288368:0;z lua
-: 1779288368:0;ls
 : 1779288373:0;cd plugins
-: 1779288374:0;ls
 : 1779288378:0;vim coding.lua
-: 1779288438:0;cd ..
-: 1779288439:0;ls
-: 1779288441:0;cd ..
-: 1779288441:0;ls
-: 1779288444:0;vim init.lua
-: 1779288458:0;vim test.py
-: 1779288463:0;vim init.lua
-: 1779288522:0;z lazy
-: 1779288523:0;ls
-: 1779288524:0;z
-: 1779288527:0;ls
 : 1779288530:0;cd Downloads
-: 1779288531:0;ls
-: 1779288532:0;z
-: 1779288543:0;z lazy
-: 1779288548:0;z plugins
-: 1779288549:0;ls
-: 1779288553:0;vim codecompanion.lua
 : 1779288582:0;vim json_tools.lua
-: 1779288586:0;yazi
-: 1779288607:0;ls
-: 1779288611:0;z test
-: 1779288612:0;ls
-: 1779288613:0;vim test.py
 : 1779288657:0;vim init.lua
 : 1779288686:0;cd lua
-: 1779288686:0;ls
 : 1779288689:0;cd craftzdog
-: 1779288690:0;ls
 : 1779288693:0;vim  discipline.lua
-: 1779288916:0;vim test.py
-: 1779288931:0;cd ..
-: 1779288933:0;vim
-: 1779288958:0;yazi
-: 1779289004:0;z test
-: 1779289005:0;ls
-: 1779289009:0;z plugins
-: 1779289010:0;yazi
-: 1779289030:0;vim test.py
-: 1779289086:0;ls
 : 1779289090:0;vim cod
-: 1779289096:0;vim codecompanion.lua
 : 1779289651:0;curl https://executable-lustered-brittanie.ngrok-free.dev/v1/chat/completions \\
   -H "Content-Type: application/json" \\
   -H "Authorization: Bearer ollama" \\
@@ -1418,7 +1234,6 @@ journalctl --user -u tasknotify-check.service -n 20
 : 1779289684:0;curl https://executable-lustered-brittanie.ngrok-free.dev/api/tags
 : 1779289745:0;curl https://executable-lustered-brittanie.ngrok-free.dev/api/show \\
   -d '{"name": "qwen2.5-coder-14b:latest"}' | python3 -m json.tool | grep -A5 "template"
-: 1779289822:0;clear
 : 1779289833:0;curl https://executable-lustered-brittanie.ngrok-free.dev/v1/chat/completions \\
   -H "Content-Type: application/json" \\
   -H "Authorization: Bearer ollama" \\
@@ -1440,7 +1255,6 @@ journalctl --user -u tasknotify-check.service -n 20
     }],\
     "messages": [{"role": "user", "content": "add a divide function to /home/phong/test/test.py"}]\
   }' | python3 -m json.tool
-: 1779289853:0;vim test.py
 : 1779291387:0;curl https://executable-lustered-brittanie.ngrok-free.dev/v1/chat/completions \\
   -H "Content-Type: application/json" \\
   -H "Authorization: Bearer ollama" \\
@@ -1484,42 +1298,410 @@ journalctl --user -u tasknotify-check.service -n 20
     }],\
     "messages": [{"role": "user", "content": "add a divide function to /home/phong/test/test.py"}]\
   }' | python3 -m json.tool
-: 1779291656:0;vim test.py
-: 1779292114:0;ls
-: 1779292699:0;vim codecompanion.lua
-: 1779292777:0;vim test.py
-: 1779292922:0;vim codecompanion.lua
-: 1779292991:0;vim test.py
-: 1779292998:0;vim codecompanion.lua
-: 1779293650:0;vim test.py
-: 1779294194:0;vim codecompanion.lua
-: 1779294371:0;vim test.py
-: 1779294478:0;vim codecompanion.lua
-: 1779296529:0;z plugins
-: 1779296531:0;ls
-: 1779296533:0;vim codecompanion.lua
 : 1779299385:0;z test
-: 1779299387:0;;s
-: 1779299389:0;ls
-: 1779299393:0;vim test.py
-: 1779299520:0;z plugins
-: 1779299522:0;ls
-: 1779299526:0;vim codecompanion.lua
 : 1779300103:0;vim test.py
-: 1779329937:0;z task
-: 1779329938:0;ls
 : 1779329942:0;local task
-: 1779329942:0;ls
 : 1779329953:0;z task
-: 1779329954:0;ls
 : 1779329958:0;vim tasks.json
-: 1779330786:0;z hypr
-: 1779330787:0;ls
-: 1779330803:0;cd ..
 : 1779330809:0;chezmoi add hypr
-: 1779330813:0;ls
-: 1779330827:0;z local bin
-: 1779330829:0;cd ..
-: 1779330830:0;ls
 : 1779330834:0;chezmoi add bin
 : 1779330847:0;dotsave
+: 1779330862:0;pkgsave
+: 1779330888:0;topgrade
+: 1779335154:0;z bar
+: 1779335160:0;vim config.jsonc
+: 1779335799:0;vim style.css
+: 1779339433:0;pacman -Ss java | grep jdk\
+
+: 1779339639:0;sudo pacman -S jdk-openjdk\
+
+: 1779339677:0;archlinux-java status\
+
+: 1779339681:0;sudo archlinux-java set java-openjdk\
+
+: 1779339720:0;java -version\
+
+: 1779339824:0;sudo pacman -S gradle
+: 1779339849:0;cd test
+: 1779339859:0;mkdir latest-java-app && cd latest-java-app\
+gradle init\
+
+: 1779388323:0;fastfetch
+: 1779388492:0;gb
+: 1779439775:0;z lazy
+: 1779440207:0;vim tasknotify.sh
+: 1779440585:0;./tasknotify.sh
+: 1779444263:0;wine --version
+: 1779444992:0;winecfg
+: 1779445740:0;z drive_c
+: 1779446237:0;z launcher
+: 1779446803:0;tar -xVJf dwproton-11.0-2-x86_64.tar.xz
+: 1779446815:0;tar -xVJ dwproton-11.0-2-x86_64.tar.xz
+: 1779446825:0;tar -x dwproton-11.0-2-x86_64.tar.xz
+: 1779446838:0;sudo pacman -S xz
+: 1779446865:0;tar -xf dwproton-11.0-2-x86_64.tar.xz
+: 1779446884:0;cd dwproton-11.0-2-x86_64
+: 1779446950:0;cd drive_c
+: 1779461592:0;z nikke
+: 1779461642:0;cd Launcher
+: 1779461644:0;wine nikke_launcher.exe
+: 1779462608:0;z desk
+: 1779462618:0;z local
+: 1779462620:0;z share
+: 1779462623:0;z applications
+: 1779462631:0;cd wine
+: 1779462829:0;btop
+: 1779462920:0;NIKKE
+: 1779462943:0;z share app
+: 1779462946:0;cd win
+: 1779462954:0;z Programs
+: 1779462964:0;vim NIKKE.desktop
+: 1779463049:0;chmod +x Nikke.sh
+: 1779463172:0;vim 
+: 1779463435:0;clear
+: 1779463441:0;z steam wine
+: 1779463525:0;z ste
+: 1779463555:0;z local share steam
+: 1779463558:0;z local share 
+: 1779463562:0;z steam
+: 1779463568:0;z local share
+: 1779463576:0;z Steam
+: 1779463581:0;z compatibilitytools.d
+: 1779463668:0;cd Programs
+: 1779463672:0;cd NIKKE
+: 1779463689:0;z lau
+: 1779463733:0;vim Nikke.sh
+: 1779463863:0;WINEPREFIX=~/custom-prefix STEAM_COMPAT_DATA_PATH=~/custom-prefix ~/.local/share/Steam/compatibilitytools.d/dwproton-11.0-2-x86_64/files/bin/wine ~/.wine/drive_c/NIKKE/Launcher/nikke_launcher.exe\
+
+: 1779463929:0;WINEPREFIX=~/custom-prefix STEAM_COMPAT_DATA_PATH=~/custom-prefix ~/.local/share/Steam/compatibilitytools.d/GE-Proton10-34/files/bin/wine ~/.wine/drive_c/NIKKE/Launcher/nikke_launcher.exe\
+
+: 1779464741:0;wine config
+: 1779464790:0;z laucher
+: 1779464794:0;z nikkei
+: 1779465040:0;z NIKKE
+: 1779465046:0;z Launcher/ls
+: 1779465050:0;z Launcher
+: 1779465061:0;wine uninst.exe
+: 1779465406:0;vim Nikke.yaml
+: 1779465665:0;z games
+: 1779465889:0;sudo pacman -Syu winetricks giflib lib32-giflib libpng lib32-png libldap lib32-ldap gnutls lib32-gnutls mpg123 lib32-mpg123 openal lib32-openal v4l-utils lib32-v4l-utils libpulse lib32-pulse libgpg-error lib32-gpg-error alsa-plugins lib32-alsa-plugins alsa-lib lib32-alsa-lib clinfo\
+
+: 1779466528:0;warp-cli status
+: 1779466752:0;winetricks mfc42
+: 1779466845:0;sudo pacman -S winetrick
+: 1779466856:0;sudo pacman -S winetricks
+: 1779466949:0;winetricks -q mfc42
+: 1779466963:0;sudo pacman -Syu
+: 1779467051:0;ncmpcpp -h
+: 1779467060:0;ncmpcpp -help
+: 1779467153:0;sudo pacman -S mpd ncmpcpp mpc\
+
+: 1779467247:0;z con
+: 1779467251:0;cd ncmpcpp
+: 1779467272:0;z usr
+: 1779467281:0;z usr share
+: 1779467285:0;z doc
+: 1779467505:0;vim now-playing
+: 1779467520:0;bindc
+: 1779467570:0;systemctl --user enable mpd\
+
+: 1779467581:0;systemctl --user status mpd\
+
+: 1779467703:0;cp /usr/share/doc/mpd/mpdconf.example ~/.config/mpd/mpd.conf
+: 1779467710:0;nvim ~/.config/mpd/mpd.conf
+: 1779467783:0;systemctl --user enable --now mpd
+: 1779467788:0;mpc update\
+mpc ls
+: 1779467803:0;mpc toggle
+: 1779467818:0;nvim ~/.config/ncmpcpp/config
+: 1779468073:0;cd ..
+: 1779468375:0;systemctl --user restart mpd
+: 1779468514:0;sudo pacman -S pipewire
+: 1779468525:0;sudo pacman -S pulseaudio
+: 1779468627:0;z mpd
+: 1779468630:0;vim mpd.conf
+: 1779468659:0;export MPD_HOST="$XDG_RUNTIME_DIR/mpd/socket"
+: 1779468829:0;chmod +x songinfo
+: 1779468855:0;z ncmpcpp
+: 1779468860:0;vim config
+: 1779468900:0;ncmpcpp
+: 1779468930:0;songinfo
+: 1779468937:0;vim songinfo
+: 1779468950:0;z local bin
+: 1779469035:0;notify-send -r 27072 "Now Playing" "$(mpc --format '%title% \n%artist% - %album%' current)" -i "$previewname"
+: 1779469090:0;mpc --format '%title% \n%artist% - %album%' current
+: 1779469108:0;;s
+: 1779469110:0;ya
+: 1779469246:0;notify-send "test" "hello\nworld"
+: 1779472201:0;z down
+: 1779472399:0;z win
+: 1779472407:0;z Steam 
+: 1779472412:0;z steam compa
+: 1779472444:0;sudo pacman -S protonplus
+: 1779472469:0;yay -S prtonplus
+: 1779472489:0;yay -S protonplus
+: 1779472639:0;sudo pacman -R lutris
+: 1779473029:0;z .steam
+: 1779473228:0;z .wine
+: 1779473561:0;z desktop
+: 1779473572:0;z app
+: 1779473577:0;z local share app
+: 1779473817:0;z plugins
+: 1779473821:0;vim codecompanion.lua
+: 1779473911:0;vim
+: 1779473939:0;chmod +x nikke.sh
+: 1779473975:0;./Nikke.sh
+: 1779474360:0;z hypr
+: 1779474419:0;vim nikke.sh
+: 1779474442:0;./nikke.sh
+: 1779474646:0;z dow
+: 1779474655:0;wine nikkeminiloader_oG7STxbESBb.wg.intl.exe
+: 1779474705:0;wine NikkeMiniloader0.0.6.143.exe
+: 1779474755:0;wine explorer
+: 1779474906:0;z wine
+: 1779474909:0;yazi
+: 1779475042:0;yay -S heroic-games-launcher-bin
+: 1779475490:0;yay -S linux-cachyos linux-cachyos-headers
+: 1779478141:0;wget https://archlinux.org\
+makepkg -si\
+cachyos-repo-mgr\
+
+: 1779478181:0;sudo pacman -S linux-cachyos-headers
+: 1779478234:0;curl -O https://mirror.cachyos.org/cachyos-repo.tar.xz\
+tar xvf cachyos-repo.tar.xz && cd cachyos-repo\
+sudo ./cachyos-repo.sh\
+
+: 1779483455:0;sudo visudo
+: 1779483960:0;hyprctl setcursor Bibata-Modern-Ice 24
+: 1779483973:0;startupc
+: 1779484037:0;z
+: 1779484038:0;ls
+: 1779484044:0;sudo grub-mkconfig -o /boot/grub/grub.cfg\
+
+: 1779484068:0;uname -r\
+uname -r\
+
+: 1779484070:0;uname -r\
+
+: 1779484077:0;:q
+: 1779484078:0;uname -r\
+uname -r\
+
+: 1779484141:0;reboot
+: 1779484191:0;uname -r\
+
+: 1779484274:0;pacman -Qs linux-cachyos\
+
+: 1779484313:0;sudo pacman -Syu linux-cachyos linux-cachyos-headers\
+
+: 1779484623:0;sudo pacman -S scx-scheds wireless-regdb nvidia-cachyos-dkms\
+\
+
+: 1779484632:0;sudo pacman -S scx-scheds wireless-regdb\
+\
+
+: 1779484670:0;sudo grub-mkconfig -o /boot/grub/grub.cfg\
+
+: 1779484679:0;reboot
+: 1779484712:0;uname -r\
+
+: 1779484753:0;sudo pacman -R linux linux-headers\
+
+: 1779484773:0;sudo pacman -Syuu
+: 1779485141:0;sudo grub-mkconfig -o /boot/grub/grub.cfg\
+
+: 1779485168:0;reboot
+: 1779485202:0;yay
+: 1779485301:0;yay -S heroic-games-launcher-bin
+: 1779487317:0;sudo pacman -S \\
+nvidia nvidia-utils lib32-nvidia-utils \\
+vulkan-icd-loader lib32-vulkan-icd-loader \\
+vulkan-tools
+: 1779487408:0;sudo pacman -S \\
+nvidia-580xx-dkms \\
+nvidia-580xx-utils \\
+lib32-nvidia-580xx-utils
+: 1779488129:0;sudo reflector --country VN,US --sort rate --save /etc/pacman.d/mirrorlist\
+
+: 1779488152:0;sudo pacman -S reflector\
+
+: 1779488159:0;sudo reflector --country VN,US --sort rate --save /etc/pacman.d/mirrorlist\
+
+: 1779492701:0;ncmpcpp
+: 1779492709:0;mpd
+: 1779492714:0;mpd kill
+: 1779492724:0;killall mpd
+: 1779492727:0;mpd
+: 1779492747:0;ncmpcpp
+: 1779492786:0;systemctl --user restart mpd
+: 1779492796:0;systemctl --user mpd status
+: 1779492806:0;systemctl --user status mpd
+: 1779492845:0;systemctl --user edit mpd.service\
+
+: 1779492867:0;systemctl --user start mpd.service\
+
+: 1779492881:0;systemctl --user status mpd
+: 1779492889:0;ncmpcpp
+: 1779492938:0;z mpd
+: 1779492939:0;ls
+: 1779492941:0;vim mpd.conf
+: 1779492971:0;z ncmpcpp
+: 1779492976:0;vim config
+: 1779493003:0;ncmpcpp
+: 1779493047:0;vim config
+: 1779493059:0;ncmpcpp
+: 1779493078:0;vim config
+: 1779493088:0;z mpd
+: 1779493088:0;ls
+: 1779493091:0;vim mpd.conf
+: 1779493101:0;ncmpcpp
+: 1779493191:0;vim mpd.conf
+: 1779493215:0;MPD_HOST="$XDG_RUNTIME_DIR/mpd/socket"
+: 1779493222:0;export MPD_HOST="$XDG_RUNTIME_DIR/mpd/socket"
+: 1779493239:0;systemctl --user status mpd
+: 1779493251:0;systemctl --user restart mpd
+: 1779493253:0;systemctl --user status mpd
+: 1779493322:0;z mpd
+: 1779493324:0;vim mpd.conf
+: 1779493367:0;systemctl --user edit mpd.service\
+
+: 1779493378:0;systemctl --user restart mpd
+: 1779493380:0;ls
+: 1779493384:0;systemctl --user status mpd
+: 1779493388:0;ncmpcpp
+: 1779493633:0;mpc stop
+: 1779493640:0;bindc
+: 1779493649:0;mpc toggle
+: 1779493669:0;bindc
+: 1779493823:0;ls
+: 1779493828:0;ncmpcpp
+: 1779493930:0;z mpd
+: 1779493932:0;vim mpd.conf
+: 1779493964:0;z ncmpcpp
+: 1779493966:0;ls
+: 1779493971:0;vim config
+: 1779494019:0;z mpd
+: 1779494021:0;vim mpd.conf
+: 1779494089:0;ncmpcpp
+: 1779494102:0;vim config
+: 1779494106:0;ncmpcpp
+: 1779494117:0;systemctl --user restart mpd
+: 1779494120:0;ncmpcpp
+: 1779494127:0;z mpd
+: 1779494131:0;vim config
+: 1779494135:0;vim mpd.conf
+: 1779494149:0;z ncmpcpp
+: 1779494150:0;ls
+: 1779494151:0;vim config
+: 1779494164:0;ncmpcpp
+: 1779494170:0;systemctl --user restart mpd
+: 1779494177:0;systemctl --user status mpd
+: 1779494180:0;ncmpcpp
+: 1779494193:0;vim config
+: 1779494218:0;ncmpcpp
+: 1779494227:0;killall mpc
+: 1779494230:0;killall mpd
+: 1779494233:0;ncmpcpp
+: 1779494237:0;mpd
+: 1779494248:0;ncmpcpp
+: 1779494256:0;systemctl --user restart mpd
+: 1779494261:0;mpd
+: 1779494265:0;ncmpcpp
+: 1779494278:0;systemctl --user status mpd
+: 1779494446:0;z mpd
+: 1779494449:0;vim mpd.conf
+: 1779494493:0;z ncmpcpp
+: 1779494497:0;vim config
+: 1779494665:0;systemctl --user enable --now mpd
+: 1779494671:0;mpc update
+: 1779494686:0;systemctl --user restart mpd
+: 1779494698:0;killall mpd
+: 1779494699:0;systemctl --user restart mpd
+: 1779494712:0;systemctl --user status mpd
+: 1779494744:0;mkdir -p ~/.local/share/mpd/playlists
+: 1779494752:0;vim mpd.conf
+: 1779494801:0;systemctl --user restart mpd\
+systemctl --user status mpd
+: 1779494851:0;mkdir -p ~/Music\
+mkdir -p ~/.local/share/mpd
+: 1779494855:0;systemctl --user restart mpd\
+systemctl --user status mpd
+: 1779494861:0;ncmpcpp
+: 1779494895:0;z ncmpcpp
+: 1779494898:0;vim config
+: 1779495034:0;ncmpcpp
+: 1779495043:0;vim config
+: 1779495051:0;ncmpcpp
+: 1779495069:0;vim config
+: 1779495073:0;ncmpcpp
+: 1779495133:0;mkdir -p ~/.local/share/ncmpcpp/lyrics
+: 1779495138:0;ncmpcpp
+: 1779495215:0;mpd
+: 1779503035:0;yazi
+: 1779503076:0;ncmpcpp
+: 1779503181:0;yazi
+: 1779504321:0;ncmpcpp
+: 1779504359:0;htop
+: 1779504361:0;btop
+: 1779504387:0;z ncmpcpp
+: 1779504388:0;ls
+: 1779504390:0;vim config
+: 1779504459:0;ncmpcpp
+: 1779504804:0;gn
+: 1779515940:0;ls
+: 1779515942:0;z
+: 1779515944:0;yazi
+: 1779515995:0;fastfetch
+: 1779516029:0;clear
+: 1779517321:0;z music
+: 1779517325:0;z Music
+: 1779517326:0;ls
+: 1779517328:0;yazi
+: 1779517353:0;ncmpcpp
+: 1779517375:0;yazi
+: 1779517420:0;ncmpcpp
+: 1779517489:0;z ncmpcpp
+: 1779517490:0;vim
+: 1779517498:0;vim config
+: 1779517555:0;ncmpcpp
+: 1779517644:0;z local bin
+: 1779517644:0;ls
+: 1779517659:0;vim songinfo
+: 1779517681:0;z music
+: 1779517682:0;ls
+: 1779517685:0;yazi
+: 1779518053:0;z
+: 1779518059:0;songinfo
+: 1779518145:0;z Music
+: 1779518148:0;yazi
+: 1779518171:0;notify-send -i /home/phong/Music/For a sick boy/For a sick boy (1).jpg "Test Notification" "This is a test with a jpg image"\
+
+: 1779518210:0;notify-send -i /home/phong/Music/For a sick boy/Forasickboy(1).jpg "Test Notification" "This is a test with a jpg image"\
+
+: 1779518239:0;notify-send -i /home/phong/Music/'For a sick boy'/Forasickboy(1).jpg "Test Notification" "This is a test with a jpg image"\
+
+: 1779518261:0;notify-send -i /home/phong/Music/For a sick boy/Forasickboy(1).jpg "Test Notification" "This is a test with a jpg image"\
+
+: 1779518375:0;songinfo
+: 1779518400:0;ncmpcpp
+: 1779518510:0;yazi
+: 1779518514:0;z music
+: 1779518516:0;yazi
+: 1779518555:0;z local bin
+: 1779518557:0;ls
+: 1779518559:0;vim songinfo
+: 1779518734:0;echo "filename: $filename" >&2\
+echo "songdir: $songdir" >&2\
+echo "coverjpg: $coverjpg" >&2\
+
+: 1779518827:0;songinfo
+: 1779519098:0;ncmpcpp
+: 1779519157:0;cd ..
+: 1779519160:0;chezmoi add bin
+: 1779519166:0;z hypr
+: 1779519169:0;cd ..
+: 1779519173:0;chezmoi add ncmpcpp
+: 1779519179:0;chezmoi add mpd
+: 1779519183:0;chezmoi add hypr
+: 1779519189:0;pkgsave
+: 1779519201:0;dotsave
