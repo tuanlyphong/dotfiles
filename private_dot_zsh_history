@@ -1705,3 +1705,10 @@ echo "coverjpg: $coverjpg" >&2\
 : 1779519183:0;chezmoi add hypr
 : 1779519189:0;pkgsave
 : 1779519201:0;dotsave
+: 1779519215:0;ls
+: 1779519219:0;z hypr
+: 1779519219:0;ls
+: 1779519222:0;yazi
+: 1779519240:0;cd ..
+: 1779519243:0;chezmoi add hypr
+: 1779519250:0;dotsave
