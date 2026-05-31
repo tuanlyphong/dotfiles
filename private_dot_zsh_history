@@ -1712,3 +1712,251 @@ echo "coverjpg: $coverjpg" >&2\
 : 1779519240:0;cd ..
 : 1779519243:0;chezmoi add hypr
 : 1779519250:0;dotsave
+: 1779519693:0;gn
+: 1779856686:0;z task
+: 1779856691:0;z local task
+: 1779856693:0;ls
+: 1779856697:0;vim tasks.json
+: 1779879622:0;yazi
+: 1779879724:0;sudo pacman -S zathura
+: 1779879758:0;sudo pacman -S zathura-pdf-poppler\
+
+: 1779879763:0;yazi
+: 1779954572:0;z local task
+: 1779954576:0;vim tasks.json
+: 1779993365:0;aria2c "magnet:?xt=urn:btih:32b5aaaa4310657a8442bec4dedcdb7ee303ce4b&dn=%5BBDMV%5D%5BViolet%20Evergarden%5D%5BVol.1-Vol.4%20Fin%5D%5B4BD%2B4SPBD%5D&tr=http%3A%2F%2Fnyaa.tracker.wf%3A7777%2Fannounce&tr=udp%3A%2F%2Fopen.stealth.si%3A80%2Fannounce&tr=udp%3A%2F%2Ftracker.opentrackr.org%3A1337%2Fannounce&tr=udp%3A%2F%2Fexodus.desync.com%3A6969%2Fannounce&tr=udp%3A%2F%2Ftracker.torrent.eu.org%3A451%2Fannounce"
+: 1779993430:0;aria2c --max-connection-per-server=16 --split=16 --file-allocation=falloc --enable-dht=true --bt-enable-pex=true --seed-time=0 "magnet:?xt=urn:btih:32b5aaaa4310657a8442bec4dedcdb7ee303ce4b&dn=%5BBDMV%5D%5BViolet%20Evergarden%5D%5BVol.1-Vol.4%20Fin%5D%5B4BD%2B4SPBD%5D&tr=http%3A%2F%2Fnyaa.tracker.wf%3A7777%2Fannounce&tr=udp%3A%2F%2Fopen.stealth.si%3A80%2Fannounce&tr=udp%3A%2F%2Ftracker.opentrackr.org%3A1337%2Fannounce&tr=udp%3A%2F%2Fexodus.desync.com%3A6969%2Fannounce&tr=udp%3A%2F%2Ftracker.torrent.eu.org%3A451%2Fannounce"\
+\
+
+: 1779993451:0;aria2c --max-connection-per-server=16 --split=16 --file-allocation=falloc --enable-dht=true --seed-time=0 "magnet:?xt=urn:btih:32b5aaaa4310657a8442bec4dedcdb7ee303ce4b&dn=%5BBDMV%5D%5BViolet%20Evergarden%5D%5BVol.1-Vol.4%20Fin%5D%5B4BD%2B4SPBD%5D&tr=http%3A%2F%2Fnyaa.tracker.wf%3A7777%2Fannounce&tr=udp%3A%2F%2Fopen.stealth.si%3A80%2Fannounce&tr=udp%3A%2F%2Ftracker.opentrackr.org%3A1337%2Fannounce&tr=udp%3A%2F%2Fexodus.desync.com%3A6969%2Fannounce&tr=udp%3A%2F%2Ftracker.torrent.eu.org%3A451%2Fannounce"\
+\
+
+: 1779993512:0;z down
+: 1779993514:0;ls
+: 1779993522:0;aria2c \[BDMV\]\[Violet\ Evergarden\]\[Vol.1-Vol.4\ Fin\].torrent
+: 1779993549:0;aria2c --file-allocation=none "[BDMV][Violet Evergarden][Vol.1-Vol.4 Fin].torrent"\
+
+: 1779993570:0;vim /home/phong/.config/aria2/aria2.conf\
+
+: 1779993596:0;z down
+: 1779993599:0;aria2c \[BDMV\]\[Violet\ Evergarden\]\[Vol.1-Vol.4\ Fin\].torrent
+: 1779993731:0;aria2c "[BDMV][Violet Evergarden][Vol.1-Vol.4 Fin].torrent"
+: 1779993745:0;grep -n "rpc-listen-all" ~/.config/aria2/aria2.conf
+: 1779993759:0;aria2c "[BDMV][Violet Evergarden][Vol.1-Vol.4 Fin].torrent"
+: 1779993847:0;mkdir -p ~/.config/aria2\
+touch ~/.config/aria2/session.txt
+: 1779993852:0;aria2c "[BDMV][Violet Evergarden][Vol.1-Vol.4 Fin].torrent"
+: 1779993872:0;z .config
+: 1779993873:0;ls
+: 1779993875:0;cd aria2
+: 1779993875:0;ls
+: 1779993893:0;vim aria2.conf
+: 1779993916:0;z down
+: 1779993919:0;aria2c "[BDMV][Violet Evergarden][Vol.1-Vol.4 Fin].torrent"
+: 1779994040:0;ls -lh
+: 1779994045:0;file "[BDMV][Violet Evergarden][Vol.1-Vol.4 Fin].torrent"
+: 1779994051:0;z down
+: 1779994052:0;file "[BDMV][Violet Evergarden][Vol.1-Vol.4 Fin].torrent"
+: 1779994056:0;yazi
+: 1779994099:0;aria2c "[BDMV][Violet Evergarden][Vol.1-Vol.4 Fin].torrent"
+: 1780026716:0;z down
+: 1780026719:0;ls
+: 1780026722:0;yazi
+: 1780026784:0;sudo pacman -S vcl
+: 1780026797:0;sudo pacman -S vlc
+: 1780026868:0;sudo pacman -S libbluray libaacs\
+
+: 1780026896:0;vlc
+: 1780026952:0;sudo pacman -S vlc
+: 1780026978:0;sudo pacman -Syu
+: 1780027508:0;sudo pacman -S vlc
+: 1780027558:0;z down
+: 1780027559:0;ls
+: 1780027582:0;vlc \[BDMV\]\[Violet\ Evergarden\]\[Vol.1-Vol.4\ Fin\]
+: 1780027686:0;vlc '[BDMV][Violet Evergarden][Vol.1-Vol.4 Fin]'\
+
+: 1780027723:0;ls
+: 1780027725:0;cd \[BDMV\]\[Violet\ Evergarden\]\[Vol.1-Vol.4\ Fin\]
+: 1780027726:0;ls
+: 1780027728:0;yazi
+: 1780027752:0;vlc '/home/phong/Downloads/[BDMV][Violet Evergarden][Vol.1-Vol.4 Fin]/VIOLET_EVERGARDEN_1/BDMV/STREAM'
+: 1780027782:0;sudo pacman -S vlc-plugins-all\
+
+: 1780027848:0;vlc '/home/phong/Downloads/[BDMV][Violet Evergarden][Vol.1-Vol.4 Fin]/VIOLET_EVERGARDEN_1/BDMV/STREAM'
+: 1780027947:0;vlc
+: 1780028025:0;sudo pacman -S libdvdcss libdvdread libdvdnav\
+
+: 1780028031:0;vcl
+: 1780028034:0;vlc
+: 1780028163:0;clear
+: 1780028165:0;vlc
+: 1780028256:0;sudo pacman -S openjdk11-jre libbluray libaacs\
+\
+
+: 1780028269:0;vlc
+: 1780043206:0;yazi
+: 1780107443:0;yay -R hyprdict
+: 1780107686:0;git clone git@github.com:tuanlyphong/hyprdict.git
+: 1780107694:0;ls
+: 1780107698:0;cd hyprdict
+: 1780107699:0;ls
+: 1780107708:0;cd assets
+: 1780107710:0;ls
+: 1780107712:0;cd ..
+: 1780107730:0;makepkg -si
+: 1780107750:0;yazi
+: 1780107764:0;z down
+: 1780107764:0;ls
+: 1780107767:0;z hypr
+: 1780107768:0;z
+: 1780107770:0;bind
+: 1780107772:0;bindc
+: 1780107798:0;z local bin
+: 1780107800:0;yazi
+: 1780107866:0;ls
+: 1780107878:0;hyls
+: 1780107879:0;ls
+: 1780107888:0;dict_toggle.sh
+: 1780107929:0;z
+: 1780107931:0;dict_toggle.sh
+: 1780107948:0;z locl
+: 1780107953:0;z local bin
+: 1780107955:0;yazi
+: 1780107987:0;hyprdict_toggle
+: 1780107991:0;yazi
+: 1780108005:0;hyprdict_toggle
+: 1780108013:0;yazi
+: 1780108033:0;hyprdict-toggle
+: 1780108050:0;yazi
+: 1780108061:0;hyprdict-toggle
+: 1780108088:0;yazi
+: 1780108114:0;ls
+: 1780108120:0;bindc
+: 1780108132:0;ls
+: 1780108152:0;hyprdict-toggle
+: 1780108217:0;bindc
+: 1780108226:0;z local bin
+: 1780108227:0;yazi
+: 1780132568:0;hyprdict-toggle
+: 1780132580:0;bindc
+: 1780132599:0;hyprdict-toggle
+: 1780132621:0;z local bin
+: 1780132622:0;ls
+: 1780132631:0;vim hyprdict-toggle
+: 1780132690:0;z hypr
+: 1780132691:0;ls
+: 1780132700:0;bindc
+: 1780132758:0;yazi
+: 1780132806:0;hyprdict-toggle
+: 1780132871:0;vim hyprdict-toggle
+: 1780133128:0;ls
+: 1780133131:0;clear
+: 1780133132:0;ls
+: 1780133138:0;clear
+: 1780133140:0;ls
+: 1780133191:0;yazi
+: 1780133277:0;ls
+: 1780133286:0;vim
+: 1780133289:0;yazi
+: 1780133367:0;ls
+: 1780133397:0;bindc
+: 1780133452:0;yazi
+: 1780133504:0;hyprctl reload
+: 1780134242:0;z loca
+: 1780134242:0;ls
+: 1780134246:0;z bin
+: 1780134246:0;ls
+: 1780134254:0;vim hyprdict-popup
+: 1780134463:0;ls
+: 1780134479:0;word="È£Éø„Åπ„ÇÉ´" bash hyprdict-popup "È£Éø„Åπ„ÇÉ´"
+: 1780134498:0;curl -s -X POST https://jotoba.de/api/search/words \\
+  -H "Content-Type: application/json" \\
+  -d '{"query":"È£Éø„Åπ„ÇÉ´","language":"English","no_english":false}'
+: 1780134520:0;DICT_QUERY="È£Éø„Åπ„ÇÉ´" python3 -c "\
+import json, os, urllib.request\
+q = os.environ['DICT_QUERY']\
+payload = json.dumps({'query': q, 'language': 'English', 'no_english': False}).encode()\
+req = urllib.request.Request(\
+    'https://jotoba.de/api/search/words',\
+    data=payload,\
+    headers={'Content-Type': 'application/json', 'User-Agent': 'Mozilla/5.0'}\
+)\
+with urllib.request.urlopen(req, timeout=5) as r:\
+    print(r.read().decode())\
+"
+: 1780134563:0;vim hyprdict-popup
+: 1780134670:0;z local bin
+: 1780134671:0;ls
+: 1780134706:0;hyprdict-popup È£Éø„Åπ„ÇÉ´
+: 1780134960:0;z local bin
+: 1780134968:0;hyprdict-popup ÂÆÉ•ÈÉ•É≠‰æø
+: 1780135000:0;vim hyprdict-popup
+: 1780135797:0;ls
+: 1780135803:0;vim hyprdict-watch
+: 1780135891:0;which ydotool\
+which libinput
+: 1780135964:0;z down
+: 1780135964:0;ls
+: 1780135966:0;yazi
+: 1780135977:0;cd hyprdict-1.4
+: 1780135978:0;ls
+: 1780135992:0;yazi
+: 1780136089:0;ls
+: 1780136094:0;yazi
+: 1780136102:0;z hypr
+: 1780136102:0;ls
+: 1780136114:0;bindc
+: 1780136133:0;z hypr
+: 1780136134:0;ls
+: 1780136157:0;bindc
+: 1780136196:0;ls
+: 1780136201:0;yazi
+: 1780136335:0;bindc
+: 1780136360:0;z bin
+: 1780136360:0;ls
+: 1780136364:0;dict_toggle.sh
+: 1780136394:0;vim dict_watch.sh
+: 1780136406:0;yazi
+: 1780136797:0;z bin
+: 1780136797:0;ls
+: 1780136807:0;vim hyprdict-watch
+: 1780196298:0;z hypr
+: 1780196305:0;vim hyprlock.conf
+: 1780196371:0;hyprlock
+: 1780196392:0;songinfo
+: 1780196416:0;z bin
+: 1780196418:0;ls
+: 1780196421:0;vim songinfo
+: 1780196469:0;mpc --format '%title% \n%artist% - %album%' current
+: 1780196516:0;hyprlock
+: 1780196609:0;z hypr
+: 1780196615:0;vim hyprlock.conf
+: 1780221487:0;gn
+: 1780236048:0;sudo pacman -S vesktop
+: 1780242580:0;z dowb
+: 1780242583:0;z dow
+: 1780242587:0;yazi
+: 1780246505:0;sudo pacman -S lmms
+: 1780246848:0;sudo pacman -R lmms
+: 1780246854:0;sudo pacman -S ardour
+: 1780246907:0;sudo pacman -R stk libgig
+: 1780247082:0;sudo vim /etc/security/limits.conf\
+
+: 1780247088:0;sudo nvim /etc/security/limits.conf\
+
+: 1780247169:0;ulimit -l\
+
+: 1780247212:0;sudo nvim /etc/security/limits.conf\
+
+: 1780248073:0;yay -S midivisualizer
+: 1780248338:0;yay -S librepiano\
+
+: 1780248582:0;sudo pacman -S fluid-soundfont\
+
+: 1780248624:0;sudo pacman -S soundfont-fluid\
+
+: 1780248648:0;yay -S soundfont-salamander\
+
+: 1780248666:0;yay -S freepats-salamander-sf2\
+
+: 1780249709:0;dotsave
