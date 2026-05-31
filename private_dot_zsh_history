@@ -1960,3 +1960,20 @@ which libinput
 : 1780248666:0;yay -S freepats-salamander-sf2\
 
 : 1780249709:0;dotsave
+: 1780249719:0;ls
+: 1780249722:0;z hypr
+: 1780249723:0;ls
+: 1780249729:0;cd ..
+: 1780249732:0;chezmoi add hypr
+: 1780249738:0;z local
+: 1780249739:0;ls
+: 1780249743:0;chezmoi add bin
+: 1780249750:0;pkgsave
+: 1780249764:0;z config
+: 1780249764:0;ls
+: 1780249780:0;chezmoi add rofi
+: 1780249800:0;chezmoi add mpd
+: 1780249807:0;chezmoi add ncmpcpp
+: 1780249818:0;chezmoi add aria2
+: 1780249824:0;pkgsave
+: 1780249834:0;dotsave
