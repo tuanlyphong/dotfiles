@@ -64,19 +64,6 @@ return {
 			end, { desc = "Lazygit" })
 		end,
 	},
-
-	-- Markdown preview — live browser preview for your README and API docs
-	{
-		"iamcco/markdown-preview.nvim",
-		cmd = { "MarkdownPreviewToggle", "MarkdownPreview", "MarkdownPreviewStop" },
-		ft = { "markdown" },
-		build = function()
-			vim.fn.jobstart({ "npm", "install" }, { cwd = vim.fn.stdpath("data") .. "/lazy/markdown-preview.nvim/app" })
-		end,
-		keys = {
-			{ "<leader>mp", "<cmd>MarkdownPreviewToggle<cr>", desc = "Markdown preview" },
-		},
-	},
 }
 
 -- EXAMPLE .http file for testing Spring Boot endpoints:
