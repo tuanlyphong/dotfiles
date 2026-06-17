@@ -2261,3 +2261,238 @@ git push -u origin main
 : 1781109903:0;ls
 : 1781109910:0;chezmoi add nvim
 : 1781109921:0;dotsave
+: 1781114370:0;z hypr
+: 1781114372:0;bindc
+: 1781114377:0;hyprc
+: 1781114382:0;z
+: 1781114382:0;ls
+: 1781114391:0;cd ProjectBahai
+: 1781114392:0;ls
+: 1781114397:0;vim server.js
+: 1781116365:0;z animanga
+: 1781116367:0;vim
+: 1781117777:0;GET /api/v1/stream/source?episodeData=shingeki-no-kyojin$12345&provider=ANIMEVIETSUB&server=DU
+: 1781118008:0;curl "https://api.animapper.net/api/v1/search?title=attack&mediaType=ANIME&limit=5"
+: 1781118091:0;curl -i "https://api.animapper.net/api/v1/search?title=Naruto&mediaType=ANIME"
+: 1781118117:0;curl -s "https://api.animapper.net/api/v1/search?title=Naruto&mediaType=ANIME" | jq
+: 1781118280:0;curl -s "https://api.animapper.net/api/v1/search?title=attack&mediaType=ANIME&limit=10"
+: 1781118340:0;curl -s "https://api.animapper.net/api/v1/search?title=Naruto"
+: 1781118357:0;curl -s https://api.animapper.net/docs
+: 1781118373:0;curl -s https://api.animapper.net/openapi.json
+: 1781118401:0;curl -s "https://api.animapper.net/api/v1/search?title=shingeki&mediaType=ANIME&status=FINISHED&season=SPRING&seasonYear=2013&limit=20&offset=0"
+: 1781118448:0;curl -s "https://api.animapper.net/api/v1/stream/source?episodeData=shingeki-no-kyojin$12345&provider=ANIMEVIETSUB&server=DU"
+: 1781118490:0;curl "https://api.animapper.net/api/v1/stream/source?episodeData=shingeki-no-kyojin\$12345&provider=ANIMEVIETSUB&server=DU"
+: 1781118521:0;curl "https://api.animapper.net/api/v1/stream/source?episodeData=shingeki-no-kyojin$12345&provider=ANIMEVIETSUB&server=DU"
+: 1781118548:0;curl "https://api.animapper.net/api/v1/stream/source?episodeData=shingeki-no-kyojin%2412345&provider=ANIMEVIETSUB&server=DU"
+: 1781118556:0;curl -s "https://api.animapper.net/api/v1/stream/source?episodeData=shingeki-no-kyojin%2412345&provider=ANIMEVIETSUB&server=DU" | jq
+: 1781118595:0;curl -i "https://api.animapper.net/api/v1/stream/episodes?id=16498&provider=ANIMEVIETSUB"
+: 1781118619:0;curl -i "https://api.animapper.net/api/v1/stream/source?episodeData=a20%2422967&provider=ANIMEVIETSUB&server=AnimeVsub"
+: 1781118648:0;sleep 20\
+\
+curl -s \\
+"https://api.animapper.net/api/v1/stream/source?episodeData=a20%2422967&provider=ANIMEVIETSUB&server=AnimeVsub" \\
+| jq
+: 1781118835:0;bash -c "$(curl -sL https://raw.githubusercontent.com/KabosuNeko/sudachi/main/sudachi.sh)"
+: 1781120384:0;ls
+: 1781120387:0;yazi
+: 1781120464:0;z bin
+: 1781120466:0;ls
+: 1781120474:0;vim sudachi.sh
+: 1781120494:0;chmod +x sudachi.sh
+: 1781120502:0;cd ..
+: 1781120510:0;chezmoi add bin
+: 1781120519:0;bindc
+: 1781120591:0;z bin
+: 1781120592:0;ls
+: 1781120601:0;sudachi.sh
+: 1781120796:0;ls
+: 1781120809:0;z bin
+: 1781120810:0;ls
+: 1781120819:0;bindc
+: 1781121268:0;z bin
+: 1781121269:0;ls
+: 1781121272:0;vim sudachi.sh
+: 1781121502:0;z bin
+: 1781121507:0;ls
+: 1781121512:0;./sudachi.sh
+: 1781121615:0;sudachi.sh
+: 1781122135:0;zbin
+: 1781122137:0;z bin
+: 1781122138:0;;s
+: 1781122140:0;ls
+: 1781122146:0;vim animelist
+: 1781122180:0;animelist
+: 1781122719:0;ls
+: 1781122721:0;vim animelist
+: 1781122736:0;animelist
+: 1781123414:0;z down
+: 1781123415:0;ls
+: 1781123424:0;chmod +x anisuda\
+sudo mv anisuda /usr/local/bin/anisuda   # or ~/bin/anisuda\
+anisuda
+: 1781123445:0;ls
+: 1781123451:0;z bin
+: 1781123452:0;ls
+: 1781123455:0;anisuda
+: 1781123516:0;ls
+: 1781123525:0;sudachi.sh
+: 1781123584:0;anisuda
+: 1781123981:0;yazi
+: 1781124018:0;sudachi.sh
+: 1781124115:0;ls
+: 1781124124:0;z config
+: 1781124126:0;yazi
+: 1781124366:0;vim sudachi.sh
+: 1781124375:0;z bin
+: 1781124377:0;vim sudachi.sh
+: 1781124397:0;sudachi.sh
+: 1781124408:0;vim sudachi.sh
+: 1781124425:0;sudachi.sh
+: 1781124440:0;vim sudachi.sh
+: 1781124452:0;sudachi.sh
+: 1781124462:0;vim sudachi.sh
+: 1781124474:0;sudachi.sh
+: 1781124483:0;vim sudachi.sh
+: 1781124488:0;sudachi.sh
+: 1781124505:0;z bin
+: 1781124506:0;ls
+: 1781124508:0;vim sudachi.sh
+: 1781124515:0;sudachi.sh
+: 1781124527:0;ls
+: 1781124529:0;vim sudachi.sh
+: 1781124612:0;sudachi.sh
+: 1781124658:0;vim sudachi.sh
+: 1781124684:0;sudachi.sh
+: 1781124713:0;vim sudachi.sh
+: 1781124729:0;sudachi.sh
+: 1781124763:0;vim sudachi.sh
+: 1781124895:0;sudachi.sh
+: 1781125032:0;curl -s "https://api.animapper.net/api/v1/stream/episodes?id=16498&provider=ANIMEVIETSUB" | jq '.episodes | length'
+: 1781125085:0;z bin
+: 1781125087:0;ls
+: 1781125091:0;vim sudachi.sh
+: 1781125155:0;sudachi.sh
+: 1781125242:0;vim sudachi.sh
+: 1781125260:0;sudachi.sh
+: 1781125340:0;ls
+: 1781125341:0;yazi
+: 1781125350:0;z bin
+: 1781125353:0;ls
+: 1781125358:0;yazi
+: 1781125379:0;ls
+: 1781125383:0;rm anisuda
+: 1781125390:0;sudo rm anisuda
+: 1781125392:0;ls
+: 1781125449:0;z dow
+: 1781125450:0;ls
+: 1781125452:0;yazi
+: 1781125491:0;chmod +x install.sh
+: 1781125495:0;./install.sh
+: 1781125500:0;animelist
+: 1781125566:0;bindc
+: 1781125702:0;z bin
+: 1781125702:0;ls
+: 1781125705:0;vim animelist
+: 1781126487:0;animelist
+: 1781126546:0;vim animelist
+: 1781144327:0;lsusb
+: 1781207685:0;gn
+: 1781276206:0;z etc bin
+: 1781276210:0;z appli
+: 1781276212:0;ls
+: 1781276219:0;z etc app
+: 1781276222:0;yazi
+: 1781276237:0;z bin share app
+: 1781276240:0;z bin
+: 1781276252:0;z usr bin share 
+: 1781276254:0;z usr 
+: 1781276257:0;z bin
+: 1781276261:0;ls
+: 1781276272:0;z /usr/share/applications
+: 1781276274:0;ls
+: 1781276283:0;sudo rm nyaa.desktop
+: 1781344190:0;yazi
+: 1781353436:0;sudo chown -R phong /usr/share/soundfonts\
+
+: 1781420988:0;yazi
+: 1781459318:0;z down
+: 1781459319:0;ls
+: 1781459320:0;yazi
+: 1781504174:0;ssh bandit0@bandit.labs.overthewire.org -p 2220\
+
+: 1781504294:0;ssh bandit1@bandit.labs.overthewire.org -p 2220\
+
+: 1781504354:0;ssh bandit2@bandit.labs.overthewire.org -p 2220\
+
+: 1781504472:0;ssh bandit3@bandit.labs.overthewire.org -p 2220\
+
+: 1781505943:0;ls
+: 1781505943:0;lsa
+: 1781506077:0;tldr du
+: 1781506128:0;ssh bandit4@bandit.labs.overthewire.org -p 2220\
+
+: 1781506290:0;ssh bandit5@bandit.labs.overthewire.org -p 2220\
+
+: 1781506669:0;tldr find
+: 1781506874:0;ssh bandit6@bandit.labs.overthewire.org -p 2220\
+
+: 1781506956:0;tldr grep
+: 1781508370:0;ssh bandit7@bandit.labs.overthewire.org -p 2220\
+
+: 1781508520:0;ssh bandit8@bandit.labs.overthewire.org -p 2220\
+
+: 1781508622:0;ssh bandit9@bandit.labs.overthewire.org -p 2220\
+
+: 1781508755:0;ssh bandit10@bandit.labs.overthewire.org -p 2220\
+
+: 1781508849:0;ssh bandit11@bandit.labs.overthewire.org -p 2220\
+
+: 1781509146:0;ssh bandit12@bandit.labs.overthewire.org -p 2220\
+
+: 1781509848:0;ssh bandit13@bandit.labs.overthewire.org -p 2220\
+
+: 1781510029:0;ssh bandit14@bandit.labs.overthewire.org -p 2220\
+
+: 1781510076:0;ssh bandit13@bandit.labs.overthewire.org -p 2220\
+
+: 1781510136:0;ssh bandit14@bandit.labs.overthewire.org -p 2220\
+
+: 1781510148:0;ssh bandit13@bandit.labs.overthewire.org -p 2220\
+
+: 1781510336:0;ls
+: 1781510354:0;vim sshkey.private
+: 1781510373:0;ssh -i sshkey.private bandit14@localhost -p 2220
+: 1781510406:0;ssh -i sshkey.private bandit14@bandit.labs.overthewire.org -p 2220\
+
+: 1781510422:0;yazi
+: 1781510441:0;ssh bandit13@bandit.labs.overthewire.org -p 2220\
+
+: 1781510704:0;ls
+: 1781510720:0;vim sshkey.private
+: 1781510745:0;chmod 600 sshkey.private
+: 1781510755:0;ssh -i sshkey.private bandit14@bandit.labs.overthewire.org -p 2220\
+
+: 1781510762:0;ls
+: 1781510764:0;yazi
+: 1781510861:0;ssh bandit14@bandit.labs.overthewire.org -p 2220\
+
+: 1781511151:0;ssh bandit15@bandit.labs.overthewire.org -p 2220\
+
+: 1781511760:0;gn
+: 0:0;
+: 1781590040:0;gb
+: 1781677055:0;v4l2-ctl --list-devices\
+
+: 1781677075:0;ls -l /dev/video*\
+
+: 1781677084:0;v4l2-ctl --list-devices\
+
+: 1781677737:0;obs
+: 1781677792:0;sudo modprobe v4l2loopback devices=1 video_nr=10 card_label="OBS Virtual Camera" exclusive_caps=1
+: 1781677802:0;v4l2-ctl --list-devices\
+
+: 1781692197:0;ls
+: 1781692206:0;z config
+: 1781692207:0;ls
+: 1781692218:0;chezmoi add animelist/
+: 1781692225:0;dotsave

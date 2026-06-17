@@ -1,0 +1,779 @@
+#!/usr/bin/env python3
+"""
+animelist — a vim/ncmpcpp-style TUI for tracking anime & manga
+Uses Jikan API (MAL) for anime, MangaDex API for manga.
+"""
+
+import curses
+import curses.textpad
+import sqlite3
+import json
+import subprocess
+import sys
+import os
+import time
+import threading
+from datetime import datetime
+from typing import Optional
+import requests
+
+# ─── Config ───────────────────────────────────────────────────────────────────
+DB_PATH = os.path.expanduser("~/.config/animelist/list.db")
+JIKAN_BASE = "https://api.jikan.moe/v4"
+MANGADEX_BASE = "https://api.mangadex.org"
+
+STATUS_COLORS = {
+    "Airing":         "green",
+    "Finished Airing":"cyan",
+    "Not yet aired":  "yellow",
+    "Publishing":     "green",
+    "Completed":      "cyan",
+    "Hiatus":         "yellow",
+    "Discontinued":   "red",
+    "Axed":           "red",
+    "Unknown":        "white",
+}
+
+HELP_TEXT = [
+    ("j / ↓",    "move down"),
+    ("k / ↑",    "move up"),
+    ("g / G",    "jump top / bottom"),
+    ("a",        "add entry"),
+    ("d",        "delete entry"),
+    ("u",        "refresh status from API"),
+    ("U",        "refresh ALL entries"),
+    ("/",        "fzf fuzzy search"),
+    ("TAB",      "toggle anime ↔ manga"),
+    ("ENTER",    "edit current episode/chapter"),
+    ("?",        "toggle this help"),
+    ("q",        "quit"),
+]
+
+# ─── Database ─────────────────────────────────────────────────────────────────
+
+def init_db() -> sqlite3.Connection:
+    os.makedirs(os.path.dirname(DB_PATH), exist_ok=True)
+    conn = sqlite3.connect(DB_PATH)
+    conn.row_factory = sqlite3.Row
+    conn.execute("""
+        CREATE TABLE IF NOT EXISTS entries (
+            id          INTEGER PRIMARY KEY AUTOINCREMENT,
+            media_type  TEXT NOT NULL DEFAULT 'anime',
+            title       TEXT NOT NULL,
+            mal_id      INTEGER,
+            current_ep  INTEGER DEFAULT 0,
+            latest_ep   INTEGER,
+            status      TEXT DEFAULT 'Unknown',
+            score       TEXT,
+            updated_at  TEXT,
+            added_at    TEXT DEFAULT (datetime('now'))
+        )
+    """)
+    conn.commit()
+    return conn
+
+
+def get_entries(conn: sqlite3.Connection, media_type: str) -> list:
+    cur = conn.execute(
+        "SELECT * FROM entries WHERE media_type=? ORDER BY added_at DESC",
+        (media_type,)
+    )
+    return [dict(r) for r in cur.fetchall()]
+
+
+def add_entry(conn: sqlite3.Connection, media_type: str, title: str,
+              mal_id: Optional[int], status: str, latest_ep: Optional[int],
+              score: Optional[str]) -> int:
+    cur = conn.execute(
+        """INSERT INTO entries (media_type, title, mal_id, status, latest_ep, score)
+           VALUES (?, ?, ?, ?, ?, ?)""",
+        (media_type, title, mal_id, status, latest_ep, score)
+    )
+    conn.commit()
+    return cur.lastrowid
+
+
+def delete_entry(conn: sqlite3.Connection, entry_id: int):
+    conn.execute("DELETE FROM entries WHERE id=?", (entry_id,))
+    conn.commit()
+
+
+def update_current(conn: sqlite3.Connection, entry_id: int, current: int):
+    conn.execute(
+        "UPDATE entries SET current_ep=?, updated_at=datetime('now') WHERE id=?",
+        (current, entry_id)
+    )
+    conn.commit()
+
+
+def update_from_api(conn: sqlite3.Connection, entry: dict):
+    conn.execute(
+        """UPDATE entries SET status=?, latest_ep=?, score=?,
+           updated_at=datetime('now') WHERE id=?""",
+        (entry["status"], entry["latest_ep"], entry["score"], entry["id"])
+    )
+    conn.commit()
+
+# ─── API ──────────────────────────────────────────────────────────────────────
+
+def _get(url: str, params: dict = None, timeout: int = 8) -> Optional[dict]:
+    try:
+        r = requests.get(url, params=params, timeout=timeout)
+        r.raise_for_status()
+        return r.json()
+    except Exception:
+        return None
+
+
+def search_anime(query: str) -> list[dict]:
+    """Return top candidates from Jikan for title autocorrect."""
+    time.sleep(0.4)  # Jikan rate limit
+    data = _get(f"{JIKAN_BASE}/anime", params={"q": query, "limit": 6})
+    if not data or "data" not in data:
+        return []
+    results = []
+    for item in data["data"]:
+        ep = item.get("episodes")
+        airing = item.get("status", "Unknown")
+        results.append({
+            "title":     item["title"],
+            "mal_id":    item["mal_id"],
+            "status":    airing,
+            "latest_ep": ep,
+            "score":     str(item.get("score") or "N/A"),
+        })
+    return results
+
+
+def fetch_anime_status(mal_id: int) -> Optional[dict]:
+    time.sleep(0.4)
+    data = _get(f"{JIKAN_BASE}/anime/{mal_id}")
+    if not data or "data" not in data:
+        return None
+    item = data["data"]
+    # For airing anime, episodes field is None; pull from aired episodes if possible
+    ep = item.get("episodes")
+    if ep is None and item.get("status") == "Currently Airing":
+        # Try to get latest episode from episodes endpoint
+        ep_data = _get(f"{JIKAN_BASE}/anime/{mal_id}/episodes", params={"page": 1})
+        if ep_data and ep_data.get("pagination"):
+            ep = ep_data["pagination"].get("last_visible_page", None)
+            # rough: count total via last episode seen
+            items = ep_data.get("data", [])
+            if items:
+                ep = max(e["mal_id"] for e in items)
+    return {
+        "status":    item.get("status", "Unknown"),
+        "latest_ep": ep,
+        "score":     str(item.get("score") or "N/A"),
+    }
+
+
+def search_manga(query: str) -> list[dict]:
+    data = _get(f"{MANGADEX_BASE}/manga", params={
+        "title": query, "limit": 6,
+        "includes[]": "cover_art",
+    })
+    if not data or "data" not in data:
+        return []
+    results = []
+    for item in data["data"]:
+        attrs = item["attributes"]
+        titles = attrs.get("title", {})
+        title = titles.get("en") or next(iter(titles.values()), "Unknown")
+        status_map = {
+            "ongoing":      "Publishing",
+            "completed":    "Completed",
+            "hiatus":       "Hiatus",
+            "cancelled":    "Axed",
+        }
+        raw_status = attrs.get("status", "unknown")
+        status = status_map.get(raw_status, raw_status.capitalize())
+        latest = attrs.get("lastChapter")
+        results.append({
+            "title":     title,
+            "mal_id":    item["id"],   # reuse field for mangadex UUID
+            "status":    status,
+            "latest_ep": int(float(latest)) if latest and latest.replace(".","").isdigit() else None,
+            "score":     "N/A",
+        })
+    return results
+
+
+def fetch_manga_status(mangadex_id: str) -> Optional[dict]:
+    data = _get(f"{MANGADEX_BASE}/manga/{mangadex_id}")
+    if not data or "data" not in data:
+        return None
+    attrs = data["data"]["attributes"]
+    status_map = {
+        "ongoing": "Publishing", "completed": "Completed",
+        "hiatus": "Hiatus", "cancelled": "Axed",
+    }
+    raw = attrs.get("status", "unknown")
+    status = status_map.get(raw, raw.capitalize())
+    latest = attrs.get("lastChapter")
+    return {
+        "status":    status,
+        "latest_ep": int(float(latest)) if latest and latest.replace(".","").isdigit() else None,
+        "score":     "N/A",
+    }
+
+# ─── TUI helpers ──────────────────────────────────────────────────────────────
+
+COLOR_PAIRS = {}
+
+def setup_colors():
+    curses.start_color()
+    curses.use_default_colors()
+    defs = {
+        "normal":   (curses.COLOR_WHITE,   -1),
+        "header":   (curses.COLOR_BLACK,   curses.COLOR_CYAN),
+        "selected": (curses.COLOR_BLACK,   curses.COLOR_WHITE),
+        "green":    (curses.COLOR_GREEN,   -1),
+        "cyan":     (curses.COLOR_CYAN,    -1),
+        "yellow":   (curses.COLOR_YELLOW,  -1),
+        "red":      (curses.COLOR_RED,     -1),
+        "white":    (curses.COLOR_WHITE,   -1),
+        "dim":      (8,                    -1),  # dark gray if supported
+        "title":    (curses.COLOR_CYAN,    -1),
+        "border":   (curses.COLOR_BLUE,    -1),
+        "inputbox": (curses.COLOR_WHITE,   curses.COLOR_BLUE),
+        "tab_act":  (curses.COLOR_BLACK,   curses.COLOR_YELLOW),
+        "tab_ina":  (curses.COLOR_WHITE,   -1),
+        "status_ok":  (curses.COLOR_GREEN, curses.COLOR_BLACK),
+        "status_err": (curses.COLOR_RED,   curses.COLOR_BLACK),
+        "progress_fill": (curses.COLOR_CYAN, curses.COLOR_BLACK),
+        "progress_empty":(curses.COLOR_WHITE, curses.COLOR_BLACK),
+    }
+    for i, (name, (fg, bg)) in enumerate(defs.items(), start=1):
+        try:
+            curses.init_pair(i, fg, bg)
+        except Exception:
+            curses.init_pair(i, curses.COLOR_WHITE, -1)
+        COLOR_PAIRS[name] = curses.color_pair(i)
+
+
+def cp(name: str) -> int:
+    return COLOR_PAIRS.get(name, 0)
+
+
+def draw_box(win, title: str = ""):
+    win.attron(cp("border"))
+    win.box()
+    win.attroff(cp("border"))
+    if title:
+        w = win.getmaxyx()[1]
+        label = f" {title} "
+        x = max(2, (w - len(label)) // 2)
+        win.attron(cp("title") | curses.A_BOLD)
+        win.addstr(0, x, label)
+        win.attroff(cp("title") | curses.A_BOLD)
+
+
+def truncate(s: str, n: int) -> str:
+    if s is None:
+        return "—"
+    s = str(s)
+    return s if len(s) <= n else s[:n - 1] + "…"
+
+
+def status_color(status: str) -> int:
+    color = STATUS_COLORS.get(status, "white")
+    return cp(color)
+
+
+def progress_bar(current: int, latest: Optional[int], width: int = 8) -> str:
+    if not latest or latest == 0:
+        return "─" * width
+    ratio = min(current / latest, 1.0)
+    filled = int(ratio * width)
+    return "█" * filled + "░" * (width - filled)
+
+# ─── Input popup ──────────────────────────────────────────────────────────────
+
+def input_popup(stdscr, prompt: str, prefill: str = "") -> Optional[str]:
+    sh, sw = stdscr.getmaxyx()
+    w, h = 50, 5
+    y, x = (sh - h) // 2, (sw - w) // 2
+    win = curses.newwin(h, w, y, x)
+    win.attron(cp("inputbox"))
+    win.bkgd(" ", cp("inputbox"))
+    draw_box(win, prompt)
+    win.attroff(cp("inputbox"))
+    win.refresh()
+
+    # Input field
+    edit_win = curses.newwin(1, w - 4, y + 2, x + 2)
+    edit_win.bkgd(" ", cp("inputbox"))
+    edit_win.attron(cp("inputbox"))
+    edit_win.addstr(prefill)
+    edit_win.attroff(cp("inputbox"))
+    edit_win.refresh()
+
+    curses.echo()
+    curses.curs_set(1)
+    buf = prefill
+    pos = len(buf)
+
+    while True:
+        edit_win.clear()
+        edit_win.attron(cp("inputbox"))
+        display = buf[:w - 4]
+        edit_win.addstr(0, 0, display)
+        edit_win.move(0, min(pos, w - 5))
+        edit_win.attroff(cp("inputbox"))
+        edit_win.refresh()
+
+        ch = edit_win.getch()
+        if ch in (10, 13):  # Enter
+            curses.noecho()
+            curses.curs_set(0)
+            return buf.strip() or None
+        elif ch == 27:  # Esc
+            curses.noecho()
+            curses.curs_set(0)
+            return None
+        elif ch in (curses.KEY_BACKSPACE, 127, 8):
+            if pos > 0:
+                buf = buf[:pos - 1] + buf[pos:]
+                pos -= 1
+        elif ch == curses.KEY_LEFT:
+            pos = max(0, pos - 1)
+        elif ch == curses.KEY_RIGHT:
+            pos = min(len(buf), pos + 1)
+        elif ch == curses.KEY_HOME:
+            pos = 0
+        elif ch == curses.KEY_END:
+            pos = len(buf)
+        elif 32 <= ch <= 126:
+            buf = buf[:pos] + chr(ch) + buf[pos:]
+            pos += 1
+
+
+def confirm_popup(stdscr, message: str) -> bool:
+    sh, sw = stdscr.getmaxyx()
+    w, h = max(len(message) + 8, 40), 5
+    y, x = (sh - h) // 2, (sw - w) // 2
+    win = curses.newwin(h, w, y, x)
+    win.bkgd(" ", cp("inputbox"))
+    draw_box(win, "Confirm")
+    win.attron(cp("inputbox") | curses.A_BOLD)
+    win.addstr(2, (w - len(message)) // 2, message)
+    hint = "  [y] yes   [n] no  "
+    win.addstr(3, (w - len(hint)) // 2, hint)
+    win.attroff(cp("inputbox") | curses.A_BOLD)
+    win.refresh()
+    while True:
+        ch = win.getch()
+        if ch in (ord('y'), ord('Y')):
+            return True
+        if ch in (ord('n'), ord('N'), 27):
+            return False
+
+
+def select_popup(stdscr, title: str, options: list[dict], key_field: str = "title") -> Optional[dict]:
+    """Scrollable picker for API search results."""
+    if not options:
+        return None
+    sh, sw = stdscr.getmaxyx()
+    h = min(len(options) + 4, sh - 4)
+    w = min(sw - 4, 72)
+    y, x = (sh - h) // 2, (sw - w) // 2
+    win = curses.newwin(h, w, y, x)
+    win.keypad(True)
+    win.bkgd(" ", cp("inputbox"))
+
+    sel = 0
+    while True:
+        win.clear()
+        win.bkgd(" ", cp("inputbox"))
+        draw_box(win, title)
+        hint = "↑↓ navigate · ENTER select · ESC cancel"
+        win.attron(curses.A_DIM)
+        win.addstr(h - 1, max(1, (w - len(hint)) // 2), truncate(hint, w - 2))
+        win.attroff(curses.A_DIM)
+
+        for i, opt in enumerate(options):
+            if i + 2 >= h - 1:
+                break
+            row = i + 1
+            t = truncate(opt.get(key_field, "?"), w - 24)
+            ep = opt.get("latest_ep", "?")
+            st = truncate(opt.get("status", ""), 18)
+            line = f" {t:<{w-28}} {str(ep):>4} ep  {st}"
+            if i == sel:
+                win.attron(cp("selected") | curses.A_BOLD)
+            else:
+                win.attron(cp("inputbox"))
+            win.addstr(row, 1, truncate(line, w - 2))
+            if i == sel:
+                win.attroff(cp("selected") | curses.A_BOLD)
+            else:
+                win.attroff(cp("inputbox"))
+
+        win.refresh()
+        ch = win.getch()
+        if ch in (curses.KEY_UP, ord('k')):
+            sel = max(0, sel - 1)
+        elif ch in (curses.KEY_DOWN, ord('j')):
+            sel = min(len(options) - 1, sel + 1)
+        elif ch in (10, 13):
+            return options[sel]
+        elif ch == 27:
+            return None
+
+
+def notify(stdscr, msg: str, error: bool = False):
+    sh, sw = stdscr.getmaxyx()
+    attr = cp("status_err") | curses.A_BOLD if error else cp("status_ok") | curses.A_BOLD
+    label = f"  {msg}  "
+    stdscr.attron(attr)
+    stdscr.addstr(sh - 1, sw - len(label) - 1, truncate(label, sw - 2))
+    stdscr.attroff(attr)
+    stdscr.refresh()
+
+# ─── fzf search ───────────────────────────────────────────────────────────────
+
+def fzf_select(entries: list[dict]) -> Optional[dict]:
+    if not entries:
+        return None
+    lines = []
+    for e in entries:
+        ep = e.get("current_ep", 0)
+        lat = e.get("latest_ep") or "?"
+        st = e.get("status", "Unknown")
+        lines.append(f"{e['id']}\t{e['title']}\t{ep}/{lat}\t{st}")
+    inp = "\n".join(lines)
+    try:
+        proc = subprocess.run(
+            ["fzf", "--delimiter=\t", "--with-nth=2,3,4",
+             "--header=Title / Progress / Status",
+             "--border=rounded", "--height=40%",
+             "--preview-window=hidden"],
+            input=inp, capture_output=True, text=True
+        )
+        if proc.returncode == 0:
+            chosen_id = int(proc.stdout.strip().split("\t")[0])
+            return next((e for e in entries if e["id"] == chosen_id), None)
+    except FileNotFoundError:
+        return None
+    return None
+
+# ─── Add flow ─────────────────────────────────────────────────────────────────
+
+def add_flow(stdscr, conn: sqlite3.Connection, media_type: str) -> Optional[str]:
+    raw = input_popup(stdscr, f"Add {media_type} title")
+    if not raw:
+        return None
+
+    notify(stdscr, f"Searching '{raw}'…")
+    stdscr.refresh()
+
+    if media_type == "anime":
+        candidates = search_anime(raw)
+    else:
+        candidates = search_manga(raw)
+
+    if not candidates:
+        notify(stdscr, f"No results for '{raw}'", error=True)
+        time.sleep(1.2)
+        return None
+
+    chosen = select_popup(stdscr, f"Select {media_type}", candidates)
+    if not chosen:
+        return None
+
+    add_entry(
+        conn, media_type,
+        chosen["title"], chosen["mal_id"],
+        chosen["status"], chosen["latest_ep"], chosen["score"]
+    )
+    return chosen["title"]
+
+# ─── Refresh worker ───────────────────────────────────────────────────────────
+
+def refresh_entry(conn: sqlite3.Connection, entry: dict) -> bool:
+    try:
+        if entry["media_type"] == "anime" and entry["mal_id"]:
+            data = fetch_anime_status(entry["mal_id"])
+        elif entry["media_type"] == "manga" and entry["mal_id"]:
+            data = fetch_manga_status(entry["mal_id"])
+        else:
+            return False
+        if data:
+            entry.update(data)
+            update_from_api(conn, entry)
+            return True
+    except Exception:
+        pass
+    return False
+
+# ─── Main TUI ─────────────────────────────────────────────────────────────────
+
+def draw_header(stdscr, tab: str, sw: int):
+    stdscr.attron(cp("header") | curses.A_BOLD)
+    stdscr.addstr(0, 0, " " * sw)
+    logo = "  animelist"
+    stdscr.addstr(0, 0, logo)
+
+    tabs = [("anime", " ANIME "), ("manga", " MANGA ")]
+    tx = sw - sum(len(t) for _, t in tabs) - 2
+    for key, label in tabs:
+        if key == tab:
+            stdscr.attroff(cp("header") | curses.A_BOLD)
+            stdscr.attron(cp("tab_act") | curses.A_BOLD)
+        else:
+            stdscr.attroff(cp("header") | curses.A_BOLD)
+            stdscr.attron(cp("tab_ina"))
+        stdscr.addstr(0, tx, label)
+        tx += len(label)
+        stdscr.attroff(cp("tab_act") | curses.A_BOLD)
+        stdscr.attroff(cp("tab_ina"))
+    stdscr.attroff(cp("header") | curses.A_BOLD)
+
+
+def draw_columns(stdscr, y: int, sw: int):
+    col_w = _col_widths(sw)
+    headers = ["Title", "Status", "Latest", "Current", "Progress"]
+    x = 1
+    stdscr.attron(curses.A_BOLD | curses.A_UNDERLINE)
+    for i, h in enumerate(headers):
+        stdscr.addstr(y, x, truncate(h, col_w[i]))
+        x += col_w[i] + 1
+    stdscr.attroff(curses.A_BOLD | curses.A_UNDERLINE)
+
+
+def _col_widths(sw: int) -> list[int]:
+    # title | status | latest | current | bar
+    title_w = max(sw - 2 - 16 - 8 - 8 - 12, 20)
+    return [title_w, 16, 7, 7, 11]
+
+
+def draw_entry(stdscr, y: int, sw: int, entry: dict, selected: bool):
+    col_w = _col_widths(sw)
+    if selected:
+        stdscr.attron(cp("selected") | curses.A_BOLD)
+        stdscr.addstr(y, 0, " " * (sw - 1))
+    else:
+        stdscr.attron(cp("normal"))
+
+    x = 1
+    # Title
+    stdscr.addstr(y, x, truncate(entry["title"], col_w[0]))
+    x += col_w[0] + 1
+
+    # Status
+    if not selected:
+        stdscr.attroff(cp("normal"))
+        stdscr.attron(status_color(entry["status"]))
+    stdscr.addstr(y, x, truncate(entry["status"], col_w[1]))
+    if not selected:
+        stdscr.attroff(status_color(entry["status"]))
+        stdscr.attron(cp("normal"))
+    x += col_w[1] + 1
+
+    # Latest
+    stdscr.addstr(y, x, truncate(str(entry["latest_ep"] or "?"), col_w[2]))
+    x += col_w[2] + 1
+
+    # Current
+    stdscr.addstr(y, x, truncate(str(entry["current_ep"] or "0"), col_w[3]))
+    x += col_w[3] + 1
+
+    # Progress bar
+    bar = progress_bar(entry["current_ep"] or 0, entry["latest_ep"], 9)
+    stdscr.addstr(y, x, bar[:col_w[4]])
+
+    stdscr.attroff(cp("selected") | curses.A_BOLD)
+    stdscr.attroff(cp("normal"))
+
+
+def draw_help(stdscr, sh: int, sw: int):
+    h = len(HELP_TEXT) + 4
+    w = 44
+    y, x = (sh - h) // 2, (sw - w) // 2
+    win = curses.newwin(h, w, y, x)
+    win.bkgd(" ", cp("inputbox"))
+    draw_box(win, "Keybindings")
+    for i, (key, desc) in enumerate(HELP_TEXT):
+        win.attron(cp("cyan") | curses.A_BOLD)
+        win.addstr(i + 2, 3, f"{key:<12}")
+        win.attroff(cp("cyan") | curses.A_BOLD)
+        win.attron(cp("inputbox"))
+        win.addstr(i + 2, 15, desc)
+        win.attroff(cp("inputbox"))
+    win.refresh()
+    win.getch()
+
+
+def main(stdscr):
+    curses.curs_set(0)
+    stdscr.keypad(True)
+    setup_colors()
+    stdscr.clear()
+
+    conn = init_db()
+    tab = "anime"
+    cursor = 0
+    scroll = 0
+    status_msg = ""
+    status_err = False
+
+    def set_status(msg, err=False):
+        nonlocal status_msg, status_err
+        status_msg = msg
+        status_err = err
+
+    while True:
+        stdscr.erase()
+        sh, sw = stdscr.getmaxyx()
+        list_h = sh - 5  # header(1) + col_header(1) + separator(1) + statusbar(1) + padding
+
+        entries = get_entries(conn, tab)
+
+        # Clamp cursor
+        if entries:
+            cursor = max(0, min(cursor, len(entries) - 1))
+            if cursor < scroll:
+                scroll = cursor
+            elif cursor >= scroll + list_h:
+                scroll = cursor - list_h + 1
+        else:
+            cursor = scroll = 0
+
+        # Draw
+        draw_header(stdscr, tab, sw)
+        draw_columns(stdscr, 1, sw)
+        # Separator
+        stdscr.attron(cp("border"))
+        stdscr.addstr(2, 0, "─" * (sw - 1))
+        stdscr.attroff(cp("border"))
+
+        visible = entries[scroll: scroll + list_h]
+        for i, entry in enumerate(visible):
+            draw_entry(stdscr, 3 + i, sw, entry, (scroll + i) == cursor)
+
+        # Empty state
+        if not entries:
+            msg = f"No {tab} tracked yet.  Press 'a' to add one."
+            stdscr.attron(curses.A_DIM)
+            stdscr.addstr(sh // 2, max(0, (sw - len(msg)) // 2), msg)
+            stdscr.attroff(curses.A_DIM)
+
+        # Status bar
+        bar_y = sh - 1
+        count_info = f" {tab.upper()} · {len(entries)} entries"
+        if cursor < len(entries):
+            e = entries[cursor]
+            updated = e.get("updated_at") or e.get("added_at") or ""
+            updated = updated[:10] if updated else "never"
+            count_info += f" · updated {updated}"
+        keys_hint = " [?]help [TAB]switch [a]add [d]del [u]refresh [/]search [q]quit "
+        stdscr.attron(cp("header"))
+        stdscr.addstr(bar_y, 0, truncate(count_info + " " * (sw - len(count_info) - len(keys_hint) - 2), sw - len(keys_hint) - 2))
+        stdscr.addstr(bar_y, sw - len(keys_hint) - 1, keys_hint)
+        stdscr.attroff(cp("header"))
+
+        if status_msg:
+            notify(stdscr, status_msg, status_err)
+
+        stdscr.refresh()
+
+        # ── Input ──
+        key = stdscr.getch()
+        status_msg = ""
+
+        if key in (ord('q'), ord('Q')):
+            break
+
+        elif key in (ord('j'), curses.KEY_DOWN):
+            cursor = min(len(entries) - 1, cursor + 1) if entries else 0
+
+        elif key in (ord('k'), curses.KEY_UP):
+            cursor = max(0, cursor - 1)
+
+        elif key == ord('g'):
+            cursor = 0
+
+        elif key == ord('G'):
+            cursor = max(0, len(entries) - 1)
+
+        elif key == ord('\t'):
+            tab = "manga" if tab == "anime" else "anime"
+            cursor = 0
+            scroll = 0
+
+        elif key == ord('?'):
+            draw_help(stdscr, sh, sw)
+
+        elif key == ord('a'):
+            title = add_flow(stdscr, conn, tab)
+            if title:
+                set_status(f"Added '{title}'")
+            else:
+                set_status("Add cancelled", err=False)
+
+        elif key == ord('d'):
+            if entries and cursor < len(entries):
+                e = entries[cursor]
+                if confirm_popup(stdscr, f"Delete '{truncate(e['title'], 30)}'?"):
+                    delete_entry(conn, e["id"])
+                    set_status(f"Deleted '{e['title']}'")
+                    cursor = max(0, cursor - 1)
+
+        elif key in (10, 13, curses.KEY_ENTER):  # Enter → edit current ep
+            if entries and cursor < len(entries):
+                e = entries[cursor]
+                label = "episode" if tab == "anime" else "chapter"
+                val = input_popup(stdscr, f"Current {label}", str(e["current_ep"] or 0))
+                if val is not None:
+                    try:
+                        update_current(conn, e["id"], int(val))
+                        set_status(f"Updated to {label} {val}")
+                    except ValueError:
+                        set_status("Invalid number", err=True)
+
+        elif key == ord('u'):
+            if entries and cursor < len(entries):
+                e = entries[cursor]
+                set_status(f"Refreshing '{truncate(e['title'], 25)}'…")
+                stdscr.refresh()
+                ok = refresh_entry(conn, e)
+                if ok:
+                    set_status(f"Refreshed '{truncate(e['title'], 25)}'")
+                else:
+                    set_status("Refresh failed (API or no ID)", err=True)
+
+        elif key == ord('U'):
+            if entries:
+                set_status(f"Refreshing all {len(entries)} entries…")
+                stdscr.refresh()
+                ok = 0
+                for e in entries:
+                    if refresh_entry(conn, e):
+                        ok += 1
+                    time.sleep(0.3)
+                set_status(f"Refreshed {ok}/{len(entries)} entries")
+
+        elif key == ord('/'):
+            all_entries = get_entries(conn, tab)
+            chosen = fzf_select(all_entries)
+            if chosen:
+                idx = next((i for i, e in enumerate(all_entries) if e["id"] == chosen["id"]), 0)
+                cursor = idx
+
+    conn.close()
+
+
+def run():
+    try:
+        curses.wrapper(main)
+    except KeyboardInterrupt:
+        pass
+    except Exception as e:
+        print(f"Error: {e}", file=sys.stderr)
+        raise
+
+
+if __name__ == "__main__":
+    run()
