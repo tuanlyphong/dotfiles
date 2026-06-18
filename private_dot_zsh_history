@@ -2783,3 +2783,68 @@ mpc play
 : 1781769195:0;cd ..
 : 1781769198:0;chezmoi add bin
 : 1781769202:0;dotsave
+: 1781769242:0;z nitri
+: 1781769245:0;z niri
+: 1781769246:0;ls
+: 1781769249:0;vim config.kdl
+: 1781769409:0;z usr bin
+: 1781769410:0;ls
+: 1781769415:0;z local bin
+: 1781769492:0;z bin
+: 1781769492:0;ls
+: 1781769495:0;yazi
+: 1781769506:0;chezmoi add bin
+: 1781769508:0;cd ..
+: 1781769511:0;chezmoi add bin
+: 1781769515:0;z config
+: 1781769516:0;ls
+: 1781769519:0;yazi
+: 1781769530:0;z local share
+: 1781769536:0;cd tasknotify/
+: 1781769541:0;yazi
+: 1781769553:0;ls
+: 1781769555:0;cd ..
+: 1781769556:0;ld
+: 1781769557:0;ls
+: 1781769563:0;yazi
+: 1781769633:0;sudo pacman -S trash-cli
+: 1781769650:0;vim ~/.config/yazi/keymap.toml
+: 1781769666:0;yazi
+: 1781769979:0;z yazi
+: 1781769980:0;ls
+: 1781769983:0;vim yazi.toml
+: 1781769989:0;vim keymap.toml
+: 1781770068:0;yazi
+: 1781770254:0;vim keymap.toml
+: 1781770508:0;mkdir -p ~/.config/yazi\
+vim ~/.config/yazi/trash.sh
+: 1781770521:0;chmod +x ~/.config/yazi/trash.sh
+: 1781770577:0;z yazi
+: 1781770578:0;ls
+: 1781770580:0;yazi
+: 1781770602:0;vim empty-trash.sh
+: 1781770610:0;chmod +x ~/.config/yazi/empty-trash.sh
+: 1781770618:0;vim restore.sh
+: 1781770630:0;chmod +x ~/.config/yazi/restore.sh
+: 1781770735:0;vim restore.sh
+: 1781770745:0;chmod +x ~/.config/yazi/restore.sh
+: 1781770760:0;vim keymap.toml
+: 1781770860:0;yazi
+: 1781770947:0;z yazi
+: 1781770948:0;ls
+: 1781770956:0;vim empty-trash.sh
+: 1781770967:0;trash-empty
+: 1781770973:0;trash-empty -y
+: 1781770980:0;trash-empty 
+: 1781771132:0;ls
+: 1781771134:0;z yazi
+: 1781771136:0;vim restore.sh
+: 1781771143:0;yazi
+: 1781771259:0;sudo pacman -R trash-cli
+: 1781771294:0;ya pkg add carlosguzu/recover
+: 1781771305:0;vim keymap.toml
+: 1781771363:0;yazi
+: 1781771385:0;cd ..
+: 1781771386:0;ls
+: 1781771394:0;chezmoi add yazi
+: 1781771411:0;dotsave pkgsave

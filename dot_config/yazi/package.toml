@@ -63,5 +63,10 @@ use = "yazi-rs/plugins:jump-to-char"
 rev = "5d5c480"
 hash = "7a4b4237223aaa94e589d1c01a23542a"
 
+[[plugin.deps]]
+use = "carlosguzu/recover"
+rev = "a4c26d2"
+hash = "43dbbdae2b7fd36b7f8f8c600f6d4dca"
+
 [flavor]
 deps = []

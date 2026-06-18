@@ -335,16 +335,15 @@ binds {
 
 
     // Play/Pause music
+        Mod+M hotkey-overlay-title="ncmcpp" {
+        spawn "kitty" "ncmpcpp";
+    }
+
     Mod+S hotkey-overlay-title="Play/Pause Music" {
         spawn "mpc" "toggle";
     }
     Mod+D hotkey-overlay-title="Play Next Music" {
-        spawn "mpc" "toggle";
-    }
-
-    // Task notifications
-    Mod+M hotkey-overlay-title="Task Notifications" {
-        spawn "~/.local/bin/tasknotify.sh";
+        spawn "mpc" "next";
     }
 
     // Rclone
