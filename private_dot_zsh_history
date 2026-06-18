@@ -2648,3 +2648,62 @@ sha256sum ~/.local/share/dms-anime-sounds/message.wav
 : 1781757327:0;dotsave
 : 1781757335:0;chezmoi add ./
 : 1781757337:0;dotsave
+: 1781757344:0;yazi
+: 1781757413:0;pkill Hyprland\
+pkill hyprland
+: 1781757419:0;ps aux | grep -i hypr
+: 1781757425:0;systemctl --user list-units | grep -i hypr
+: 1781757435:0;rm -rf ~/.config/hypr\
+rm -rf ~/.cache/hyprland\
+rm -rf ~/.local/state/hyprland
+: 1781757440:0;find ~/.config -maxdepth 2 -iname "*hypr*"
+: 1781757454:0;sudo rm /usr/share/wayland-sessions/hyprland.desktop
+: 1781758643:0;sudo pacman -Rns hyprland hyprpaper hypridle hyprlock hyprutils
+: 1781758656:0;sudo pacman -Rns hyprland hyprutils
+: 1781758704:0;sudo pacman -Rns hyprlang xdg-desktop-portal-hyprland
+: 1781758770:0;sudo pacman -Rns hyprland hyprcursor hyprland-guiutils hyprtoolkit
+: 1781758777:0;sudo pacman -Rns xdg-desktop-portal-hyprland hyprlang
+: 1781758784:0;sudo pacman -Rns hyprutils
+: 1781758792:0;pactree -r hyprlang
+: 1781758798:0;pacman -Qi hyprlang
+: 1781758805:0;pacman -Q | grep hypr
+: 1781758812:0;z config
+: 1781758813:0;yazi
+: 1781758819:0;z .config
+: 1781758820:0;yazi
+: 1781758844:0;ls /usr/share/wayland-sessions/\
+ls /usr/share/xsessions/
+: 1781758852:0;ls /usr/share/wayland-sessions/ | grep -i hypr
+: 1781759070:0;z local bin
+: 1781759071:0;ls
+: 1781759073:0;yazi
+: 1781759247:0;sudo pacman -R nm-applet
+: 1781759261:0;sudo pacman -R network-manager-applet
+: 1781759767:0;z niri
+: 1781759768:0;ls
+: 1781759771:0;cd dms
+: 1781759772:0;ls
+: 1781759778:0;cd ..
+: 1781759779:0;ls
+: 1781759781:0;vim config.kdl
+: 1781760041:0;niri msg outputs
+: 1781760073:0;z niri
+: 1781760074:0;vim config.kdl
+: 1781760117:0;z niri
+: 1781760119:0;vim config.kdl
+: 1781765728:0;z niro
+: 1781765731:0;z nir
+: 1781765734:0;yazi
+: 1781766141:0;z niri
+: 1781766142:0;ls
+: 1781766144:0;yazi
+: 1781766828:0;z niri
+: 1781766830:0;vim config.kdl
+: 1781766870:0;yazi
+: 1781767301:0;ls
+: 1781767307:0;z .config
+: 1781767308:0;ls
+: 1781767311:0;yazi
+: 1781767391:0;chezmoi add ./
+: 1781767404:0;pkgsave
+: 1781767413:0;dotsave

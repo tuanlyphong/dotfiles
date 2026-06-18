@@ -1,2 +1,54 @@
 // DMS Window Rules - Managed by DankMaterialShell
 // Do not edit manually - changes may be overwritten
+
+// @id=wr_1781765891259225544 @name=zen
+window-rule {
+    match app-id="^zen$"
+    open-maximized true
+    open-focused true
+    open-on-workspace "browser"
+}
+
+// @id=wr_1781766367582417627 @name=kitty
+window-rule {
+    match app-id="^kitty$"
+    open-focused true
+    open-on-workspace "code"
+}
+
+// @id=wr_1781766541461941602 @name=heroic
+window-rule {
+    match app-id="^heroic$"
+    open-fullscreen true
+    open-focused true
+}
+
+// @id=wr_1781767039966167174 @name=org.quickshell
+window-rule {
+    match app-id="^org.quickshell$"
+    open-maximized true
+    open-focused true
+}
+
+// @id=wr_1781767126132961465 @name=org.kde.krita
+window-rule {
+    match app-id="^org.kde.krita$"
+    open-maximized-to-edges true
+    open-focused true
+    open-on-workspace "hobby"
+}
+
+// @id=wr_1781767214023407201 @name=Ardour-9.7.0
+window-rule {
+    match app-id="^Ardour-9.7.0$"
+    open-focused true
+    open-on-workspace "hobby"
+}
+
+// @id=wr_1781767250710641625 @name=Ardour
+window-rule {
+    match app-id="^Ardour$"
+    open-fullscreen true
+    open-focused true
+    open-on-workspace "hobby"
+}
