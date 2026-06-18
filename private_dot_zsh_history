@@ -58,7 +58,6 @@ sudo pacman -S lua51
 : 1778670418:0;sudo pacman -S tree-sitter-cli
 : 1778670544:0;vim https://claude.ai/chat/858654e5-bd0e-45e9-9a64-f6f1725aa552
 : 1778670560:0;vim ~/.config/gtk-3.0/settings.ini
-: 1778670849:0;vim hyprland.conf
 : 1778670863:0;vim rules.conf
 : 1778670936:0;hyprctl version
 : 1778671164:0;hyprctl reload\
@@ -189,7 +188,6 @@ print('done')\
 : 1778683146:0;./configure && make && sudo make install
 : 1778683153:0;sudo luarocks install luasocket
 : 1778683164:0;lua
-: 1778683279:0;cd share
 : 1778683306:0;cd nvim
 : 1778683313:0;cd lazy
 : 1778683818:0;sudo pacman -S hyprlock hypridle
@@ -209,7 +207,6 @@ touch ~/.config/aria2/session.txt
 : 1778685121:0;systemctl --user enable --now aria2\
 systemctl --user status aria2
 : 1778685415:0;sudo pacman -S cliphist
-: 1778685434:0;hypc
 : 1778685676:0;# 1. Create a temp dir and init sparse checkout\
 git clone --no-checkout --depth=1 --filter=blob:none \\
   https://github.com/Pahasara/HyprDots.git /tmp/hyprdots\
@@ -226,7 +223,6 @@ cp -r .config/rofi ~/.config/\
 cd ~\
 rm -rf /tmp/hyprdots
 : 1778685707:0;cd rofi
-: 1778685741:0;hyprc
 : 1778686176:0;z pacman
 : 1778686189:0;sudo nvim /etc/aria2-pacman.conf
 : 1778686199:0;cd /etc
@@ -377,7 +373,6 @@ mkdir -p ~/.pkgbackup\
 cd ~/.pkgbackup\
 git init\
 git remote add origin https://github.com/tuanlyphong/pkglist.git
-: 1778694512:0;zbin
 : 1778694594:0;# Install scripts\
 chmod +x pkgsave pkgrestore\
 sudo mv pkgsave pkgrestore /usr/local/bin/\
@@ -527,7 +522,6 @@ sudo wg-quick up /etc/wireguard/warp.conf
 
 : 1778740126:0;sudo systemctl start warp-svc.service
 : 1778740202:0;warp-cli 
-: 1778740239:0;sudo systemctl enable --now warp-svc.service
 : 1778740253:0;sudo systemctl restart warp-svc
 : 1778740276:0;warp-cli mode proxy\
 warp-cli connect\
@@ -605,12 +599,9 @@ curl -s -o /dev/null -w "%{http_code}" https://nyaa.lol/
 ./test.sh
 : 1778745961:0;sudo git clone -b master --depth 1 https://github.com/keyitdev/sddm-astronaut-theme.git /usr/share/sddm/themes/sddm-astronaut-theme
 : 1778745985:0;z etc 
-: 1778745987:0;vim sddm.conf
-: 1778746007:0;sudo nvim sddm.conf
 : 1778746040:0;sudo cp -r /usr/share/sddm/themes/sddm-astronaut-theme/Fonts/* /usr/share/fonts/
 : 1778746056:0;echo "[General]\
 InputMethod=qtvirtualkeyboard" | sudo tee /etc/sddm.conf.d/virtualkbd.conf
-: 1778746137:0;cd sddm-astronaut-theme
 : 1778746158:0;z theme
 : 1778746407:0;sddm-greeter-qt6 --test-mode --theme /usr/share/sddm/themes/sddm-astronaut-theme/
 : 1778746864:0;sudo pacman -S mpv fmpeg libplacebo
@@ -620,7 +611,6 @@ Current=silent" | sudo tee /etc/sddm.conf
 : 1778747123:0;silent
 : 1778747129:0;./change_avatar.sh
 : 1778747155:0;./change_avatar.sh phong icons/art_download.png
-: 1778747162:0;sudo nvim metadata.desktop
 : 1778747299:0;sudo pacman -S mediainfo
 : 1778747427:0;yazi -debug
 : 1778747504:0;sudo pacman -S mediainfo fzf fd fzf chafa ueberzugpp zoxide 7-zip resvg
@@ -670,13 +660,10 @@ grep -n "setup\|return\|M\." ~/.config/yazi/plugins/git.yazi/main.lua | head -10
 : 1778749321:0;z them
 : 1778749445:0;mpv fox-girl-ice-cream-break.1920x1080.mp4
 : 1778749497:0;vim execs.conf
-: 1778749720:0;cd configs
-: 1778749724:0;vim rei.conf
 : 1778749879:0;sudo nvim rei.conf
 : 1778750003:0;z .local bin
 : 1778750609:0;sudo pacman -S swww
 : 1778750618:0;vim random-wall
-: 1778750627:0;random-wall
 : 1778750697:0;walld
 : 1778750716:0;vim walld
 : 1778750846:0;swww-daemon &
@@ -684,21 +671,13 @@ grep -n "setup\|return\|M\." ~/.config/yazi/plugins/git.yazi/main.lua | head -10
 : 1778750909:0;awww img /home/phong/Pictures/Wallpapers/wp5595374-chilling-at-night-anime-wallpapers.jpg
 : 1778750930:0;systemctl --user enable --now awww-daemon
 : 1778751060:0;vim miku.css
-: 1778751234:0;vim general.conf
 : 1778752170:0;warp-cli proxy 4000\
 
 : 1778752192:0;warp-cli proxy port 4000\
 
 : 1778752196:0;warp-cli proxy port 40000\
 
-: 1778752278:0;warp-cli registration delete\
-
-: 1778752283:0;warp-cli registration new\
-
-: 1778752292:0;warp-cli mode warp\
-
 : 1778752303:0;warp-cli sta
-: 1778752490:0;warp-cli connect
 : 1778752586:0;warp-cli mode proxy\
 
 : 1778752597:0;warp-cli proxy port 8118\
@@ -717,20 +696,13 @@ warp-cli connect
 : 1778753363:0;curl --proxy http://127.0.0.1:8443 https://ifconfig.me
 : 1778753400:0;curl --proxy http://127.0.0.1:8443 https://nyaa.si
 : 1778753416:0;curl https://nyaa.si
-: 1778753503:0;lsa
 : 1778753584:0;warp-cli settings
 : 1778753643:0;zshc\
 
 : 1778753685:0;warp-cli mode proxy
 : 1778753692:0;warp-cli proxy port 8118
-: 1778753697:0;warp-cli connect\
-
 : 1778753831:0;warp-cli registration delete
 : 1778753835:0;warp-cli registration new
-: 1778753846:0;warp-cli mode warp\
-warp-cli connect
-: 1778753889:0;warp-cli disconnect\
-
 : 1778753964:0;warp-cli -h
 : 1778754027:0;cd scripts
 : 1778754038:0;vim warp.conf
@@ -754,7 +726,6 @@ warp-cli connect
 : 1778756360:0;sudo pacman -S dmenu
 : 1778756370:0;sudo pacman -S rofi-script-to-dmenu
 : 1778756375:0;yay -S rofi-script-to-dmenu
-: 1778756480:0;cd silent
 : 1778770339:0;rofi \\
   -show p \\
   -modi p:'rofi-power-menu --symbols-font "Symbols Nerd Font Mono"' \\
@@ -809,7 +780,6 @@ warp-cli connect
 : 1778776296:0;z sound
 : 1778776310:0;z local sound
 : 1778776338:0;play-notify-sound
-: 1778776410:0;z sounds
 : 1778776417:0;cp ~/.local/share/sounds/sound.mp3 .
 : 1778776421:0;cd .
 : 1778776446:0;vim config.json
@@ -855,7 +825,6 @@ sudo systemctl reset-failed\
 : 1778779036:0;z rofi
 : 1778779056:0;vim grimblast
 : 1778779116:0;z clip
-: 1778779176:0;z etc bin
 : 1778779188:0;hyprctl
 : 1778779208:0;yay -S hyprdict
 : 1778779233:0;cd yay-bin
@@ -874,11 +843,6 @@ sudo systemctl reset-failed\
 : 1778779862:0;sudo pacman -S wl-clipboard
 : 1778779885:0;grep -rnw ~/ -e "Nothing is copied" 2>/dev/null\
 
-: 1778782049:0;vim warp.sh
-: 1778782132:0;warp-cli status\
-
-: 1778782136:0;warp-cli settings\
-
 : 1778785421:0;mediainfo \[Erai-raws\]\ Mato\ Seihei\ no\ Slave\ -\ 12\ \[1080p\]\[3F6562A0\].mkv
 : 1778791747:0;z mpv
 : 1778791749:0;vim mpv.conf
@@ -896,7 +860,6 @@ sudo systemctl reset-failed\
 : 1778793705:0;cd bin
 : 1778793731:0;chezmoi add .
 : 1778793820:0;chezmoi add .zsh_history warp.conf 
-: 1778793910:0;z chez
 : 1778793940:0;chezmoi add .pkglist.txt
 : 1778822018:0;systemctl --user daemon-reload\
 systemctl --user restart tasknotify-check.timer\
@@ -927,9 +890,7 @@ systemctl --user restart tasknotify-check.timer
 : 1778855577:0;git clone https://github.com/catppuccin/grub.git && cd grub
 : 1778855585:0;sudo cp -r src/* /usr/share/grub/themes/
 : 1778855597:0;GRUB_THEME="/usr/share/grub/themes/catppuccin-<flavor>-grub-theme/theme.txt"
-: 1778855655:0;z etc
 : 1778855661:0;z default/
-: 1778855937:0;sudo yazi
 : 1778856319:0;sudo grub-script-check /etc/default/grub
 : 1778856450:0;z themes
 : 1778856469:0;vim catppuccin-macchiato-grub-theme
@@ -942,20 +903,13 @@ systemctl --user restart tasknotify-check.timer
 : 1778857155:0;vim grub
 : 1778857252:0;sudo nvim grub
 : 1778857406:0;sudo grub-mkconfig -o /boot/grub/grub.cfg
-: 1778857714:0;cd themes
-: 1778858189:0;z sddm
 : 1778858364:0;vim Main.qml
 : 1778858370:0;sudo nvim Main.qml
-: 1778858471:0;nvim
 : 1778858741:0;source ~/.zshrc
 : 1778858842:0;sudo nvim
 : 1778859121:0;sudo nvim LoginScreen.qml
-: 1778859252:0;z silent
-: 1778859278:0;cd components
-: 1778859437:0;vim LoginScreen.qml
 : 1778859517:0;vim LockScreen.qml
 : 1778859585:0;sudo nvim LockScreen.qml
-: 1778859632:0;./test.sh
 : 1778862407:0;vim --version | grep clipboard
 : 1778862412:0;vim --version | grep clipboardn
 : 1778862417:0;nvim --version | grep clipboard
@@ -1296,7 +1250,6 @@ journalctl --user -u tasknotify-check.service -n 20
 : 1779339859:0;mkdir latest-java-app && cd latest-java-app\
 gradle init\
 
-: 1779388492:0;gb
 : 1779440207:0;vim tasknotify.sh
 : 1779440585:0;./tasknotify.sh
 : 1779444263:0;wine --version
@@ -1329,7 +1282,6 @@ gradle init\
 : 1779463555:0;z local share steam
 : 1779463558:0;z local share 
 : 1779463562:0;z steam
-: 1779463568:0;z local share
 : 1779463576:0;z Steam
 : 1779463581:0;z compatibilitytools.d
 : 1779463668:0;cd Programs
@@ -1351,7 +1303,6 @@ gradle init\
 : 1779465665:0;z games
 : 1779465889:0;sudo pacman -Syu winetricks giflib lib32-giflib libpng lib32-png libldap lib32-ldap gnutls lib32-gnutls mpg123 lib32-mpg123 openal lib32-openal v4l-utils lib32-v4l-utils libpulse lib32-pulse libgpg-error lib32-gpg-error alsa-plugins lib32-alsa-plugins alsa-lib lib32-alsa-lib clinfo\
 
-: 1779466528:0;warp-cli status
 : 1779466752:0;winetricks mfc42
 : 1779466845:0;sudo pacman -S winetrick
 : 1779466856:0;sudo pacman -S winetricks
@@ -1362,8 +1313,6 @@ gradle init\
 
 : 1779467247:0;z con
 : 1779467251:0;cd ncmpcpp
-: 1779467272:0;z usr
-: 1779467281:0;z usr share
 : 1779467285:0;z doc
 : 1779467505:0;vim now-playing
 : 1779467570:0;systemctl --user enable mpd\
@@ -1393,7 +1342,6 @@ mpc ls
 : 1779473561:0;z desktop
 : 1779473572:0;z app
 : 1779473577:0;z local share app
-: 1779473817:0;z plugins
 : 1779473821:0;vim codecompanion.lua
 : 1779473939:0;chmod +x nikke.sh
 : 1779473975:0;./Nikke.sh
@@ -1431,11 +1379,8 @@ uname -r\
 
 : 1779484753:0;sudo pacman -R linux linux-headers\
 
-: 1779484773:0;sudo pacman -Syuu
 : 1779485141:0;sudo grub-mkconfig -o /boot/grub/grub.cfg\
 
-: 1779485168:0;reboot
-: 1779485202:0;yay
 : 1779485301:0;yay -S heroic-games-launcher-bin
 : 1779487317:0;sudo pacman -S \\
 nvidia nvidia-utils lib32-nvidia-utils \\
@@ -1458,7 +1403,6 @@ lib32-nvidia-580xx-utils
 : 1779493367:0;systemctl --user edit mpd.service\
 
 : 1779493633:0;mpc stop
-: 1779493649:0;mpc toggle
 : 1779494227:0;killall mpc
 : 1779494446:0;z mpd
 : 1779494665:0;systemctl --user enable --now mpd
@@ -1475,7 +1419,6 @@ systemctl --user status mpd
 : 1779495133:0;mkdir -p ~/.local/share/ncmpcpp/lyrics
 : 1779495215:0;mpd
 : 1779504359:0;htop
-: 1779515995:0;fastfetch
 : 1779517489:0;z ncmpcpp
 : 1779517498:0;vim config
 : 1779518145:0;z Music
@@ -1512,7 +1455,6 @@ echo "coverjpg: $coverjpg" >&2\
 : 1779993745:0;grep -n "rpc-listen-all" ~/.config/aria2/aria2.conf
 : 1779993847:0;mkdir -p ~/.config/aria2\
 touch ~/.config/aria2/session.txt
-: 1779993872:0;z .config
 : 1779993875:0;cd aria2
 : 1779993893:0;vim aria2.conf
 : 1779994040:0;ls -lh
@@ -1602,18 +1544,13 @@ which libinput
 : 1780248666:0;yay -S freepats-salamander-sf2\
 
 : 1780249732:0;chezmoi add hypr
-: 1780249738:0;z local
-: 1780249743:0;chezmoi add bin
 : 1780249780:0;chezmoi add rofi
 : 1780249800:0;chezmoi add mpd
 : 1780249807:0;chezmoi add ncmpcpp
 : 1780249818:0;chezmoi add aria2
-: 1780249824:0;pkgsave
-: 1780249834:0;dotsave
 : 1780552647:0;tasknotify.sh check
 : 1780554916:0;z icon
 : 1780554924:0;z local 
-: 1780554950:0;startupc
 : 1780555114:0;vim ~/.icons/default/index.theme\
 
 : 1780737764:0;sudo /bin/sh -c "$(curl -fsSL https://static.palera.in/scripts/install.sh)"\
@@ -1879,7 +1816,6 @@ sudo usbmuxd -p -f
 rm -rf /mnt1/System/Library/CoreServices/Setup.app\
 reboot\
 
-: 1781006475:0;
 : 1780758231:0;sudo usbmuxd -p -f\
 
 : 1780758274:0;sudo ./sshrd.sh boot
@@ -1976,7 +1912,6 @@ sudo systemctl stop upower\
 sudo usbmuxd -p -f\
 
 : 1780775364:0;sudo palera1n -f
-: 1780775639:0;z down
 : 1780776326:0;gf git@github.com:dhharris/palera1n-mod.git
 : 1780776332:0;gc git@github.com:dhharris/palera1n-mod.git
 : 1780776341:0;git clone git@github.com:dhharris/palera1n-mod.git
@@ -2078,23 +2013,19 @@ file ~/palera1n-mod/ramdisk/Linux/gaster
 : 1780855785:0;yazo
 : 1780855925:0;cd ~/.local/share/nvim/lazy/markdown-preview.nvim/app
 : 1780855938:0;npm install
-: 1780856154:0;z lazy
 : 1780856170:0;z vim
 : 1780856179:0;z config vim
 : 1780856189:0;vim lazyvim.json
-: 1780856319:0;;s
 : 1780856322:0;vim prototype.md
 : 1780862701:0;vim gamemode
 : 1780862708:0;vim gamemode.md
 : 1780972566:0;npm init -y\
 npm install express socket.io uuid
-: 1780972597:0;vim server.js
 : 1780974586:0;npm install\
 node server.js          # start server on :3000\
 node test.js            # run smoke tests (server must be running)
 : 1780974653:0;npm install socket.io-client
 : 1780974745:0;npm install express socket.io socket.io-client uuid
-: 1780974949:0;clear
 : 1780975762:0;node server.js
 : 1780975781:0;z Bahai
 : 1780975788:0;node test.js
@@ -2124,7 +2055,6 @@ ls -ld /home/phong/Downloads
 : 1781005797:0;sudo systemctl disable smb.service\
 sudo systemctl disable nmb.service
 : 1781005893:0;systemctl is-enabled smb
-: 1781005925:0;gn
 : 1781006637:0;hyprctl reload
 : 1781006641:0;z bindc
 : 1781006721:0;sudo -k\
@@ -2138,7 +2068,6 @@ sudo /usr/bin/systemctl start smb.service nmb.service
 : 1781006994:0;whoami\
 groups
 : 1781007017:0;sudo -v
-: 1781007028:0;sudo pacman -Syu
 : 1781007280:0;vim Nsharing.sh
 : 1781007289:0;./Nsharing.sh
 : 1781007436:0;sudo -k\
@@ -2160,11 +2089,9 @@ sudo id
 : 1781020508:0;sudo pacman -S obs
 : 1781020524:0;sudo pacman -S obs-studio
 : 1781020585:0;sudo pacman -S v4l2loopback-dkms
-: 1781020610:0;sudo modprobe v4l2loopback devices=1 video_nr=10 card_label="OBS Virtual Camera" exclusive_caps=1
 : 1781020621:0;v4l2-ctl --list-devices
 : 1781026066:0;pactl load-module module-null-sink sink_name=virtual_sink sink_properties=device.description=VirtualSink
 : 1781026077:0;pactl list short sources
-: 1781026668:0;z dow
 : 1781026741:0;sudo pacman -S mkvtoolnix-cli\
 
 : 1781026766:0;mkvmerge -i \[NanakoRaws\]\ Kamiina\ Botan,\ Yoeru\ Sugata\ wa\ Yuri\ no\ Hana\ -\ 09\ \(AT-X\ 1080p\ HEVC\ AAC\).mkv
@@ -2178,99 +2105,36 @@ sudo id
 : 1781027761:0;sudo pacman -S qpwgraph
 : 1781028097:0;mpv --loop=inf cut_output.m4a
 : 1781028585:0;qpwgraph
-: 1781103365:0;chmod +x install.sh
-: 1781103378:0;vim
 : 1781103541:0;git init
-: 1781104006:0;yazi
 : 1781104037:0;vim .gitignore
 : 1781104133:0;vim PKGBUILD
-: 1781104150:0;./install.sh
 : 1781105784:0;git remote add origin git@github.com:tuanlyphong/animetrack.git\
 git branch -M main\
 git push -u origin main
 : 1781105794:0;ga .
 : 1781105795:0;gc
 : 1781105823:0;git push --set-upstream origin main
-: 1781105858:0;cd ..
 : 1781106008:0;z animel
-: 1781106015:0;z animanga
 : 1781106020:0;vim install.sh
 : 1781106029:0;z local bin
-: 1781106381:0;animelist
-: 1781106608:0;z hypr
-: 1781106669:0;bindc
 : 1781107436:0;z congif
 : 1781107445:0;vim list.db
-: 1781107458:0;z bin
-: 1781107461:0;vim animelist
-: 1781107502:0;z
 : 1781107508:0;sqlite3
-: 1781107529:0;z config
-: 1781107533:0;z animelist
-: 1781107534:0;ls
 : 1781107539:0;sqlite3 list.db
-: 1781107731:0;:q
-: 1781107765:0;ls
-: 1781107772:0;cd ..
-: 1781107773:0;ls
-: 1781107783:0;chezmoi add animelist
-: 1781107793:0;pkgsave
-: 1781107802:0;dotsave
-: 1781107960:0;ls
-: 1781107977:0;vim animelist
 : 1781107996:0;z animelist
-: 1781107997:0;ls
-: 1781107999:0;z
-: 1781108001:0;cd animanga
-: 1781108002:0;ls
-: 1781108007:0;vim
-: 1781108072:0;z bin
-: 1781108072:0;ls
-: 1781108075:0;vim animelist
-: 1781108451:0;git push
-: 1781108457:0;ls
 : 1781108679:0;ssh-keygen -p -f ~/.ssh/id_ed25519\
 
-: 1781108717:0;ls
-: 1781108724:0;vim README.md
 : 1781108795:0;git push
-: 1781108811:0;vim README.md
-: 1781109193:0;ls
 : 1781109224:0;vim README.md
 : 1781109273:0;z lazy
-: 1781109273:0;ls
-: 1781109281:0;z plugins
-: 1781109283:0;ls
-: 1781109288:0;vim
-: 1781109492:0;ls
-: 1781109494:0;cd ..
-: 1781109494:0;ls
-: 1781109497:0;yazi
-: 1781109522:0;ls
-: 1781109524:0;yazi
 : 1781109670:0;z plugins
-: 1781109671:0;ls
-: 1781109672:0;vim
 : 1781109759:0;z anime
-: 1781109759:0;ls
-: 1781109760:0;z
 : 1781109763:0;cd animanga
-: 1781109766:0;vim
-: 1781109898:0;ls
 : 1781109902:0;z .config
-: 1781109903:0;ls
 : 1781109910:0;chezmoi add nvim
-: 1781109921:0;dotsave
-: 1781114370:0;z hypr
-: 1781114372:0;bindc
-: 1781114377:0;hyprc
-: 1781114382:0;z
-: 1781114382:0;ls
 : 1781114391:0;cd ProjectBahai
-: 1781114392:0;ls
 : 1781114397:0;vim server.js
 : 1781116365:0;z animanga
-: 1781116367:0;vim
 : 1781117777:0;GET /api/v1/stream/source?episodeData=shingeki-no-kyojin$12345&provider=ANIMEVIETSUB&server=DU
 : 1781118008:0;curl "https://api.animapper.net/api/v1/search?title=attack&mediaType=ANIME&limit=5"
 : 1781118091:0;curl -i "https://api.animapper.net/api/v1/search?title=Naruto&mediaType=ANIME"
@@ -2293,131 +2157,35 @@ curl -s \\
 "https://api.animapper.net/api/v1/stream/source?episodeData=a20%2422967&provider=ANIMEVIETSUB&server=AnimeVsub" \\
 | jq
 : 1781118835:0;bash -c "$(curl -sL https://raw.githubusercontent.com/KabosuNeko/sudachi/main/sudachi.sh)"
-: 1781120384:0;ls
-: 1781120387:0;yazi
-: 1781120464:0;z bin
-: 1781120466:0;ls
-: 1781120474:0;vim sudachi.sh
 : 1781120494:0;chmod +x sudachi.sh
-: 1781120502:0;cd ..
 : 1781120510:0;chezmoi add bin
-: 1781120519:0;bindc
-: 1781120591:0;z bin
-: 1781120592:0;ls
-: 1781120601:0;sudachi.sh
-: 1781120796:0;ls
-: 1781120809:0;z bin
-: 1781120810:0;ls
-: 1781120819:0;bindc
-: 1781121268:0;z bin
-: 1781121269:0;ls
-: 1781121272:0;vim sudachi.sh
-: 1781121502:0;z bin
-: 1781121507:0;ls
 : 1781121512:0;./sudachi.sh
-: 1781121615:0;sudachi.sh
 : 1781122135:0;zbin
-: 1781122137:0;z bin
-: 1781122138:0;;s
-: 1781122140:0;ls
-: 1781122146:0;vim animelist
-: 1781122180:0;animelist
-: 1781122719:0;ls
-: 1781122721:0;vim animelist
-: 1781122736:0;animelist
-: 1781123414:0;z down
-: 1781123415:0;ls
 : 1781123424:0;chmod +x anisuda\
 sudo mv anisuda /usr/local/bin/anisuda   # or ~/bin/anisuda\
 anisuda
-: 1781123445:0;ls
-: 1781123451:0;z bin
-: 1781123452:0;ls
-: 1781123455:0;anisuda
-: 1781123516:0;ls
-: 1781123525:0;sudachi.sh
 : 1781123584:0;anisuda
-: 1781123981:0;yazi
-: 1781124018:0;sudachi.sh
-: 1781124115:0;ls
-: 1781124124:0;z config
-: 1781124126:0;yazi
-: 1781124366:0;vim sudachi.sh
-: 1781124375:0;z bin
-: 1781124377:0;vim sudachi.sh
-: 1781124397:0;sudachi.sh
-: 1781124408:0;vim sudachi.sh
-: 1781124425:0;sudachi.sh
-: 1781124440:0;vim sudachi.sh
-: 1781124452:0;sudachi.sh
-: 1781124462:0;vim sudachi.sh
-: 1781124474:0;sudachi.sh
-: 1781124483:0;vim sudachi.sh
-: 1781124488:0;sudachi.sh
-: 1781124505:0;z bin
-: 1781124506:0;ls
-: 1781124508:0;vim sudachi.sh
-: 1781124515:0;sudachi.sh
-: 1781124527:0;ls
-: 1781124529:0;vim sudachi.sh
-: 1781124612:0;sudachi.sh
-: 1781124658:0;vim sudachi.sh
-: 1781124684:0;sudachi.sh
-: 1781124713:0;vim sudachi.sh
-: 1781124729:0;sudachi.sh
-: 1781124763:0;vim sudachi.sh
-: 1781124895:0;sudachi.sh
 : 1781125032:0;curl -s "https://api.animapper.net/api/v1/stream/episodes?id=16498&provider=ANIMEVIETSUB" | jq '.episodes | length'
-: 1781125085:0;z bin
-: 1781125087:0;ls
-: 1781125091:0;vim sudachi.sh
-: 1781125155:0;sudachi.sh
 : 1781125242:0;vim sudachi.sh
 : 1781125260:0;sudachi.sh
-: 1781125340:0;ls
-: 1781125341:0;yazi
-: 1781125350:0;z bin
-: 1781125353:0;ls
-: 1781125358:0;yazi
-: 1781125379:0;ls
 : 1781125383:0;rm anisuda
 : 1781125390:0;sudo rm anisuda
-: 1781125392:0;ls
 : 1781125449:0;z dow
-: 1781125450:0;ls
-: 1781125452:0;yazi
 : 1781125491:0;chmod +x install.sh
 : 1781125495:0;./install.sh
-: 1781125500:0;animelist
-: 1781125566:0;bindc
-: 1781125702:0;z bin
-: 1781125702:0;ls
-: 1781125705:0;vim animelist
 : 1781126487:0;animelist
 : 1781126546:0;vim animelist
 : 1781144327:0;lsusb
-: 1781207685:0;gn
 : 1781276206:0;z etc bin
 : 1781276210:0;z appli
-: 1781276212:0;ls
 : 1781276219:0;z etc app
-: 1781276222:0;yazi
 : 1781276237:0;z bin share app
-: 1781276240:0;z bin
 : 1781276252:0;z usr bin share 
 : 1781276254:0;z usr 
-: 1781276257:0;z bin
-: 1781276261:0;ls
 : 1781276272:0;z /usr/share/applications
-: 1781276274:0;ls
 : 1781276283:0;sudo rm nyaa.desktop
-: 1781344190:0;yazi
 : 1781353436:0;sudo chown -R phong /usr/share/soundfonts\
 
-: 1781420988:0;yazi
-: 1781459318:0;z down
-: 1781459319:0;ls
-: 1781459320:0;yazi
 : 1781504174:0;ssh bandit0@bandit.labs.overthewire.org -p 2220\
 
 : 1781504294:0;ssh bandit1@bandit.labs.overthewire.org -p 2220\
@@ -2426,7 +2194,6 @@ anisuda
 
 : 1781504472:0;ssh bandit3@bandit.labs.overthewire.org -p 2220\
 
-: 1781505943:0;ls
 : 1781505943:0;lsa
 : 1781506077:0;tldr du
 : 1781506128:0;ssh bandit4@bandit.labs.overthewire.org -p 2220\
@@ -2449,52 +2216,426 @@ anisuda
 
 : 1781509146:0;ssh bandit12@bandit.labs.overthewire.org -p 2220\
 
-: 1781509848:0;ssh bandit13@bandit.labs.overthewire.org -p 2220\
-
-: 1781510029:0;ssh bandit14@bandit.labs.overthewire.org -p 2220\
-
-: 1781510076:0;ssh bandit13@bandit.labs.overthewire.org -p 2220\
-
-: 1781510136:0;ssh bandit14@bandit.labs.overthewire.org -p 2220\
-
-: 1781510148:0;ssh bandit13@bandit.labs.overthewire.org -p 2220\
-
-: 1781510336:0;ls
-: 1781510354:0;vim sshkey.private
 : 1781510373:0;ssh -i sshkey.private bandit14@localhost -p 2220
-: 1781510406:0;ssh -i sshkey.private bandit14@bandit.labs.overthewire.org -p 2220\
-
-: 1781510422:0;yazi
 : 1781510441:0;ssh bandit13@bandit.labs.overthewire.org -p 2220\
 
-: 1781510704:0;ls
 : 1781510720:0;vim sshkey.private
 : 1781510745:0;chmod 600 sshkey.private
 : 1781510755:0;ssh -i sshkey.private bandit14@bandit.labs.overthewire.org -p 2220\
 
-: 1781510762:0;ls
-: 1781510764:0;yazi
 : 1781510861:0;ssh bandit14@bandit.labs.overthewire.org -p 2220\
 
 : 1781511151:0;ssh bandit15@bandit.labs.overthewire.org -p 2220\
 
 : 1781511760:0;gn
-: 0:0;
+: 1781711631:0;
 : 1781590040:0;gb
-: 1781677055:0;v4l2-ctl --list-devices\
-
 : 1781677075:0;ls -l /dev/video*\
-
-: 1781677084:0;v4l2-ctl --list-devices\
 
 : 1781677737:0;obs
 : 1781677792:0;sudo modprobe v4l2loopback devices=1 video_nr=10 card_label="OBS Virtual Camera" exclusive_caps=1
 : 1781677802:0;v4l2-ctl --list-devices\
 
-: 1781692197:0;ls
-: 1781692206:0;z config
-: 1781692207:0;ls
 : 1781692218:0;chezmoi add animelist/
-: 1781692225:0;dotsave
 : 1781692237:0;pkgsave
 : 1781692291:0;dotsave
+: 1781707733:0;sudo pacman -Syu niri xwayland-satellite xdg-desktop-portal-gnome xdg-desktop-portal-gtk alacritty dms-shell-niri matugen cava qt6-multimedia-ffmpeg\
+systemctl --user add-wants niri.service dms
+: 1781708723:0;mkdir -p ~/.config/niri\
+cp /usr/share/niri/config.kdl ~/.config/niri/config.kdl
+: 1781708802:0;niri-session
+: 1781708869:0;cd niri
+: 1781709081:0;hypc
+: 1781709167:0;z nri
+: 1781710688:0;kill waybar
+: 1781710694:0;killall waybar
+: 1781711451:0;Ctrl\
+Ctrl\
+Ctrl\
+Ctrl\
+
+: 1781711472:0;niri msg output
+: 1781711540:0;niri msg action reload-config
+: 1781711551:0;niri msg action load-config-file
+: 1781711631:0;exit
+: 1781712199:0;sudo pacman -S power-profiles-daemon cups-pk-helper kimageformats
+: 1781712222:0;systemctl status power-profiles-daemon
+: 1781712238:0;sudo systemctl enable --now power-profiles-daemon
+: 1781712443:0;vim general.conf
+: 1781712462:0;vim hyprland.conf
+: 1781712669:0;bindc
+: 1781712747:0;zen-browser
+: 1781712856:0;hyprc
+: 1781713044:0;sudo -R grimblast
+: 1781713051:0;sudo pacman -R grimblast
+: 1781713071:0;yay -R grimblast
+: 1781713151:0;niri
+: 1781713968:0;sudo pacman -S fuzzel
+: 1781714003:0;sudo pacman -R fuzzel
+: 1781714095:0;~/.local/bin/animelist
+: 1781714234:0;warp.sh
+: 1781714240:0;./warp.sh
+: 1781714561:0;startupc
+: 1781714844:0;which dms\
+which dank-material-shell
+: 1781714949:0;dms clipboard
+: 1781714973:0;dms clipboard cliphist-migrate
+: 1781715003:0;dms clipboard history
+: 1781715598:0;sudo pacman -R cliphist
+: 1781716160:0;brightnessctl get\
+brightnessctl max
+: 1781716170:0;sudo pacman -R nmtui
+: 1781716179:0;sudo pacman -R nm-tui
+: 1781716236:0;sudo pacman -R networkmanager
+: 1781716272:0;sudo pacman -R networkmanager network-manager-applet
+: 1781716469:0;~/.config/dms/\
+~/.config/dank-material-shell/
+: 1781718136:0;dms media
+: 1781718275:0;playerctl -l
+: 1781718314:0;sudo pacman -S mpdris2
+: 1781718341:0;mpDris2
+: 1781719518:0;z hypr
+: 1781719522:0;vim warp.sh
+: 1781719650:0;sudo systemctl status warp-svc
+: 1781719679:0;warp-cli status\
+warp-cli tunnel stats
+: 1781719690:0;warp-cli registration show\
+warp-cli registration license
+: 1781719709:0;warp-cli disconnect\
+warp-cli disable-always-on\
+warp-cli connect\
+sleep 5\
+warp-cli status
+: 1781719961:0;warp-cli
+: 1781719973:0;warp-cli disconnect\
+\
+\
+\
+
+: 1781719984:0;sudo pacman -Syu
+: 1781720455:0;/home/phong/.local/bin/walld
+: 1781720475:0;.//home/phong/.local/bin/random-wall
+: 1781720479:0;./home/phong/.local/bin/random-wall
+: 1781720483:0;z bin
+: 1781720509:0;random-wall
+: 1781720978:0;sudo pacman -R awww
+: 1781721441:0;sudo pacman -R hyprlock
+: 1781721449:0;sudo pacman -R hypridle
+: 1781721601:0;mpc toggle
+: 1781721852:0;warp-cli registration show\
+warp-cli account\
+warp-cli settings
+: 1781722034:0;sudo pacman -R warp-cli
+: 1781722137:0;warp-cli mode warp\
+warp-cli connect
+: 1781722156:0;sudo systemctl status --now warp-svc.service
+: 1781722343:0;sudo systemctl disable --now warp-svc
+: 1781722350:0;sudo pacman -Rns cloudflare-warp-bin
+: 1781722354:0;rm -rf $HOME/.warp
+: 1781722360:0;sudo pacman -S cloudflare-warp-bin
+: 1781722378:0;sudo systemctl enable --now warp-svc.service
+: 1781722524:0;systemctl status warp-svc
+: 1781722563:0;warp-cli connect\
+sleep 3\
+warp-cli status
+: 1781722574:0;journalctl -u warp-svc -f
+: 1781722659:0;sudo warp-cli deregister
+: 1781722672:0;sudo warp-cli registration
+: 1781722696:0;warp-cli registration delete\
+\
+
+: 1781722701:0;warp-cli registration show\
+\
+
+: 1781722706:0;warp-cli registration new\
+\
+
+: 1781722715:0;warp-cli registration connect\
+\
+
+: 1781722726:0;warp-cli mode watp\
+\
+
+: 1781722729:0;warp-cli mode warp\
+\
+
+: 1781722776:0;sudo systemctl status warp-svc\
+# If it is stopped, run:\
+sudo systemctl enable --now warp-svc\
+
+: 1781722785:0;warp-cli reset-settings\
+warp-cli registration new\
+warp-cli connect\
+
+: 1781722809:0;sudo systemctl restart systemd-resolved
+: 1781722814:0;warp-cli reset\
+warp-cli registration new\
+warp-cli connect\
+
+: 1781722818:0;warp-cli registration new\
+warp-cli connect\
+
+: 1781722826:0;warp-cli registration delete\
+warp-cli registration new\
+warp-cli connect\
+
+: 1781722860:0;warp-cli set-mode proxy\
+warp-cli connect\
+
+: 1781722901:0;\
+warp-cli connect\
+
+: 1781722968:0;warp-cli connect
+: 1781722977:0;warp-cli settings\
+
+: 1781723066:0;# Disable Always On so disconnect actually sticks\
+warp-cli set-always-on false\
+\
+# Now disconnect will stay disconnected\
+warp-cli disconnect
+: 1781723131:0;warp-cli disconnect
+: 1781723139:0;warp-cli status\
+\
+
+: 1781723226:0;warp-cli status --watch   # if supported on your version\
+# or poll manually:\
+watch -n 2 warp-cli status
+: 1781723273:0;# 1. Is the daemon running?\
+systemctl status warp-svc\
+\
+# 2. What does status say?\
+warp-cli status\
+\
+# 3. Any errors in the log?\
+journalctl -u warp-svc -n 50 --no-pager\
+\
+# 4. Try connecting and grab the full output\
+warp-cli connect
+: 1781723341:0;# 1. Watch status in real time while connecting\
+warp-cli status & warp-cli connect && sleep 3 && warp-cli status\
+\
+# 2. Get fuller logs around the connect attempt\
+journalctl -u warp-svc -n 200 --no-pager | grep -E "ERROR|WARN|connect|tunnel|MASQUE|Failed|attempt"\
+\
+# 3. Test if Cloudflare endpoints are reachable (MASQUE uses UDP 443)\
+curl -v https://engage.cloudflareclient.com\
+nc -vzu 162.159.193.1 443   # UDP reachability\
+\
+# 4. Check if MASQUE/QUIC is being blocked â€ƒ´ fall back to WireGuard\
+warp-cli tunnel protocol set wireguard\
+warp-cli connect\
+warp-cli status
+: 1781723413:0;# 1. Load the module\
+sudo modprobe nf_tables\
+\
+# 2. Verify it loaded\
+lsmod | grep nf_tables\
+\
+# 3. Try connecting now\
+warp-cli connect\
+warp-cli status
+: 1781723473:0;# 1. Is nf_tables built into the kernel?\
+zcat /proc/config.gz | grep NF_TABLES\
+# Look for: CONFIG_NF_TABLES=y (built-in) vs =m (module) vs not set (absent)\
+\
+# 2. Does nft actually work?\
+sudo nft list tables\
+\
+# 3. Is nftables installed?\
+pacman -Qs nftables\
+which nft && nft --version
+: 1781723530:0;sudo pacman -Syuu
+: 1781723549:0;yay
+: 1781723838:0;yazii
+: 1781723896:0;z silemt
+: 1781723915:0;vim metadata.desktop.pacnew
+: 1781724193:0;z local share
+: 1781724440:0;warp-cli status
+: 1781724587:0;z etc sddm
+: 1781724673:0;vim metadata.desktop
+: 1781724722:0;vim rei.conf
+: 1781724780:0;mv metadata.desktop.pacnew metadata.desktop
+: 1781724788:0;sudo mv metadata.desktop.pacnew metadata.desktop
+: 1781724884:0;sudo nvim metadata.desktop
+: 1781724981:0;cd them
+: 1781725385:0;cd configs
+: 1781726510:0;sudo cp -r /usr/share/sddm/themes/sddm-silent /usr/share/sddm/themes/sddm-silent-custom
+: 1781726533:0;sudo cp -r /usr/share/sddm/themes/silent /usr/share/sddm/themes/sddm-silent-custom
+: 1781726879:0;z down
+: 1781726946:0;mv /home/phong/Downloads/lonely-night-train-moewalls-com.mp4 /usr/share/sddm/themes/sddm-silent-custom/backgrounds/rei.mp4
+: 1781726959:0;sudo mv /home/phong/Downloads/lonely-night-train-moewalls-com.mp4 /usr/share/sddm/themes/sddm-silent-custom/backgrounds/rei.mp4
+: 1781727030:0;rm rei2.png
+: 1781727039:0;sudo rm rei2.png
+: 1781727051:0;sudo rm rei1.png
+: 1781727078:0;rm rei.png
+: 1781727085:0;sudo rm rei.png
+: 1781727145:0;sudo vim
+: 1781727167:0;vim
+: 1781727189:0;cd components
+: 1781727213:0;vim LoginScreen.qml
+: 1781729028:0;sudo mv LoginScreen.qml /usr/share/sddm/themes/sddm-silent-custom/components/LoginScreen.qml
+: 1781729038:0;sudo mv LockScreen.qml /usr/share/sddm/themes/sddm-silent-custom/components/LockScreen.qml
+: 1781729057:0;sudo mv Main.qml /usr/share/sddm/themes/sddm-silent-custom/Main.qml
+: 1781729096:0;nvim sddm.conf
+: 1781729169:0;chezmoi add sddm.conf
+: 1781729191:0;z custom
+: 1781729202:0;chezmoi add sddm-silent-custom
+: 1781729457:0;# 1. Copy the live theme into your dotfiles repo as the source of truth\
+mkdir -p ~/.local/share/chezmoi/dot_local/share/sddm/themes/sddm-silent-custom\
+sudo cp -r /usr/share/sddm/themes/sddm-silent-custom ~/.local/share/chezmoi/dot_local/share/sddm/themes/sddm-silent-custom/\
+sudo chown -R "$USER":"$USER" ~/.local/share/chezmoi/dot_local/share/sddm/themes/sddm-silent-custom\
+\
+# 2. Remove the original system copy and symlink it back to your home dir's chezmoi-managed copy\
+sudo rm -rf /usr/share/sddm/themes/sddm-silent-custom\
+sudo ln -s "$HOME/.local/share/sddm/themes/sddm-silent-custom" /usr/share/sddm/themes/sddm-silent-custom
+: 1781729511:0;chezmoi add ~/.local/share/sddm/themes/sddm-silent-custom\
+chezmoi diff   # sanity check before applying\
+chezmoi apply\
+\
+
+: 1781729620:0;z chez
+: 1781729659:0;sudo pacman -R alacritty
+: 1781729710:0;chezmoi add animelist
+: 1781729742:0;chezmoi add cava dunst niri
+: 1781729752:0;chezmoi add menus
+: 1781729947:0;sudo pacman -R hexchat
+: 1781730400:0;mpc next
+: 1781731976:0;dms --help
+: 1781731993:0;dms greeter
+: 1781732172:0;dms brightness
+: 1781732188:0;dms brightness list
+: 1781732244:0;fastfetch
+: 1781750672:0;sudo pacman -R hyprpicker
+: 1781750688:0;sudo pacman -R hyprpicker grimblast-git
+: 1781751545:0;dms plugins install emojiLauncher
+: 1781752082:0;cat ~/.config/rofi/config.rasi\
+grep -rn "modi\|calc\|emoji" ~/.config/rofi/\
+which rofi-emoji rofi-calc 2>/dev/null
+: 1781752110:0;sudo pacman -R rofi-emoji
+: 1781752117:0;sudo pacman -R rofi-calc
+: 1781753031:0;nvim
+: 1781753179:0;ls /usr/share/quickshell/dms/assets/sounds/freedesktop/
+: 1781753194:0;notify-send "Test Title" "This is a test notification"
+: 1781753227:0;dms ipc call audio status
+: 1781753249:0;notify-send "Sound Test" "Does this play a sound?"
+: 1781753686:0;cd ~/.local/share/dms-anime-sounds
+: 1781753718:0;mkdir ~/.local/share/dms-anime-sounds
+: 1781753722:0;cd ~/.local/share/dms-anime-sounds\
+\
+ffmpeg -i ~/Downloads/tuturu.mp3 -ar 44100 -ac 2 -sample_fmt s16 message.wav\
+cp message.wav message-new-instant.wav\
+\
+ffmpeg -i message.wav -c:a libvorbis message.oga\
+ffmpeg -i message-new-instant.wav -c:a libvorbis message-new-instant.oga
+: 1781753725:0;z
+: 1781753805:0;sudo mv /usr/share/quickshell/dms/assets/sounds/freedesktop \\
+        /usr/share/quickshell/dms/assets/sounds/freedesktop.orig
+: 1781753836:0;cp /usr/share/quickshell/dms/assets/sounds/freedesktop.orig/audio-volume-change.wav \\
+   /usr/share/quickshell/dms/assets/sounds/freedesktop.orig/audio-volume-change.oga \\
+   ~/.local/share/dms-anime-sounds/
+: 1781753841:0;ls ~/.local/share/dms-anime-sounds
+: 1781753846:0;sudo ln -s ~/.local/share/dms-anime-sounds /usr/share/quickshell/dms/assets/sounds/freedesktop
+: 1781753892:0;dms restart 
+: 1781753947:0;ls -la /usr/share/quickshell/dms/assets/sounds/
+: 1781753986:0;md5sum /usr/share/quickshell/dms/assets/sounds/freedesktop/message.wav\
+md5sum /usr/share/quickshell/dms/assets/sounds/freedesktop.orig/message.wav
+: 1781753996:0;z dms anim
+: 1781754062:0;notify-send "Test" "Tuturu?"
+: 1781754099:0;notify-send -u critical "Test" "Tuturu critical?"notify-send -u critical "Test" "Tuturu critical?"
+: 1781754219:0;z usr share theme
+: 1781754258:0;z silent cus
+: 1781754271:0;chmod +x test.sh
+: 1781754329:0;z usr share
+: 1781754334:0;cd sddm
+: 1781754342:0;cd sddm-astronaut-theme
+: 1781754406:0;cd sddm-silent-custom
+: 1781754416:0;cd themes
+: 1781754429:0;z usr
+: 1781754544:0;ls -la /usr/share/sddm/themes/sddm-silent-custom/
+: 1781754575:0;cat /usr/share/sddm/themes/sddm-silent-custom/metadata.desktop
+: 1781754599:0;cd /usr/share/sddm/themes/sddm-silent-custom\
+sudo ./test.sh
+: 1781754648:0;cat /etc/sddm.conf\
+cat /etc/sddm.conf.d/*.conf 2>/dev/null
+: 1781754684:0;sudo journalctl -u sddm -b -1 --no-pager | tail -100
+: 1781754828:0;sudo rm -rf /usr/share/sddm/themes/silent
+: 1781754886:0;reboot
+: 1781754927:0;z config
+: 1781754945:0;z sddm
+: 1781754948:0;z silent
+: 1781754971:0;z local share sddm
+: 1781754982:0;z local
+: 1781754985:0;cd share
+: 1781754986:0;;s
+: 1781755004:0;z etc
+: 1781755007:0;vim sddm.conf
+: 1781755029:0;sudo nvim sddm.conf
+: 1781755155:0;sudo rm /usr/share/sddm/themes/sddm-silent-custom\
+sudo ln -s "$HOME/.local/share/sddm/themes/silent" /usr/share/sddm/themes/silent
+: 1781755165:0;./test.sh
+: 1781755232:0;# Remove the symlink\
+sudo rm /usr/share/sddm/themes/silent\
+\
+# Copy your chezmoi-applied theme directory in directly\
+sudo cp -r ~/.local/share/sddm/themes/silent /usr/share/sddm/themes/silent\
+\
+# Fix ownership so the sddm user can read everything\
+sudo chown -R root:root /usr/share/sddm/themes/silent
+: 1781755271:0;z usr theme
+: 1781755274:0;cd silent
+: 1781755276:0;;ls
+: 1781755284:0;cd backgrounds
+: 1781755383:0;z niri
+: 1781755387:0;vim config.kdl
+: 1781755554:0;sudo rm /usr/share/quickshell/dms/assets/sounds/freedesktop
+: 1781755594:0;sudo cp -r /usr/share/quickshell/dms/assets/sounds/freedesktop.orig /usr/share/quickshell/dms/assets/sounds/freedesktop
+: 1781755612:0;sudo cp ~/.local/share/dms-anime-sounds/ /usr/share/quickshell/dms/assets/sounds/
+: 1781755638:0;sudo cp -r ~/.local/share/dms-anime-sounds/ /usr/share/quickshell/dms/assets/sounds/
+: 1781755674:0;z usr share quickshell
+: 1781755676:0;z usr share 
+: 1781755678:0;z quickshell
+: 1781755680:0;z dms
+: 1781755682:0;z assets
+: 1781755726:0;cd dms-anime-sounds
+: 1781755734:0;sudo rm dms-anime-sounds
+: 1781755739:0;cd ..
+: 1781755851:0;cd freedesktop
+: 1781756022:0;clear
+: 1781756025:0;notify-send -u critical "Test" "Tuturu critical?"
+: 1781756032:0;notify-send -u "Test" "Tuturu critical?"
+: 1781756077:0;notify-send "DMS" "Sound test"
+: 1781756112:0;paplay /usr/share/quickshell/dms/assets/sounds/freedesktop/audio-volume-change2.oga
+: 1781756137:0;z sounds
+: 1781756184:0;paplay /usr/share/quickshell/dms/assets/sounds/freedesktop/audio-volume-change.wav
+: 1781756223:0;paplay /usr/share/quickshell/dms/assets/sounds/freedesktop2/audio-volume-change2.wav
+: 1781756232:0;paplay /usr/share/quickshell/dms/assets/sounds/freedesktop2/audio-volume-change.wav
+: 1781756289:0;paplay /usr/share/quickshell/dms/assets/sounds/freedesktop2/audio-volume-change.oga
+: 1781756393:0;sudo yazi
+: 1781756418:0;ls
+: 1781756421:0;yazi
+: 1781756456:0;paplay /usr/share/quickshell/dms/assets/sounds/freedesktop/audio-volume-change.oga
+: 1781756462:0;paplay /usr/share/quickshell/dms/assets/sounds/freedesktop/message-new-instant.wav
+: 1781756505:0;notify-send "Test" "Should trigger sound"
+: 1781756567:0;notify-send -a dms "Test" "Custom sound test"
+: 1781756571:0;:q
+: 1781756580:0;notify-send -a discord "Test" "Custom sound test"
+: 1781756605:0;find /usr/share/quickshell -type f | grep sound
+: 1781756702:0;ls
+: 1781756704:0;yazi
+: 1781756729:0;pkill quickshell
+: 1781756735:0;systemctl --user restart quickshell
+: 1781756745:0;sha256sum /usr/share/quickshell/dms/assets/sounds/freedesktop/message.wav\
+sha256sum ~/.local/share/dms-anime-sounds/message.wav
+: 1781756783:0;notify-send -a discord "Test" "Custom sound test"
+: 1781756788:0;ls
+: 1781756814:0;notify-send -a discord "Test" "Custom sound test"
+: 1781757064:0;z sounds
+: 1781757065:0;ls
+: 1781757076:0;kill mpv
+: 1781757081:0;killall mpv
+: 1781757093:0;notify-send -a discord "Test" "Custom sound test"
+: 1781757184:0;ls
+: 1781757195:0;z .config
+: 1781757197:0;ls
+: 1781757205:0;chezmoi add ./
+: 1781757223:0;dotsave
