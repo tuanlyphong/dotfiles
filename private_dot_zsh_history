@@ -2707,3 +2707,8 @@ ls /usr/share/xsessions/
 : 1781767391:0;chezmoi add ./
 : 1781767404:0;pkgsave
 : 1781767413:0;dotsave
+: 1781767429:0;z local bin
+: 1781767430:0;ls
+: 1781767432:0;cd ..
+: 1781767439:0;chezmoi add bin
+: 1781767445:0;dotsave
