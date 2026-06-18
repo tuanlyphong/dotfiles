@@ -354,7 +354,7 @@ binds {
 
     // Dictionary
     Mod+L hotkey-overlay-title="Dictionary" {
-        spawn "hyprdict-toggle";
+        spawn "/home/phong/.local/bin/hyprdict-toggle";
     }
 
     // Nsharing
@@ -367,15 +367,6 @@ binds {
         spawn "/home/phong/.config/hypr/warp.sh";
     }
 
-    // Force kill
-    Mod+Shift+Q hotkey-overlay-title="Force Kill Window" {
-        spawn "/home/phong/.config/hypr/forcekill.sh";
-    }
-
-    // Touchpad toggle
-    Mod+End hotkey-overlay-title="Toggle Touchpad" {
-        spawn "/home/phong/.config/hypr/scripts/touchpad.sh";
-    }
 
     // Exit Niri
     Mod+Shift+Escape {

@@ -1,5 +1,5 @@
 configuration {
-    modes: "window,run,ssh,drun,emoji";
+    modes: "window,run,ssh,drun";
     sorting-method: "normal";
     show-icons:true;
     matching: "regex";

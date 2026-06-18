@@ -2712,3 +2712,74 @@ ls /usr/share/xsessions/
 : 1781767432:0;cd ..
 : 1781767439:0;chezmoi add bin
 : 1781767445:0;dotsave
+: 1781767476:0;z niri
+: 1781767478:0;ls
+: 1781767480:0;yazi
+: 1781767509:0;hyprdict-toggle
+: 1781767565:0;z rofi
+: 1781767566:0;ls
+: 1781767571:0;vim dict.rasi
+: 1781767592:0;hyprdict-toggle
+: 1781767610:0;ls
+: 1781767615:0;vim config.rasi
+: 1781767647:0;z bin
+: 1781767647:0;ls
+: 1781767649:0;yazi
+: 1781768090:0;playerctl metadata mpris:artUrl
+: 1781768124:0;playerctl -l
+: 1781768208:0;playerctl metadata --format "{{mpris:artUrl}}"
+: 1781768257:0;mkdir -p ~/.config/mpDris2\
+nano ~/.config/mpDris2/mpDris2.conf
+: 1781768266:0;vim ~/.config/mpDris2/mpDris2.conf
+: 1781768282:0;pkill mpDris2\
+mpDris2 &
+: 1781768333:0;sudo pacman -S python-mutagen
+: 1781768353:0;systemctl --user restart mpDris2
+: 1781768397:0;mpc current -f "%file%"
+: 1781768408:0;mpc readcomments
+: 1781768455:0;mpc update\
+systemctl --user restart mpd\
+systemctl --user restart mpDris2
+: 1781768480:0;mpd
+: 1781768494:0;ncmpcpp
+: 1781768558:0;ls
+: 1781768564:0;z ncmpcpp
+: 1781768565:0;ls
+: 1781768568:0;vim config
+: 1781768595:0;ncmpcpp
+: 1781768631:0;kill all mpd
+: 1781768637:0;killall mpd
+: 1781768638:0;mpd
+: 1781768647:0;ncmpcpp
+: 1781768657:0;playerctl
+: 1781768662:0;playerctl play
+: 1781768671:0;playerctl status
+: 1781768687:0;systemctl --user status mpDris2
+: 1781768713:0;systemctl --user restart mpDris2
+: 1781768715:0;playerctl status
+: 1781768728:0;systemctl --user restart mpDris2
+: 1781768731:0;playerctl status
+: 1781768735:0;playerctl
+: 1781768756:0;playerctl status
+: 1781768761:0;ncmpcpp
+: 1781768839:0;mpc update
+: 1781768851:0;mpc clear\
+mpc add /\
+mpc shuffle\
+mpc play
+: 1781768868:0;mpc ls
+: 1781768874:0;mpc ls "For a sick boy" | mpc add\
+mpc play
+: 1781768909:0;mpc ls "Your Pianist" | mpc add\
+mpc play
+: 1781768944:0;ncmpcpp
+: 1781768986:0;zyazi
+: 1781768987:0;yazi
+: 1781769071:0;ncmpcpp
+: 1781769156:0;z bin
+: 1781769157:0;ls
+: 1781769160:0;yazi
+: 1781769193:0;ls
+: 1781769195:0;cd ..
+: 1781769198:0;chezmoi add bin
+: 1781769202:0;dotsave
