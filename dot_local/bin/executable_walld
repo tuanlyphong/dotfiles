@@ -1,6 +1,0 @@
-#!/bin/sh
-
-awww query
-if [ $? -eq 1 ]; then
-  awww-daemon
-fi

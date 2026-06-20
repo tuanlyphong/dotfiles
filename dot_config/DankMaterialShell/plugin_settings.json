@@ -1,0 +1,15 @@
+{
+  "emojiLauncher": {
+    "enabled": true,
+    "pasteOnSelect": true
+  },
+  "calculator": {
+    "enabled": true,
+    "trigger": "=",
+    "persistHistoryOnFile": true
+  },
+  "dankGifSearch": {
+    "enabled": true,
+    "pasteUrlOnly": true
+  }
+}
