@@ -1,0 +1,41 @@
+.config/yazi/package.toml
+.config/yazi/plugins/mediainfo.yazi/audio-old.lua
+.config/yazi/plugins/mediainfo.yazi/audio-stable.lua
+.config/yazi/plugins/piper.yazi/README.md
+.config/yazi/plugins/piper.yazi/main.lua
+.oh-my-zsh/.git/**
+.oh-my-zsh/.github/workflows/**
+.config/yazi/package.toml
+.config/yazi/plugins/mediainfo.yazi/audio-old.lua
+.config/yazi/plugins/mediainfo.yazi/audio-stable.lua
+.config/yazi/plugins/piper.yazi/README.md
+.config/yazi/plugins/piper.yazi/main.lua
+.oh-my-zsh/.git/**
+.oh-my-zsh/.github/workflows/**
+
+# Git metadata
+**/.git/**
+**/.gitignore
+**/.gitattributes
+**/.gitmodules
+
+# GitHub/GitLab CI
+**/.github/workflows/**
+**/.gitlab/**
+
+# Yazi generated/plugin files
+.config/yazi/package.toml
+.config/yazi/plugins/mediainfo.yazi/audio-old.lua
+.config/yazi/plugins/mediainfo.yazi/audio-stable.lua
+.config/yazi/plugins/piper.yazi/README.md
+.config/yazi/plugins/piper.yazi/main.lua
+
+# Common generated files
+**/*.log
+**/*.bak
+**/*.orig
+**/*.rej
+**/*~
+**/.DS_Store
+**/Thumbs.db
+
