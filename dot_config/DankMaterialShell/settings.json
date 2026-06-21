@@ -239,7 +239,7 @@
   "useAutoLocation": false,
   "weatherEnabled": true,
   "networkPreference": "wifi",
-  "iconTheme": "System Default",
+  "iconTheme": "Adwaita",
   "cursorSettings": {
     "theme": "System Default",
     "size": 24,

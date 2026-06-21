@@ -19,7 +19,7 @@ window-rule {
 // @id=wr_1781766541461941602 @name=heroic
 window-rule {
     match app-id="^heroic$"
-    open-fullscreen true
+    open-maximized true
     open-focused true
 }
 
