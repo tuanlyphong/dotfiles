@@ -5,7 +5,21 @@
 workspace "code"
 workspace "hobby"
 workspace "browser"
+// Keep the Quickshell wallpaper fixed to the monitor instead of
+// scrolling with Niri's workspace.
+layer-rule {
+    match namespace="^quickshell$"
+    place-within-backdrop true
+}
 
+
+
+// Optional: disable workspace shadows in the overview.
+overview {
+    workspace-shadow {
+        off
+    }
+}
 // Input device configuration.
 // Find the full list of options on the wiki:
 // https://niri-wm.github.io/niri/Configuration:-Input
@@ -84,6 +98,7 @@ input {
 layout {
     // Set gaps around windows in logical pixels.
     gaps 0
+    background-color "transparent"
 
     // When to center a column when changing focus, options are:
     // - "never", default behavior, focusing an off-screen column will keep at the left
@@ -319,7 +334,7 @@ binds {
 
     // Animelist
     Mod+A hotkey-overlay-title="Animelist" {
-        spawn "kitty" "/home/phong/.local/bin/animelist";
+        spawn "kitty" "/home/phong/Playground/anime_tui/tui_anime.sh";
     }
 
     // File manager
@@ -363,7 +378,7 @@ binds {
 
     // Warp
     Mod+P hotkey-overlay-title="Warp" {
-        spawn "/home/phong/.config/hypr/warp.sh";
+        spawn "/home/phong/.local/bin/warp.sh";
     }
 
 
@@ -372,7 +387,6 @@ binds {
         quit skip-confirmation=true;
     }
 
-    // Screenshots
 
 
 
@@ -585,7 +599,7 @@ binds {
 
     Mod+F { maximize-column; }
     Mod+Shift+F { fullscreen-window; }
-
+    
     // While maximize-column leaves gaps and borders around the window,
     // maximize-window-to-edges doesn't: the window expands to the edges of the screen.
     // This bind corresponds to normal window maximizing,

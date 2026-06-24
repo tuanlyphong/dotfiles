@@ -1,7 +1,8 @@
 {
   "emojiLauncher": {
     "enabled": true,
-    "pasteOnSelect": true
+    "pasteOnSelect": true,
+    "recentEmojis": "⭐"
   },
   "calculator": {
     "enabled": true,

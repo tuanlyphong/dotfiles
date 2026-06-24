@@ -12,44 +12,31 @@ return {
 		opts = {
 			adapters = {
 				http = {
-					kaggle = function()
-						return require("codecompanion.adapters").extend("openai_compatible", {
-							name = "kaggle",
-
-							schema = {
-								model = {
-									default = "qwen2.5-coder:14b",
-								},
-							},
-
+					ollama = function()
+						return require("codecompanion.adapters").extend("ollama", {
 							env = {
 								url = "https://executable-lustered-brittanie.ngrok-free.dev",
+							},
+							schema = {
+								model = {
+									default = "qwen2.5-coder:32b",
+								},
 							},
 						})
 					end,
 				},
 			},
-
 			strategies = {
 				chat = {
-					adapter = "kaggle",
+					adapter = "ollama",
 				},
-
 				inline = {
-					adapter = "kaggle",
-
-					prompts = {
-						system = {
-							content = "You are a code editor. Output ONLY raw code with no markdown fences, no explanation, no preamble. Output the complete updated file contents only.",
-						},
-					},
+					adapter = "ollama",
 				},
-
 				agent = {
-					adapter = "kaggle",
+					adapter = "ollama",
 				},
 			},
-
 			extensions = {
 				mcphub = {
 					callback = "mcphub.extensions.codecompanion",

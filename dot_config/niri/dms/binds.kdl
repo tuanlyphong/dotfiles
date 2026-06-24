@@ -9,6 +9,7 @@ binds {
     Super+Shift+P hotkey-overlay-title="Color Picker" { spawn "dms" "color" "pick" "-a"; }
     Super+W hotkey-overlay-title="Control Center" { spawn "dms" "ipc" "call" "control-center" "toggle"; }
     Super+I hotkey-overlay-title="Emoji Picker" { spawn "dms" "ipc" "call" "spotlight" "openQuery" ":e"; }
-    Super+V hotkey-overlay-title="Calculator" { spawn "dms" "ipc" "call" "spotlight" "openQuery" "="; }
+    Super+V hotkey-overlay-title="Calculator" { spawn "dms" "ipc" "call" "spotlight" "openQuery" ""; }
     Super+U hotkey-overlay-title="GIF Search" { spawn "dms" "ipc" "call" "spotlight" "openQuery" "gif "; }
 }
+

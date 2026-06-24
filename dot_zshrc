@@ -112,50 +112,26 @@ source ~/.oh-my-zsh/custom/themes/powerlevel10k/powerlevel10k.zsh-theme
 ######################
 #      ALIASES       #
 ######################
+alias makerepo="gh repo create --source=. --private"
 alias :q="exit"
 alias py="python"
 alias vim="nvim"
-alias miku="neofetch"
 alias ls='eza --icons --color=always --group-directories-first'
-alias bt='cd ~/freqtrade && source ./.venv/bin/activate'
 alias ll='eza -alF --icons --color=always --group-directories-first'
 alias la='eza -a --icons --color=always --group-directories-first'
 alias l='eza -F --icons --color=always --group-directories-first'
 alias l.='eza -a | egrep "^\."'
-alias mk="mpd && ncmpcpp"
 alias tmt="./.local/bin/timecanvas/TimeCanvas"
-alias dr="dotnet run"
-alias dpl="dotnet publish -r linux-x64 --sc"
-alias dpw="dotnet publish -r win-x64 --sc"
-alias wall="swww img"
 alias zshc="nvim ~/.zshrc"
-alias neoc="nvim ~/.config/neofetch/config.conf"
 alias jr="java"
 alias jc="javac"
-alias sddmc="nvim /usr/share/sddm/themes/eucalyptus-drop/theme.conf" 
-alias hyprc="nvim ~/.config/hypr/general.conf"
-alias bindc="nvim ~/.config/hypr/keybinds.conf"
-alias startupc="nvim ~/.config/hypr/execs.conf"
-alias barc="nvim ~/.config/waybar/config.jsonc"
-alias quote="fortune | cowsay | lolcat"
-alias cat="lolcat"
+alias niric="nvim ~/.config/niri/config.kdl"
+alias bindc="nvim ~/.config/niri/dms/binds.kdl"
+alias du="dust -r"
+alias cat="bat"
 alias virtual="source .venv/bin/activate"
-alias anime="cd ~/anime && npm run dev"
-alias waifu="yazi ~/.waifus"
 alias picture="yazi ~/Pictures/Wallpapers"
-alias podc='bluetoothctl connect F4:6F:C6:F6:3D:43'
-alias podd='bluetoothctl disconnect F4:6F:C6:F6:3D:43'
-alias idf='. $HOME/esp-idf/export.sh'
-alias podb='bluetoothctl info'
-alias bye="poweroff"
-alias goodbye ="poweroff"
-alias goodnight ="poweroff"
-alias gn="poweroff"
-alias gb="poweroff"
-alias taovoucher="python generate_voucher.py"
-alias g4f='docker run -p 8080:8080 -p 1337:1337 -p 7900:7900 --shm-size="2g" -v ${PWD}/har_and_cookies:/app/har_and_cookies -v $HOME/Pictures/generated_images:/app/generated_images hlohaus789/g4f:latest'
 eval "$(zoxide init zsh)"
-alias uzipa="for i in *.zip; do unzip $i; done"
 
 # pnpm
 export PNPM_HOME="/home/phong/.local/share/pnpm"
