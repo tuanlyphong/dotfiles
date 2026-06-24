@@ -1,15 +1,14 @@
 binds {
     Super+B hotkey-overlay-title="Wallpaper: Next" { spawn "dms" "ipc" "call" "wallpaper" "next"; }
     Super+C hotkey-overlay-title="Clipboard: Open" { spawn "dms" "ipc" "call" "clipboard" "open"; }
+    Super+I hotkey-overlay-title="Emoji Picker" { spawn "dms" "ipc" "call" "spotlight" "openQuery" ":e"; }
     Super+N hotkey-overlay-title="Notifications: Toggle" { spawn "dms" "ipc" "call" "notifications" "toggle"; }
-    Super+Shift+X hotkey-overlay-title="Power Menu: Open" { spawn "dms" "ipc" "call" "powermenu" "open"; }
-    Super+X hotkey-overlay-title="Lock Screen" { spawn "dms" "ipc" "call" "lock" "lock"; }
-    Super+space hotkey-overlay-title="App Launcher: Toggle" { spawn "dms" "ipc" "call" "spotlight" "toggle"; }
     Super+Shift+N hotkey-overlay-title="Notifications: Clear All" { spawn "dms" "ipc" "call" "notifications" "clearAll"; }
     Super+Shift+P hotkey-overlay-title="Color Picker" { spawn "dms" "color" "pick" "-a"; }
-    Super+W hotkey-overlay-title="Control Center" { spawn "dms" "ipc" "call" "control-center" "toggle"; }
-    Super+I hotkey-overlay-title="Emoji Picker" { spawn "dms" "ipc" "call" "spotlight" "openQuery" ":e"; }
-    Super+V hotkey-overlay-title="Calculator" { spawn "dms" "ipc" "call" "spotlight" "openQuery" ""; }
+    Super+Shift+X hotkey-overlay-title="Power Menu: Open" { spawn "dms" "ipc" "call" "powermenu" "open"; }
     Super+U hotkey-overlay-title="GIF Search" { spawn "dms" "ipc" "call" "spotlight" "openQuery" "gif "; }
+    Super+V hotkey-overlay-title="Calculator" { spawn "dms" "ipc" "call" "spotlight" "openQuery" ""; }
+    Super+W hotkey-overlay-title="Control Center" { spawn "dms" "ipc" "call" "control-center" "toggle"; }
+    Super+X hotkey-overlay-title="Lock Screen" { spawn "dms" "ipc" "call" "lock" "lock"; }
+    Super+space hotkey-overlay-title="App Launcher: Toggle" { spawn "dms" "ipc" "call" "spotlight" "toggle"; }
 }
-

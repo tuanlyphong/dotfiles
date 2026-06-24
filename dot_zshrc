@@ -11,10 +11,10 @@ export SUDO_EDITOR="nvim"
 ###########
 # ENVIRON #
 ###########
-export PATH="$PATH:$HOME/.local/bin"
 export __GL_THREADED_OPTIMIZATIONS=1
 export __GL_SYNC_TO_VBLANK=0
 export __GL_YIELD=USLEEP
+export PATH="$HOME/.cargo/bin:$PATH"
 
 #############
 #  GENERAL  #

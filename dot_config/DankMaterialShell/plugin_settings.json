@@ -12,5 +12,9 @@
   "dankGifSearch": {
     "enabled": true,
     "pasteUrlOnly": true
+  },
+  "glance": {
+    "enabled": true,
+    "targetLang": "en"
   }
 }

@@ -515,6 +515,10 @@
         {
           "id": "notificationButton",
           "enabled": true
+        },
+        {
+          "id": "glance",
+          "enabled": true
         }
       ],
       "spacing": 0,

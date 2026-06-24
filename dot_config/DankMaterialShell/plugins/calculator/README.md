@@ -287,6 +287,3 @@ Set `"calcEngine"` to `"qalc"` for the qalc engine, `"numbat"` for the numbat en
 
 Bruno Cesar Rocha
 
-## License
-
-Same as DankMaterialShell
