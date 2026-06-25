@@ -44,6 +44,9 @@ reveal = [
 # Archive extraction (unified)
 extract = [
   { run = 'bsdtar -xf "$1"', desc = "Extract here (bsdtar)", for = "unix" },
+]
+
+extract_7z = [
   { run = '7z x "$1"', desc = "Extract here (7z)", for = "unix" },
   { run = '7z x "%1"', desc = "Extract here (7z)", for = "windows" },
 ]
@@ -76,23 +79,26 @@ rules = [
   { mime = "audio/*", use = ["play", "reveal"] },
 
   # Archives - comprehensive list
+  # Multi-file archives (handled by bsdtar)
   { mime = "application/zip", use = ["extract", "reveal"] },
   { mime = "application/x-zip-compressed", use = ["extract", "reveal"] },
-  { mime = "application/gzip", use = ["extract", "reveal"] },
-  { mime = "application/x-gzip", use = ["extract", "reveal"] },
   { mime = "application/x-tar", use = ["extract", "reveal"] },
-  { mime = "application/x-bzip", use = ["extract", "reveal"] },
-  { mime = "application/x-bzip2", use = ["extract", "reveal"] },
   { mime = "application/x-7z-compressed", use = ["extract", "reveal"] },
   { mime = "application/x-rar", use = ["extract", "reveal"] },
   { mime = "application/x-rar-compressed", use = ["extract", "reveal"] },
   { mime = "application/vnd.rar", use = ["extract", "reveal"] },
-  { mime = "application/x-xz", use = ["extract", "reveal"] },
-  { mime = "application/xz", use = ["extract", "reveal"] },
-  { mime = "application/x-lzip", use = ["extract", "reveal"] },
-  { mime = "application/x-compress", use = ["extract", "reveal"] },
   { mime = "application/x-compressed-tar", use = ["extract", "reveal"] },
-  { mime = "application/x-lzma", use = ["extract", "reveal"] },
+
+  # Raw single-file compression streams (handled by 7z)
+  { mime = "application/gzip", use = ["extract_7z", "reveal"] },
+  { mime = "application/x-gzip", use = ["extract_7z", "reveal"] },
+  { mime = "application/x-bzip", use = ["extract_7z", "reveal"] },
+  { mime = "application/x-bzip2", use = ["extract_7z", "reveal"] },
+  { mime = "application/x-xz", use = ["extract_7z", "reveal"] },
+  { mime = "application/xz", use = ["extract_7z", "reveal"] },
+  { mime = "application/x-lzip", use = ["extract_7z", "reveal"] },
+  { mime = "application/x-compress", use = ["extract_7z", "reveal"] },
+  { mime = "application/x-lzma", use = ["extract_7z", "reveal"] },
 
   # Fallback
   { mime = "*", use = ["open", "reveal"] },

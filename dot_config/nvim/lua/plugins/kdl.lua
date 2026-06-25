@@ -1,32 +1,33 @@
 return {
-	-- 1. Ensure KDL files get syntax highlighting and correct filetype detection
+	-- 1. Ensure KDL and TOML files get syntax highlighting
 	{
 		"nvim-treesitter/nvim-treesitter",
 		opts = function(_, opts)
 			if type(opts.ensure_installed) == "table" then
 				table.insert(opts.ensure_installed, "kdl")
+				table.insert(opts.ensure_installed, "toml")
 			end
 		end,
 	},
 
-	-- 2. Register kdlfmt with conform.nvim for automatic formatting
+	-- 2. Register kdlfmt and taplo with conform.nvim safely
 	{
 		"stevearc/conform.nvim",
-		opts = {
-			formatters_by_ft = {
-				-- Map the .kdl filetype to the kdlfmt formatter
-				kdl = { "kdlfmt" },
-			},
-			formatters = {
-				kdlfmt = {
-					-- The command-line executable we installed in Step 1
-					command = "kdlfmt",
-					-- The arguments to pass (format the file in place)
-					args = { "format", "$FILENAME" },
-					-- Tell conform not to use stdin, but to update the file on disk
-					stdin = false,
-				},
-			},
-		},
+		opts = function(_, opts)
+			-- Initialize tables if they don't exist to prevent errors
+			opts.formatters_by_ft = opts.formatters_by_ft or {}
+			opts.formatters = opts.formatters or {}
+
+			-- Map filetypes to formatters
+			opts.formatters_by_ft.kdl = { "kdlfmt" }
+			opts.formatters_by_ft.toml = { "taplo" }
+
+			-- Define the custom kdlfmt binary properties
+			opts.formatters.kdlfmt = {
+				command = "kdlfmt",
+				args = { "format", "$FILENAME" },
+				stdin = false,
+			}
+		end,
 	},
 }
