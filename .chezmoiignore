@@ -39,3 +39,4 @@
 **/.DS_Store
 **/Thumbs.db
 
+.config/rclone/rclone.conf
