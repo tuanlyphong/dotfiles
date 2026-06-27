@@ -1,10 +1,6 @@
 #!/usr/bin/env bash
-# Take a screenshot in a number of different ways. Any of the case statement
-# options can be passed in as a value.
 
-set -o errexit
-set -o pipefail
-set -o nounset
+set -euo pipefail
 
 MODE="${1:-region}"
 
@@ -18,13 +14,17 @@ window)
   wl-paste --type image/png
   ;;
 monitor-focused)
-  grim -o "$(niri msg --json focused-output | jq --raw-output .name)" -
+  grim -o "$(niri msg --json focused-output | jq -r .name)" -
   ;;
 monitor-all)
   grim -
   ;;
 *)
-  echo "'${MODE}' is not a supported, aborting!" >&2
+  echo "'${MODE}' is not supported!" >&2
   exit 1
   ;;
-esac | satty --filename - --output-filename "~/Pictures/Screenshots/screenshot-%+.png"
+esac |
+  tee >(wl-copy --type image/png) |
+  satty \
+    --filename - \
+    --output-filename "$HOME/Pictures/Screenshots/screenshot-%+.png"

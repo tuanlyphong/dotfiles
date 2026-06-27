@@ -1,4 +1,3 @@
-local lsp = require("craftzdog.lsp")
 local keymap = vim.keymap
 local opts = { noremap = true, silent = true }
 -- Do things without affecting the registers
@@ -90,6 +89,6 @@ keymap.set("n", "<leader>r", function()
 	require("craftzdog.hsl").replaceHexWithHSL()
 end)
 
-vim.keymap.set("n", "<leader>uh", function()
-	lsp.toggleInlayHints()
-end, { desc = "Toggle Inlay Hints" })
+keymap.set("n", "<leader>i", function()
+	require("craftzdog.lsp").toggleInlayHints()
+end)

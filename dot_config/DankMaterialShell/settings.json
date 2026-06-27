@@ -517,6 +517,10 @@
           "enabled": true
         },
         {
+          "id": "dockerManager",
+          "enabled": true
+        },
+        {
           "id": "glance",
           "enabled": true
         }

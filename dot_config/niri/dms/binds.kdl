@@ -11,4 +11,5 @@ binds {
     Super+W hotkey-overlay-title="Control Center" { spawn "dms" "ipc" "call" "control-center" "toggle"; }
     Super+X hotkey-overlay-title="Lock Screen" { spawn "dms" "ipc" "call" "lock" "lock"; }
     Super+space hotkey-overlay-title="App Launcher: Toggle" { spawn "dms" "ipc" "call" "spotlight" "toggle"; }
+    Super+L hotkey-overlay-title="translate" { spawn "dms" "ipc" "call" "widget" "toggle" "glance"; }
 }

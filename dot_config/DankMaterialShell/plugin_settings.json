@@ -16,5 +16,8 @@
   "glance": {
     "enabled": true,
     "targetLang": "en"
+  },
+  "dockerManager": {
+    "enabled": true
   }
 }

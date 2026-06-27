@@ -131,6 +131,15 @@ alias du="dust -r"
 alias cat="bat"
 alias virtual="source .venv/bin/activate"
 alias picture="yazi ~/Pictures/Wallpapers"
+# Start both the socket and the engine cleanly
+alias aws-start="sudo systemctl start docker.socket docker.service && sudo docker run --rm -it -p 4566:4566 ministackorg/ministack"
+
+# Stop both elements to guarantee Docker is fully wiped from your laptop's active RAM
+alias aws-stop="sudo systemctl stop docker.service docker.socket"
+
+# Shortcut so you don't have to type the local URL every time
+alias aws-learn="aws --endpoint-url=http://127.0.0.1:4566"
+
 eval "$(zoxide init zsh)"
 
 # pnpm

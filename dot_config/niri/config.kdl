@@ -286,6 +286,9 @@ clip-to-geometry true
 // Startup
 spawn-at-startup "mpDris2"
 binds {
+    Mod+Shift+G hotkey-overlay-title="Games" {
+        spawn "gamemode.sh"
+    }
     Alt+Print hotkey-overlay-title="Screenshot (region)" {
         spawn "dfr-screenshot" "region"
     }
