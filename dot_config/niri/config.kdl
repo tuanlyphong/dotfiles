@@ -308,11 +308,15 @@ binds {
     // Migrate
     // Animelist
     Mod+A hotkey-overlay-title="Animelist" {
-        spawn "kitty" "/home/phong/Playground/anime_tui/tui_anime.sh"
+        spawn "kitty" "anime-tui"
     }
     // File manager
     Mod+E hotkey-overlay-title="File Manager" {
         spawn "nautilus"
+    }
+    // Window menu
+    Mod+Shift+W hotkey-overlay-title="Window Menu" {
+        spawn "rofi" "-show" "window"
     }
     // Play/Pause music
     Mod+M hotkey-overlay-title="ncmcpp" {

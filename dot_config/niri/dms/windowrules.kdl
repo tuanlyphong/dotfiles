@@ -8,13 +8,6 @@ window-rule {
     open-on-workspace "browser"
 }
 
-// @id=wr_1781766367582417627 @name=kitty
-window-rule {
-    match app-id="^kitty$"
-    open-focused true
-    open-on-workspace "code"
-}
-
 // @id=wr_1781766541461941602 @name=heroic
 window-rule {
     match app-id="^heroic$"
@@ -83,4 +76,18 @@ window-rule {
 window-rule {
     match app-id="^Godot$"
     open-floating true
+}
+
+// @id=wr_1784609279875238244 @name=code
+window-rule {
+    match app-id="^code$"
+    open-maximized-to-edges true
+    open-focused true
+}
+
+// @id=wr_1784609306703609343 @name=com.danklinux.dms
+window-rule {
+    match app-id="^com.danklinux.dms$"
+    open-floating true
+    open-focused true
 }
