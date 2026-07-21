@@ -91,3 +91,10 @@ window-rule {
     open-floating true
     open-focused true
 }
+
+// @id=wr_1784645379191552077 @name=com.obsproject.Studio
+window-rule {
+    match app-id="^com.obsproject.Studio$"
+    open-floating true
+    open-focused true
+}
