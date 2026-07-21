@@ -26,7 +26,6 @@ volume_change_step            = 2
 
 external_editor               = nvim
 use_console_editor            = yes
-execute_on_song_change = songinfo
 lyrics_fetchers               = genius,tekstowo
 store_lyrics_in_song_dir      = no
 lyrics_directory              = ~/.local/share/ncmpcpp/lyrics

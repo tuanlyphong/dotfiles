@@ -11,6 +11,10 @@ layer-rule {
     match namespace="^quickshell$"
     place-within-backdrop true
 }
+layer-rule {
+    match namespace="dms:spotlight"
+    match layer="overlay"
+}
 // Optional: disable workspace shadows in the overview.
 overview {
     workspace-shadow {
@@ -309,10 +313,6 @@ binds {
     // File manager
     Mod+E hotkey-overlay-title="File Manager" {
         spawn "nautilus"
-    }
-    // Window menu
-    Mod+Shift+W hotkey-overlay-title="Window Menu" {
-        spawn "rofi" "-show" "window"
     }
     // Play/Pause music
     Mod+M hotkey-overlay-title="ncmcpp" {

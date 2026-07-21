@@ -89,6 +89,12 @@ keymap.set("n", "<leader>r", function()
 	require("craftzdog.hsl").replaceHexWithHSL()
 end)
 
+keymap.set("n", "<F8>", function()
+	require("dap").toggle_breakpoint()
+end, { desc = "Toggle Breakpoint" })
+
+keymap.set("n", "<leader>m", "<CMD>Markview<CR>", { desc = "Toggle Markview" })
+
 keymap.set("n", "<leader>i", function()
 	require("craftzdog.lsp").toggleInlayHints()
 end)

@@ -60,48 +60,142 @@ play = [
 [open]
 rules = [
   # Directories
-  { mime = "inode/directory", use = ["edit", "open", "reveal"] },
+  { mime = "inode/directory", use = [
+    "edit",
+    "open",
+    "reveal",
+  ] },
 
   # Text files
-  { mime = "text/*", use = ["edit", "reveal"] },
-  { mime = "application/json", use = ["edit", "reveal"] },
-  { mime = "*/javascript", use = ["edit", "reveal"] },
-  { mime = "*/xml", use = ["edit", "reveal"] },
-  { mime = "inode/x-empty", use = ["edit", "reveal"] },
-
+  { mime = "text/*", use = [
+    "edit",
+    "reveal",
+  ] },
+  { mime = "application/json", use = [
+    "edit",
+    "reveal",
+  ] },
+  { mime = "*/javascript", use = [
+    "edit",
+    "reveal",
+  ] },
+  { mime = "*/xml", use = [
+    "edit",
+    "reveal",
+  ] },
+  { mime = "inode/x-empty", use = [
+    "edit",
+    "reveal",
+  ] },
+  { url = "*.{rs,py,js,ts,jsx,tsx,go,cpp,hpp,c,h,html,css,sh,md,toml,yaml,json}", use = [
+    "edit",
+    "reveal",
+  ] },
   # Images
-  { mime = "image/*", use = ["open", "reveal"] },
+  { mime = "image/*", use = [
+    "open",
+    "reveal",
+  ] },
 
   # Video
-  { mime = "video/*", use = ["play", "reveal"] },
+  { mime = "video/*", use = [
+    "play",
+    "reveal",
+  ] },
 
   # Audio
-  { mime = "audio/*", use = ["play", "reveal"] },
+  { mime = "audio/*", use = [
+    "play",
+    "reveal",
+  ] },
 
   # Archives - comprehensive list
   # Multi-file archives (handled by bsdtar)
-  { mime = "application/zip", use = ["extract", "reveal"] },
-  { mime = "application/x-zip-compressed", use = ["extract", "reveal"] },
-  { mime = "application/x-tar", use = ["extract", "reveal"] },
-  { mime = "application/x-7z-compressed", use = ["extract", "reveal"] },
-  { mime = "application/x-rar", use = ["extract", "reveal"] },
-  { mime = "application/x-rar-compressed", use = ["extract", "reveal"] },
-  { mime = "application/vnd.rar", use = ["extract", "reveal"] },
-  { mime = "application/x-compressed-tar", use = ["extract", "reveal"] },
+  { mime = "application/zip", use = [
+    "extract",
+    "reveal",
+  ] },
+  { mime = "application/x-zip-compressed", use = [
+    "extract",
+    "reveal",
+  ] },
+  { mime = "application/x-tar", use = [
+    "extract",
+    "reveal",
+  ] },
+  { mime = "application/tar", use = [
+    "extract",
+    "reveal",
+  ] },
+
+  { mime = "application/7z-compressed", use = [
+    "extract_7z",
+    "reveal",
+  ] },
+  { mime = "application/x-rar", use = [
+    "extract",
+    "reveal",
+  ] },
+  { mime = "application/x-rar-compressed", use = [
+    "extract",
+    "reveal",
+  ] },
+  { mime = "application/vnd.rar", use = [
+    "extract",
+    "reveal",
+  ] },
+  { mime = "application/x-compressed-tar", use = [
+    "extract",
+    "reveal",
+  ] },
+  { mime = "application/bzip2", use = [
+    "extract",
+    "reveal",
+  ] },
 
   # Raw single-file compression streams (handled by 7z)
-  { mime = "application/gzip", use = ["extract_7z", "reveal"] },
-  { mime = "application/x-gzip", use = ["extract_7z", "reveal"] },
-  { mime = "application/x-bzip", use = ["extract_7z", "reveal"] },
-  { mime = "application/x-bzip2", use = ["extract_7z", "reveal"] },
-  { mime = "application/x-xz", use = ["extract_7z", "reveal"] },
-  { mime = "application/xz", use = ["extract_7z", "reveal"] },
-  { mime = "application/x-lzip", use = ["extract_7z", "reveal"] },
-  { mime = "application/x-compress", use = ["extract_7z", "reveal"] },
-  { mime = "application/x-lzma", use = ["extract_7z", "reveal"] },
+  { mime = "application/gzip", use = [
+    "extract_7z",
+    "reveal",
+  ] },
+  { mime = "application/x-gzip", use = [
+    "extract_7z",
+    "reveal",
+  ] },
+  { mime = "application/x-bzip", use = [
+    "extract_7z",
+    "reveal",
+  ] },
+  { mime = "application/x-bzip2", use = [
+    "extract_7z",
+    "reveal",
+  ] },
+  { mime = "application/x-xz", use = [
+    "extract_7z",
+    "reveal",
+  ] },
+  { mime = "application/xz", use = [
+    "extract",
+    "reveal",
+  ] },
+  { mime = "application/x-lzip", use = [
+    "extract_7z",
+    "reveal",
+  ] },
+  { mime = "application/x-compress", use = [
+    "extract_7z",
+    "reveal",
+  ] },
+  { mime = "application/x-lzma", use = [
+    "extract_7z",
+    "reveal",
+  ] },
 
   # Fallback
-  { mime = "*", use = ["open", "reveal"] },
+  { mime = "*", use = [
+    "open",
+    "reveal",
+  ] },
 ]
 
 [tasks]
