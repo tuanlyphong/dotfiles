@@ -644,9 +644,13 @@
       ],
       "rightWidgets": [
         {
-          "id": "memUsage",
+          "id": "systemTray",
+          "enabled": true
+        },
+        {
+          "id": "clock",
           "enabled": true,
-          "minimumWidth": true
+          "clockCompactMode": true
         },
         {
           "id": "controlCenterButton",
@@ -665,21 +669,9 @@
           "showScreenSharingIcon": true
         },
         {
-          "id": "weather",
-          "enabled": true
-        },
-        {
-          "id": "clock",
+          "id": "memUsage",
           "enabled": true,
-          "clockCompactMode": true
-        },
-        {
-          "id": "systemTray",
-          "enabled": true
-        },
-        {
-          "id": "notificationButton",
-          "enabled": true
+          "minimumWidth": true
         },
         {
           "id": "dockerManager",
@@ -687,6 +679,10 @@
         },
         {
           "id": "glance",
+          "enabled": true
+        },
+        {
+          "id": "notificationButton",
           "enabled": true
         }
       ],

@@ -305,6 +305,7 @@ binds {
     Mod+Print hotkey-overlay-title="Screenshot (monitor: all)" {
         spawn "dfr-screenshot" "monitor-all"
     }
+    Mod+Alt+G { spawn "gif"; }
     // Migrate
     // Animelist
     Mod+A hotkey-overlay-title="Animelist" {
