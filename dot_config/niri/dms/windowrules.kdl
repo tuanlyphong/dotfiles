@@ -75,6 +75,7 @@ window-rule {
 // @id=wr_1784603269170932625 @name=Godot
 window-rule {
     match app-id="^Godot$"
+    open-floating true
     open-focused true
 }
 
