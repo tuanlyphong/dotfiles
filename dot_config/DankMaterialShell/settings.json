@@ -586,7 +586,7 @@
   "updaterIncludeFlatpak": true,
   "updaterAllowAUR": true,
   "updaterIgnoredPackages": [],
-  "displayNameMode": "system",
+  "displayNameMode": "model",
   "screenPreferences": {
     "wallpaper": [
       "all"
@@ -599,14 +599,22 @@
       "hotCorners": {
         "off": true
       },
+      "disabled": null
+    },
+    "Samsung Display Corp. 0x324C Unknown": {
+      "hotCorners": {
+        "off": true
+      },
       "disabled": true
     }
   },
   "hyprlandOutputSettings": {},
   "displayProfiles": {},
-  "activeDisplayProfile": {},
-  "displayProfileAutoSelect": false,
-  "displayShowDisconnected": false,
+  "activeDisplayProfile": {
+    "niri": "auto_7c55eac0"
+  },
+  "displayProfileAutoSelect": true,
+  "displayShowDisconnected": true,
   "displaySnapToEdge": true,
   "connectedFrameBarStyleBackups": {},
   "barConfigs": [
