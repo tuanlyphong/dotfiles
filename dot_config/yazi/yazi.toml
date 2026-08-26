@@ -211,8 +211,6 @@ suppress_preload = false
 prepend_previewers = [
   { mime = "video/*", run = "mediainfo" },
   { mime = "audio/*", run = "mediainfo" },
-  { mime = "application/vnd.apache.parquet", run = "duckdb" },
-  { mime = "text/csv", run = "duckdb" },
 ]
 preloaders = [
   { mime = "image/vnd.djvu", run = "noop" },

@@ -32,11 +32,6 @@ run = "plugin open-with-cmd"
 desc = "Open with command (open-with-cmd)"
 
 [[mgr.prepend_keymap]]
-on  = ["<C-g>"]
-run = "plugin glow"
-desc = "Preview markdown with glow"
-
-[[mgr.prepend_keymap]]
 on  = ["<C-x>"]
 run = "plugin ouch"
 desc = "Compress/extract with ouch"
