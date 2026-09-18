@@ -128,7 +128,6 @@ alias jc="javac"
 alias niric="nvim ~/.config/niri/config.kdl"
 alias bindc="nvim ~/.config/niri/dms/binds.kdl"
 alias du="dust -r"
-alias cat="bat"
 alias virtual="source .venv/bin/activate"
 alias picture="yazi ~/Pictures/Wallpapers"
 # Start both the socket and the engine cleanly

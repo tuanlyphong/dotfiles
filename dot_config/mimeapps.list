@@ -14,6 +14,9 @@ application/x-extension-xht=zen.desktop
 x-scheme-handler/dmmgameplayer=dmmgameplayer.desktop
 image/png=krita_png.desktop
 image/jpeg=krita_jpeg.desktop
+x-scheme-handler/cockpit-tools=cockpit-tools-handler.desktop
+x-scheme-handler/cockpittools=cockpit-tools-handler.desktop
+x-scheme-handler/zcode=cockpit-tools-handler.desktop
 
 [Added Associations]
 application/pdf=org.pwmt.zathura.desktop;
