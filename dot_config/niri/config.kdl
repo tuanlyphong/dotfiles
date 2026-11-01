@@ -289,6 +289,7 @@ clip-to-geometry true
 }
 // Startup
 spawn-at-startup "mpDris2"
+spawn-at-startup "~/.local/bin/gmail-notify"
 binds {
     Mod+Shift+G hotkey-overlay-title="Games" {
         spawn "gamemode.sh"

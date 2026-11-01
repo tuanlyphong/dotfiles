@@ -1,0 +1,64 @@
+#!/usr/bin/env bash
+
+set -u
+
+STATE="$HOME/.cache/himalaya-notified-ids.json"
+TMP="$(mktemp)"
+trap 'rm -f "$TMP"' EXIT
+
+mkdir -p "$HOME/.cache"
+
+while true; do
+  if himalaya envelope list --json --page 1 --page-size 20 \
+    >"$TMP" 2>/dev/null &&
+    jq -e '.envelopes | type == "array"' "$TMP" >/dev/null 2>&1; then
+
+    CURRENT="$(jq -c '
+            [.envelopes[] | {
+                id: (.id | tostring),
+                subject: (.subject // "(no subject)"),
+                sender: (
+                    [.from[]? |
+                        if (.name // "") != "" then .name
+                        else (.email // "")
+                        end
+                    ] | map(select(. != "")) | first
+                ) // "Unknown sender",
+                email: ([.from[]?.email // empty] | first // "")
+            }]
+        ' "$TMP")"
+
+    if [[ ! -f "$STATE" ]]; then
+      # First run: record existing messages without notifications.
+      jq '[.[].id]' <<<"$CURRENT" >"$STATE"
+    else
+      NEW="$(jq -cn \
+        --argjson current "$CURRENT" \
+        --slurpfile old "$STATE" '
+                [$current[] |
+                    select((.id as $id |
+                        ($old[0] | index($id)) == null))]
+            ')"
+
+      jq '[.[].id]' <<<"$CURRENT" >"$STATE"
+
+      while IFS= read -r mail; do
+        [[ -z "$mail" ]] && continue
+
+        sender="$(jq -r '
+                    if .email != "" then "\(.sender) <\(.email)>"
+                    else .sender
+                    end
+                ' <<<"$mail")"
+        subject="$(jq -r '.subject' <<<"$mail")"
+
+        notify-send \
+          --app-name="Himalaya" \
+          --icon=mail-unread \
+          "$sender" "$subject"
+      done < <(jq -c '.[]' <<<"$NEW")
+    fi
+  fi
+
+  sleep 120
+done
