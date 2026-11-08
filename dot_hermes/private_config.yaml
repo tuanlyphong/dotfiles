@@ -2279,6 +2279,7 @@ display:
 #     shared-metrics directory resets it.
 # See docs/observability/relay-shared-metrics.md (Appendix A) for the full
 # consent, identity, retention, and deletion decisions.
+  personality: technical
 telemetry:
   shared_metrics:
     enabled: false

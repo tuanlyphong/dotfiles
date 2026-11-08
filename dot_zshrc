@@ -112,6 +112,8 @@ source ~/.oh-my-zsh/custom/themes/powerlevel10k/powerlevel10k.zsh-theme
 ######################
 #      ALIASES       #
 ######################
+alias vpn-start='sudo systemctl unmask tailscaled warp-svc && sudo systemctl enable --now tailscaled warp-svc'
+alias vpn-stop='sudo systemctl disable --now tailscaled warp-svc'
 alias makerepo="gh repo create --source=. --private"
 alias :q="exit"
 alias py="python"
@@ -177,3 +179,8 @@ export GITHUB_PERSONAL_ACCESS_TOKEN="$(gh auth token)"
 
 # Hermes Agent command
 case ":$PATH:" in *":$HOME/.local/bin:"*) ;; *) export PATH="$HOME/.local/bin:$PATH" ;; esac
+
+eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv zsh)"
+export PATH="$PATH:/home/phong/development/flutter/bin"
+export PATH="$PATH:/home/phong/development/flutter/bin"
+export PATH="$HOME/development/flutter/bin:$PATH"

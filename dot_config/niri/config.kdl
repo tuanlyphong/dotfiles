@@ -64,7 +64,7 @@ input {
         // accel-speed 0.2
         // accel-profile "flat"
         // scroll-method "no-scroll"
-        middle-emulation
+        // middle-emulation
     }
     trackpoint {
  // off
@@ -314,6 +314,10 @@ binds {
     Mod+A hotkey-overlay-title="Animelist" {
         spawn "kitty" "anime-tui"
     }
+    Mod+Y hotkey-overlay-title="Youtube" {
+        spawn "kitty" "youtube-tui"
+    }
+
     // File manager
     Mod+E hotkey-overlay-title="File Manager" {
         spawn "nautilus"
