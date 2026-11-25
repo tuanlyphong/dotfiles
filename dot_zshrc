@@ -184,3 +184,7 @@ eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv zsh)"
 export PATH="$PATH:/home/phong/development/flutter/bin"
 export PATH="$PATH:/home/phong/development/flutter/bin"
 export PATH="$HOME/development/flutter/bin:$PATH"
+
+
+# Added by Antigravity CLI installer
+export PATH="/home/phong/.local/bin:$PATH"
